@@ -1035,12 +1035,6 @@ namespace Mappalachia
 						continue;
 					}
 
-					// If the plot is flux but the target space isn't nukable - skip
-					if (item.Entity is DerivedRawFlux && !teleporter.TeleportsTo!.IsNukable())
-					{
-						continue;
-					}
-
 					List<Instance> instances = await Database.GetInstances(item, teleporter.TeleportsTo);
 
 					if (instances.Count == 0)

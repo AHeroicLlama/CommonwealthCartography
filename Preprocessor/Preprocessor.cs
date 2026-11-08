@@ -360,13 +360,6 @@ namespace Preprocessor
 			SimpleQuery("ALTER TABLE Space ADD COLUMN northAngle REAL;");
 			TransformColumn(GetNorthAngle, "Space", "spaceFormID", "northAngle");
 
-			// Create the Flux table
-			SimpleQuery("CREATE TABLE Flux (referenceFormID INTEGER, editorID STRING, color STRING);");
-			SimpleQuery("INSERT INTO Flux (referenceFormID, editorID) SELECT DISTINCT referenceFormID, editorID FROM Position JOIN Entity ON Entity.entityFormID = Position.referenceFormID;");
-			TransformColumn(GetFluxLoot, "Flux", "editorID", "color");
-			SimpleQuery("DELETE FROM Flux WHERE color = '';");
-			SimpleQuery("ALTER TABLE Flux DROP COLUMN editorID;");
-
 			// Null empty rows which are not TEXT
 			SimpleQuery("UPDATE Position SET teleportsToFormID = NULL WHERE teleportsToFormID = '';");
 			SimpleQuery("UPDATE Position SET boundX = NULL WHERE boundX = '';");
@@ -469,7 +462,6 @@ namespace Preprocessor
 			AddToSummaryReport("Avg Container items per container", SimpleQuery("SELECT AVG(contentsCount) FROM (SELECT count(contentFormID) as contentsCount FROM Container GROUP BY ContainerFormID);"));
 			AddToSummaryReport("Avg Container quantity per item", SimpleQuery("SELECT AVG(quantity) FROM Container;"));
 			AddToSummaryReport("Unique Container count", SimpleQuery("SELECT count(DISTINCT containerFormID) FROM Container;"));
-			AddToSummaryReport("Flux-producing entities count", SimpleQuery("SELECT color, COUNT(*) FROM Flux GROUP BY color;"));
 			AddToSummaryReport("Non-standard NorthMarker counts", SimpleQuery(
 				"SELECT * FROM (" +
 					"SELECT spaceEditorID, COUNT(Position.spaceFormID) AS northMarkerCount FROM Position " +
@@ -743,12 +735,6 @@ namespace Preprocessor
 			SimpleQuery("DROP TABLE Space;");
 			SimpleQuery("CREATE TABLE Space (spaceFormID INTEGER NOT NULL UNIQUE PRIMARY KEY, spaceEditorID TEXT NOT NULL, spaceDisplayName TEXT NOT NULL, isWorldspace INTEGER NOT NULL, isInstanceable INTEGER NOT NULL, centerX REAL NOT NULL, centerY REAL NOT NULL, maxRange REAL NOT NULL, northAngle REAL NOT NULL) STRICT;");
 			SimpleQuery("INSERT INTO Space (spaceFormID, spaceEditorID, spaceDisplayName, isWorldspace, isInstanceable, centerX, centerY, maxRange, northAngle) SELECT spaceFormID, spaceEditorID, spaceDisplayName, isWorldspace, isInstanceable, centerX, centerY, maxRange, northAngle FROM temp;");
-			SimpleQuery("DROP TABLE temp;");
-
-			SimpleQuery("CREATE TABLE temp AS SELECT * FROM Flux;");
-			SimpleQuery("DROP TABLE Flux;");
-			SimpleQuery("CREATE TABLE Flux (referenceFormID INTEGER NOT NULL UNIQUE PRIMARY KEY, color TEXT NOT NULL) STRICT;");
-			SimpleQuery("INSERT INTO Flux (referenceFormID, color) SELECT referenceFormID, color FROM temp;");
 			SimpleQuery("DROP TABLE temp;");
 
 			SimpleQuery("CREATE TABLE temp AS SELECT * FROM Location;");

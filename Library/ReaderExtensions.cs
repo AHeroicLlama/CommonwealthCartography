@@ -108,13 +108,6 @@ namespace Library
 			return Enum.Parse<Signature>(signature);
 		}
 
-		public static FluxColor GetFluxColor(this SqliteDataReader reader)
-		{
-			string color = reader.GetString("color");
-
-			return Enum.Parse<FluxColor>(color);
-		}
-
 		public static Bounds GetBounds(this SqliteDataReader reader)
 		{
 			return new Bounds(

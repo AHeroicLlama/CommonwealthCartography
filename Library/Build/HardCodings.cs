@@ -36,9 +36,7 @@ namespace Library
 
 		public static Regex ValidateMapMarkerIcon { get; } = new Regex("^(WhitespringResort|NukaColaQuantumPlant|TrainTrackMark|.*Marker)$");
 
-		public static Regex ValidateComponent { get; } = new Regex("^(Acid|Adhesive|Aluminum|Antiseptic|Asbestos|Ballistic Fiber|Black Titanium|Bone|Ceramic|Circuitry|Cloth|Coal|Concrete|Copper|Cork|Crystal|Fertilizer|Fiber Optics|Fiberglass|Gear|Glass|Gold|Gunpowder|Lead|Leather|Nuclear Material|Oil|Plastic|Rubber|Screw|Silver|Spring|Steel|Ultracite|Wood|Stable (Crimson|Violet|Yellowcake|Fluorescent|Cobalt) Flux)$");
-
-		public static Regex ValidateFluxColor { get; } = new Regex("^(Crimson|Violet|Yellowcake|Fluorescent|Cobalt)$");
+		public static Regex ValidateComponent { get; } = new Regex("^(Acid|Adhesive|Aluminum|Antiseptic|Asbestos|Ballistic Fiber|Black Titanium|Bone|Ceramic|Circuitry|Cloth|Coal|Concrete|Copper|Cork|Crystal|Fertilizer|Fiber Optics|Fiberglass|Gear|Glass|Gold|Gunpowder|Lead|Leather|Nuclear Material|Oil|Plastic|Rubber|Screw|Silver|Spring|Steel|Ultracite|Wood)$");
 
 		public static Regex ValidateNPC { get; } = new Regex("^(Angler|Beaver|Bloatfly|Bloodbug|Cat|Cave Cricket|Chicken|Deathclaw|Firefly|Fog Crawler|Fox|Frog|Ghoul|Grafton Monster|Gulper|Honey Beast|Insect|Liberator|Lost|Mega Sloth|Mirelurk|Mole Miner|Mole Rat|Opposum|Rabbit|Rad Ant|Rad Rat|Rad Scorpion|Rad Toad|Radroach|Radstag|Robot|Scorched|Snallygaster|Squirrel|Stingwing|Super Mutant|Thrasher|Tick|Vicious Dog|Wolf|Yao Guai)$");
 
@@ -346,103 +344,8 @@ namespace Library
 			attribute.Value = value;
 		}
 
-		// Return the color of the flux dropped by the editorID of the non-nuked version of the flora
-		public static string GetFluxLoot(string editorID)
-		{
-			switch (editorID)
-			{
-				case "LPI_FloraAster01":
-				case "LPI_FloraBlight01":
-				case "LPI_FloraCranberry01":
-				case "LPI_FloraCranberry02":
-				case "LPI_FloraCranberry03":
-				case "LPI_FloraCranberry01Diseased":
-				case "LPI_FloraCranberry02Diseased":
-				case "LPI_FloraCranberry03Diseased":
-				case "LPI_FloraFeverBlossom01":
-				case "LPI_FloraFirecap01":
-				case "LPI_FloraFungusBrain01":
-				case "LPI_FloraFungusBrain02":
-				case "LPI_FloraFungusBrain03":
-				case "LPI_FloraMothmanEggs01":
-				case "LPI_FloraMothmanEggs02":
-				case "LPI_FloraMothmanEggs03":
-				case "LPI_FloraWildGourdVine01":
-					return FluxColor.Crimson.ToString();
-
-				case "LPI_Burn_FloraSlipperCactus01":
-				case "LPI_Burn_FloraSlipperCactus02":
-				case "LPI_Burn_FloraSlipperCactus03":
-				case "LPI_FloraBloodLeaf01":
-				case "LPI_FloraBloodLeaf02":
-				case "LPI_FloraFirecracker01":
-				case "LPI_FloraFirecracker02":
-				case "LPI_FloraSap01":
-				case "LPI_FloraSap02":
-				case "LPI_FloraSiltBean01":
-				case "LPI_FloraSiltBean02":
-				case "LPI_FloraStarlightCreeper01":
-				case "LPI_FloraStarlightCreeper02":
-				case "LPI_FloraWildCornStalk01":
-				case "LPI_FloraWildMutFruit":
-					return FluxColor.Cobalt.ToString();
-
-				case "LPI_FloraFungusGlowing01":
-				case "LPI_FloraFungusGlowing02":
-				case "LPI_FloraFungusGlowing03":
-				case "LPI_FloraFungusGlowing04":
-				case "LPI_FloraFungusGlowing05":
-				case "LPI_FloraFungusGlowing06":
-				case "LPI_FloraRhododendron01":
-				case "LPI_TrapFloraThistle":
-					return FluxColor.Fluorescent.ToString();
-
-				case "LPI_FloraFern01":
-				case "LPI_FloraFern01_Charred01":
-				case "LPI_FloraFern01_Charred02":
-				case "LPI_FloraFern01_Charred03":
-				case "LPI_FloraFern01_Charred04":
-				case "LPI_FloraFern02":
-				case "LPI_FloraFern02_Charred01":
-				case "LPI_FloraFern02_Charred02":
-				case "LPI_FloraFern02_Charred03":
-				case "LPI_FloraFern02_Charred04":
-				case "LPI_FloraGinseng01":
-				case "LPI_FloraPitcherPlant":
-				case "LPI_FloraSnapTail01":
-				case "LPI_FloraSnapTail02":
-				case "LPI_FloraSwampPod01":
-				case "LPI_FloraWildRazorgrain01":
-				case "LPI_FloraWildTarberryFloat01":
-				case "LPI_FloraWildTarberryFloat02":
-				case "LPI_FloraWildTatoPlant01":
-				case "LPI_FloraWildTatoPlant02":
-					return FluxColor.Violet.ToString();
-
-				case "LPI_FloraAshRose01":
-				case "LPI_FloraAshRose02":
-				case "LPI_FloraBlackberry01":
-				case "LPI_FloraBlackberry02":
-				case "LPI_FloraBleachDogwoodBark01":
-				case "LPI_FloraBleachDogwoodBark02":
-				case "LPI_FloraBleachDogwoodBark03":
-				case "LPI_FloraSootFlower01":
-				case "LPI_FloraSootFlower02":
-				case "LPI_FloraToxicSootFlower01":
-				case "LPI_FloraToxicSootFlower02":
-				case "LPI_FloraWildCarrotFlower":
-				case "LPI_FloraWildMelonVine01":
-					return FluxColor.Yellowcake.ToString();
-
-				default:
-					return string.Empty;
-			}
-		}
-
 		// List of Globals (GLOB) by EditorID which we should keep
 		public static List<string> GlobalsToKeep { get; } = new List<string>()
-		{
-			"EN07_NukeBlastRadius", "HTO_LCP_HostileTakeOver_TargetRadius_Location",
-		};
+		{ };
 	}
 }

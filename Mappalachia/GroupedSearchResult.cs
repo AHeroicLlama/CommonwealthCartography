@@ -44,7 +44,7 @@ namespace Mappalachia
 
 			List<string> additionalInfo = new List<string>();
 
-			if (Entity is DerivedNPC || Entity is DerivedScrap || Entity is DerivedRawFlux)
+			if (Entity is DerivedNPC || Entity is DerivedScrap)
 			{
 				builder.Append(Entity.DisplayName);
 			}
