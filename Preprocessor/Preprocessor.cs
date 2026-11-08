@@ -134,10 +134,10 @@ namespace Preprocessor
 			// Pull the MapMarker data into a new table, then make some hardcoded amendments and corrections
 			SimpleQuery("CREATE TABLE MapMarker AS SELECT spaceFormID, x, y, referenceFormID as label, mapMarkerName as icon FROM Position WHERE mapMarkerName != '';");
 			TransformColumn(UnescapeCharacters, "MapMarker", "label");
-			SimpleQuery($"DELETE FROM MapMarker WHERE label IN {MapMarkersToRemove.ToSqliteCollection()};");
-			SimpleQuery($"DELETE FROM MapMarker WHERE label LIKE '{MapMarkersToRemovePattern}';");
-			SimpleQuery(AddMissingMarkersQuery);
-			SimpleQuery(CorrectDuplicateMarkersQuery);
+			//SimpleQuery($"DELETE FROM MapMarker WHERE label IN {MapMarkersToRemove.ToSqliteCollection()};");
+			//SimpleQuery($"DELETE FROM MapMarker WHERE label LIKE '{MapMarkersToRemovePattern}';");
+			//SimpleQuery(AddMissingMarkersQuery);
+			//SimpleQuery(CorrectDuplicateMarkersQuery);
 			TransformColumn(CorrectLabelsByDict, "MapMarker", "label");
 			TransformColumn(CorrectFissureLabels, "MapMarker", "label");
 			TransformColumn(CorrectCommonBadLabels, "MapMarker", "label");
@@ -286,15 +286,15 @@ namespace Preprocessor
 			SimpleQuery($"UPDATE Scrap SET componentQuantity = 'Singular' WHERE componentQuantity LIKE '%Singular%';");
 
 			// Fix erroneous data which is exported from xEdit with values somehow misaligned from in-game
-			SimpleQuery(CorrectLockLevelQuery);
-			SimpleQuery(CorrectPrimitiveShapeQuery);
+			//SimpleQuery(CorrectLockLevelQuery);
+			//SimpleQuery(CorrectPrimitiveShapeQuery);
 
 			TransformColumn(ReduceLockLevel, "Position", "lockLevel");
 
 			// Transform the component quantity keywords to numeric values from Scrap table, then drop the Component table
-			TransformColumn(GetComponentQuantity, "Scrap", "component", "componentQuantity", "componentQuantity");
-			ChangeColumnType("Scrap", "componentQuantity", "INTEGER");
-			SimpleQuery($"DROP TABLE Component;");
+			//TransformColumn(GetComponentQuantity, "Scrap", "component", "componentQuantity", "componentQuantity");
+			//ChangeColumnType("Scrap", "componentQuantity", "INTEGER");
+			//SimpleQuery($"DROP TABLE Component;");
 
 			// Extract the NPC types and classes on Location from the raw 'property'
 			SimpleQuery("ALTER TABLE Location ADD COLUMN npcName TEXT;");

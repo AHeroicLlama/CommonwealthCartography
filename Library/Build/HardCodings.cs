@@ -46,55 +46,55 @@ namespace Library
 
 		public static Dictionary<string, string> MarkerLabelCorrection { get; } = new Dictionary<string, string>()
 		{
-			{ "Abraxodyne Storage Depot", "Meadow Breeze Storage Depot" },
-			{ "Animal Cave", "Hopewell Cave" },
-			{ "Bleeding Kate's Grinder", "Bleeding Kate's Grindhouse" },
-			{ "Building Summersville Dam", "Summersville Dam" },
-			{ "Burning Mine", "The Burning Mine" },
-			{ "Cranberry Bog Region", "Quarry X3" },
-			{ "Cranberry Glade", "Sacramental Glade" },
-			{ "Crater Outpost", "Crater Watchstation" },
-			{ "Derelict Power Substation", "Abraxodyne Chemical Power Substation" },
-			{ "Desolate Encampment", "Hamley Run Camp" },
-			{ "Emmett Mt. Disposal Site", "Emmett Mountain Disposal Site" },
-			{ "Federal Field NG-17", "Big Meadows Gas Well" },
-			{ "Garrahan Excavations Headquarters", "Garrahan Mining Headquarters" },
-			{ "Hawke's Refuge", "Dagger's Den" },
-			{ "Hillside Church", "Shade Hill Church" },
-			{ "Lightning Pylon A", "Research Site Saxony" },
-			{ "Lightning Pylon B", "Research Site Bavaria" },
-			{ "Lightning Pylon C", "Research Site Rhineland" },
-			{ "Lumber Camp", "Sylvie & Sons Logging Camp" },
-			{ "Maybell Pond", "Beckwith Farm" },
-			{ "Middle Mountain Cabins", "Middle Mountain Pitstop" },
-			{ "Mine Shaft No. 9", "AMS Testing Site" },
-			{ "Mire", "Harpers Ferry Tunnel" },
-			{ "Morgantown Regional Airfield", "Morgantown Airport" },
-			{ "Mountain Region", "Colonel Kelly Monument" },
-			{ "Nuked Crater", "Foundation Outpost" },
-			{ "Pine Bluff Overlook", "Prospect Hill" },
-			{ "Relay Tower 2", "Relay Tower HN-B1-12" },
-			{ "Relay Tower 3", "Relay Tower DP-B5-21" },
-			{ "Relay Tower 4", "Relay Tower LW-B1-22" },
-			{ "Relay Tower 5", "Relay Tower HG-B7-09" },
-			{ "Relay Tower 6", "Relay Tower EM-B1-27" },
-			{ "Schram Homestead", "Silva Homestead" },
-			{ "Shenandoah Weather Station", "Hawksbill Weather Station" },
-			{ "Shining Creek Caverns", "Shining Creek Cavern" },
-			{ "Sundew Grove 02", "Veiled Sundew Grove" },
-			{ "Sundew Grove 03", "Creekside Sundew Grove" },
-			{ "The Burrows", "The Burrows South" },
-			{ "The Savage Divide", "Monorail Elevator" },
-			{ "Wildwood Horse Ranch", "Westbrook Horse Ranch" },
-			{ "World's Largest Teapot", "The Giant Teapot" },
+			//{ "Abraxodyne Storage Depot", "Meadow Breeze Storage Depot" },
+			//{ "Animal Cave", "Hopewell Cave" },
+			//{ "Bleeding Kate's Grinder", "Bleeding Kate's Grindhouse" },
+			//{ "Building Summersville Dam", "Summersville Dam" },
+			//{ "Burning Mine", "The Burning Mine" },
+			//{ "Cranberry Bog Region", "Quarry X3" },
+			//{ "Cranberry Glade", "Sacramental Glade" },
+			//{ "Crater Outpost", "Crater Watchstation" },
+			//{ "Derelict Power Substation", "Abraxodyne Chemical Power Substation" },
+			//{ "Desolate Encampment", "Hamley Run Camp" },
+			//{ "Emmett Mt. Disposal Site", "Emmett Mountain Disposal Site" },
+			//{ "Federal Field NG-17", "Big Meadows Gas Well" },
+			//{ "Garrahan Excavations Headquarters", "Garrahan Mining Headquarters" },
+			//{ "Hawke's Refuge", "Dagger's Den" },
+			//{ "Hillside Church", "Shade Hill Church" },
+			//{ "Lightning Pylon A", "Research Site Saxony" },
+			//{ "Lightning Pylon B", "Research Site Bavaria" },
+			//{ "Lightning Pylon C", "Research Site Rhineland" },
+			//{ "Lumber Camp", "Sylvie & Sons Logging Camp" },
+			//{ "Maybell Pond", "Beckwith Farm" },
+			//{ "Middle Mountain Cabins", "Middle Mountain Pitstop" },
+			//{ "Mine Shaft No. 9", "AMS Testing Site" },
+			//{ "Mire", "Harpers Ferry Tunnel" },
+			//{ "Morgantown Regional Airfield", "Morgantown Airport" },
+			//{ "Mountain Region", "Colonel Kelly Monument" },
+			//{ "Nuked Crater", "Foundation Outpost" },
+			//{ "Pine Bluff Overlook", "Prospect Hill" },
+			//{ "Relay Tower 2", "Relay Tower HN-B1-12" },
+			//{ "Relay Tower 3", "Relay Tower DP-B5-21" },
+			//{ "Relay Tower 4", "Relay Tower LW-B1-22" },
+			//{ "Relay Tower 5", "Relay Tower HG-B7-09" },
+			//{ "Relay Tower 6", "Relay Tower EM-B1-27" },
+			//{ "Schram Homestead", "Silva Homestead" },
+			//{ "Shenandoah Weather Station", "Hawksbill Weather Station" },
+			//{ "Shining Creek Caverns", "Shining Creek Cavern" },
+			//{ "Sundew Grove 02", "Veiled Sundew Grove" },
+			//{ "Sundew Grove 03", "Creekside Sundew Grove" },
+			//{ "The Burrows", "The Burrows South" },
+			//{ "The Savage Divide", "Monorail Elevator" },
+			//{ "Wildwood Horse Ranch", "Westbrook Horse Ranch" },
+			//{ "World's Largest Teapot", "The Giant Teapot" },
 		};
 
 		public static List<string> MapMarkersToRemove { get; } = new List<string>()
 		{
-			"Fissure Site Delta",
-			"Fissure Site Theta",
-			"Fissure Site Kappa",
-			"Fissure Site Tau",
+			//"Fissure Site Delta",
+			//"Fissure Site Theta",
+			//"Fissure Site Kappa",
+			//"Fissure Site Tau",
 		};
 
 		// As above, but provides a pattern for a LIKE term
@@ -103,16 +103,16 @@ namespace Library
 		// Spaces which appear to be copy/pastes or alternates of the same thing, and therefore can and should share scaling/adjustments
 		public static List<List<string>> SisterSpaces { get; } = new List<List<string>>()
 		{
-			new List<string>() { "ArktosPharmaLab01", "ArktosPharmaLabDungeon" },
-			new List<string>() { "CharGen01", "CharGen02", "CharGen03", "CharGen04", "CharGen05", "NPEVault7601", "NVEVault7601" },
-			new List<string>() { "GlassedCavern01", "GlassedCavernDungeon" },
-			new List<string>() { "SugarGroveMissileSilo01", "MonongahMissileSilo01", "SpruceKnobMissileSilo01" },
-			new List<string>() { "WatogaCivicCenter01", "WatogaCivicCenterDungeon" },
-			new List<string>() { "WatogaHighSchool01", "WatogaHighSchoolDungeon" },
-			new List<string>() { "XPDAC02Aquarium", "XPDAC02AquariumDungeon" },
-			new List<string>() { "XPDAC03CommunityCenter", "XPDAC03CommunityCenterDungeon" },
-			new List<string>() { "XPDPitt01Foundry", "XPDPitt01FoundryDungeon" },
-			new List<string>() { "WestTek02", "WestTek02Arena" },
+			//new List<string>() { "ArktosPharmaLab01", "ArktosPharmaLabDungeon" },
+			//new List<string>() { "CharGen01", "CharGen02", "CharGen03", "CharGen04", "CharGen05", "NPEVault7601", "NVEVault7601" },
+			//new List<string>() { "GlassedCavern01", "GlassedCavernDungeon" },
+			//new List<string>() { "SugarGroveMissileSilo01", "MonongahMissileSilo01", "SpruceKnobMissileSilo01" },
+			//new List<string>() { "WatogaCivicCenter01", "WatogaCivicCenterDungeon" },
+			//new List<string>() { "WatogaHighSchool01", "WatogaHighSchoolDungeon" },
+			//new List<string>() { "XPDAC02Aquarium", "XPDAC02AquariumDungeon" },
+			//new List<string>() { "XPDAC03CommunityCenter", "XPDAC03CommunityCenterDungeon" },
+			//new List<string>() { "XPDPitt01Foundry", "XPDPitt01FoundryDungeon" },
+			//new List<string>() { "WestTek02", "WestTek02Arena" },
 		};
 
 		// Monongah Workshop (0x003D4B48) does not have its 'Map Marker/FULL - Name' record assigned so the export scripts don't find it
@@ -130,12 +130,12 @@ namespace Library
 		// Assumes PascalCased names will already have had spaces added
 		public static Dictionary<string, string> NPCNameCorrection { get; } = new Dictionary<string, string>()
 		{
-			{ "Megasloth", "Mega Sloth" },
+			//{ "Megasloth", "Mega Sloth" },
 			{ "Molerat", "Mole Rat" },
-			{ "Mutation", "Snallygaster" },
-			{ "Rad Frog", "Frog" },
+			//{ "Mutation", "Snallygaster" },
+			//{ "Rad Frog", "Frog" },
 			{ "Rad Stag", "Radstag" },
-			{ "Rad Turkey", "Thrasher" },
+			//{ "Rad Turkey", "Thrasher" },
 			{ "Rat", "Rad Rat" },
 			{ "Scorpion", "Rad Scorpion" },
 			{ "Swamp", "Gulper" },
@@ -153,112 +153,112 @@ namespace Library
 			"spaceEditorID LIKE 'Test%' OR " +
 			"spaceEditorID LIKE '%Debug%' OR " +
 			"spaceEditorID LIKE 'zz%' OR " +
-			"spaceEditorID LIKE '76%' OR " +
+			//"spaceEditorID LIKE '76%' OR " +
 			"spaceEditorID LIKE '%Worldspace' OR " +
 			"spaceEditorID LIKE '%Nav%Test%' OR " +
 			"spaceEditorID LIKE 'PackIn%' OR " +
-			"spaceEditorID LIKE 'COPY%' OR " +
-			"spaceEditorID LIKE 'XPD%SteelTower%' OR " +
-			"spaceEditorID = 'MILEBlueRidgeHQ' OR " +
-			"spaceEditorID = 'StormPresidentialBunker' OR " +
-			"spaceEditorID = 'StormEngineeringVlt63' OR " +
-			"spaceEditorID = 'XPDPitt02ACCJ' OR " +
-			"spaceDisplayName = 'Diamond City' OR " +
-			"spaceDisplayName = 'Goodneighbor'";
+			"spaceEditorID LIKE 'COPY%'";
+			//"spaceEditorID LIKE 'XPD%SteelTower%' OR " +
+			//"spaceEditorID = 'MILEBlueRidgeHQ' OR " +
+			//"spaceEditorID = 'StormPresidentialBunker' OR " +
+			//"spaceEditorID = 'StormEngineeringVlt63' OR " +
+			//"spaceEditorID = 'XPDPitt02ACCJ' OR " +
+			//"spaceDisplayName = 'Diamond City' OR " +
+			//"spaceDisplayName = 'Goodneighbor'";
 
 		// Operates against already-finalized labels
 		public static string? GetCorrectedMarkerIcon(string markerName)
 		{
 			switch (markerName)
 			{
-				case "Ammo Dump":
-				case "Bloody Frank's":
-				case "Cliffwatch":
-				case "Crimson Prospect":
-				case "Dagger's Den":
-				case "Hunter's Ridge":
-				case "Ripper Alley":
-				case "Rollins Labor Camp":
-				case "Seneca Gang Camp":
-				case "Skullbone Vantage":
-				case "South Cutthroat Camp":
-				case "The Bounty":
-				case "The Crosshair":
-				case "The Kill Box":
-				case "The Pigsty":
-				case "The Sludge Works":
-				case "The Vantage":
-				case "Twin Pine Cabins":
-				case "Widow's Perch":
-					return "BloodEagleMarker";
+				//case "Ammo Dump":
+				//case "Bloody Frank's":
+				//case "Cliffwatch":
+				//case "Crimson Prospect":
+				//case "Dagger's Den":
+				//case "Hunter's Ridge":
+				//case "Ripper Alley":
+				//case "Rollins Labor Camp":
+				//case "Seneca Gang Camp":
+				//case "Skullbone Vantage":
+				//case "South Cutthroat Camp":
+				//case "The Bounty":
+				//case "The Crosshair":
+				//case "The Kill Box":
+				//case "The Pigsty":
+				//case "The Sludge Works":
+				//case "The Vantage":
+				//case "Twin Pine Cabins":
+				//case "Widow's Perch":
+				//	return "BloodEagleMarker";
 
-				case "Forward Station Alpha":
-				case "Forward Station Delta":
-				case "Forward Station Tango":
-					return "BoSMarker";
+				//case "Forward Station Alpha":
+				//case "Forward Station Delta":
+				//case "Forward Station Tango":
+				//	return "BoSMarker";
 
-				case "Blakes Offering":
-				case "Clancy Manor":
-				case "Ingram Mansion":
-				case "Johnson's Acre":
-				case "Kanawha County Cemetery":
-				case "Lucky Hole Mine":
-				case "Moth-Home":
-				case "Organ Cave North":
-				case "Organ Cave South":
-				case "Organ Cave West":
-				case "Sacrament":
-					return "CultistMarker";
+				//case "Blakes Offering":
+				//case "Clancy Manor":
+				//case "Ingram Mansion":
+				//case "Johnson's Acre":
+				//case "Kanawha County Cemetery":
+				//case "Lucky Hole Mine":
+				//case "Moth-Home":
+				//case "Organ Cave North":
+				//case "Organ Cave South":
+				//case "Organ Cave West":
+				//case "Sacrament":
+				//	return "CultistMarker";
 
-				case "Highway Town":
-					return "ElevatedHighwayMarker";
+				//case "Highway Town":
+				//	return "ElevatedHighwayMarker";
 
-				case "Gleaming Depths":
-					return "GleamingDepthsMarker";
+				//case "Gleaming Depths":
+				//	return "GleamingDepthsMarker";
 
-				case "Foundation":
-					return "HammerWingMarker";
+				//case "Foundation":
+				//	return "HammerWingMarker";
 
-				case "The Rust Kingdom":
-					return "IndustrialDomeMarker";
+				//case "The Rust Kingdom":
+				//	return "IndustrialDomeMarker";
 
-				case "The Rusty Pick":
-					return "LegendaryPurveyorMarker";
+				//case "The Rusty Pick":
+				//	return "LegendaryPurveyorMarker";
 
-				case "Abandoned Bog Town":
-				case "Beckley Mine Exhibit":
-				case "Berkeley Springs West":
-				case "Billings Homestead":
-				case "Charleston Landfill":
-				case "Converted Munitions Factory":
-				case "Dabney Homestead":
-				case "Dolly Sods Campground":
-				case "Federal Disposal Field HZ-21":
-				case "Gorge Junkyard":
-				case "Grafton Steel Yard":
-				case "Hemlock Holes Maintenance":
-				case "Lakeside Cabins":
-				case "Monongah Power Plant Yard":
-				case "Mount Blair":
-				case "Poseidon Energy Plant Yard":
-				case "Red Rocket Mega Stop":
-				case "Starlight Drive-in":
-				case "Sunshine Meadows Industrial Farm":
-				case "Thunder Mt. Power Plant Yard":
-				case "Tyler County Dirt Track":
-				case "Wade Airport":
-					return "PublicWorkshopMarker";
+				//case "Abandoned Bog Town":
+				//case "Beckley Mine Exhibit":
+				//case "Berkeley Springs West":
+				//case "Billings Homestead":
+				//case "Charleston Landfill":
+				//case "Converted Munitions Factory":
+				//case "Dabney Homestead":
+				//case "Dolly Sods Campground":
+				//case "Federal Disposal Field HZ-21":
+				//case "Gorge Junkyard":
+				//case "Grafton Steel Yard":
+				//case "Hemlock Holes Maintenance":
+				//case "Lakeside Cabins":
+				//case "Monongah Power Plant Yard":
+				//case "Mount Blair":
+				//case "Poseidon Energy Plant Yard":
+				//case "Red Rocket Mega Stop":
+				//case "Starlight Drive-in":
+				//case "Sunshine Meadows Industrial Farm":
+				//case "Thunder Mt. Power Plant Yard":
+				//case "Tyler County Dirt Track":
+				//case "Wade Airport":
+				//	return "PublicWorkshopMarker";
 
-				case "Ohio River Adventures":
-				case "The Coop":
-				case "The Crater":
-					return "SkullRingMarker";
+				//case "Ohio River Adventures":
+				//case "The Coop":
+				//case "The Crater":
+				//	return "SkullRingMarker";
 
-				case "Vault 51":
-					return "Vault51Marker";
+				//case "Vault 51":
+				//	return "Vault51Marker";
 
-				case "Vault 79":
-					return "Vault79Marker";
+				//case "Vault 79":
+				//	return "Vault79Marker";
 
 				default:
 					return null;
@@ -268,7 +268,7 @@ namespace Library
 		// Values passed with the -xm argument to the render command
 		public static List<string> RenderExcludeModels { get; } = new List<string>()
 		{
-			"babylon", "76Trailer", "SwampGas",
+			//"babylon", "76Trailer", "SwampGas",
 		};
 
 		// The Form ID of NorthMarker
@@ -278,17 +278,17 @@ namespace Library
 		// Key = space FormID in Hex, Value = northMarker instance FormID in Hex
 		public static Dictionary<string, string> NorthMarkerPreference { get; } = new Dictionary<string, string>()
 		{
-			{ "00473CE3", "0040C221" }, // Burrows01
-			{ "006143D4", "006150A9" }, // UncannyCavernsDungeon
+			//{ "00473CE3", "0040C221" }, // Burrows01
+			//{ "006143D4", "006150A9" }, // UncannyCavernsDungeon
 		};
 
 		// Fix fissure site naming - Rename Zeta to Prime, drop Greek alphabet names from all others
 		public static string CorrectFissureLabels(string label)
 		{
-			if (label.StartsWith(FissureSiteLabel))
-			{
-				return (label == $"{FissureSiteLabel} Zeta") ? $"{FissureSiteLabel} Prime" : FissureSiteLabel;
-			}
+			//if (label.StartsWith(FissureSiteLabel))
+			//{
+			//	return (label == $"{FissureSiteLabel} Zeta") ? $"{FissureSiteLabel} Prime" : FissureSiteLabel;
+			//}
 
 			return label;
 		}
@@ -296,6 +296,7 @@ namespace Library
 		// Correct map marker labels by correcting common extraneous/incorrect text in the label
 		public static string CorrectCommonBadLabels(string label)
 		{
+			return label;
 			return label.Replace("Fast Travel Point: ", string.Empty).Replace("Hornwright Air Cleanser Site", "Hornwright Air Purifier Site");
 		}
 
@@ -305,11 +306,11 @@ namespace Library
 		{
 			switch (space.EditorID.ToUpper())
 			{
-				case "APPALACHIA":
-					List<Region> borderRegions = new List<Region>();
-					borderRegions.AddRange(await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'76Border%'"));
-					borderRegions.AddRange(await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'BurningSpringsSubRegion%'"));
-					return borderRegions;
+				//case "APPALACHIA":
+				//	List<Region> borderRegions = new List<Region>();
+				//	borderRegions.AddRange(await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'76Border%'"));
+				//	borderRegions.AddRange(await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'BurningSpringsSubRegion%'"));
+				//	return borderRegions;
 
 				default:
 					return new List<Region>();
@@ -318,16 +319,16 @@ namespace Library
 
 		public static XmlDocument FixMapMarkerSVG(XmlDocument document, MapMarker mapMarker)
 		{
-			// Change the size and position of the workshop svg, so it is centered
-			if (mapMarker.Icon == "PublicWorkshopMarker")
-			{
-				XmlNode? svgNode = document.SelectSingleNode("//*[local-name()='svg']");
-				XmlNode? gNode = svgNode?.SelectSingleNode("//*[local-name()='g']");
+			//// Change the size and position of the workshop svg, so it is centered
+			//if (mapMarker.Icon == "PublicWorkshopMarker")
+			//{
+			//	XmlNode? svgNode = document.SelectSingleNode("//*[local-name()='svg']");
+			//	XmlNode? gNode = svgNode?.SelectSingleNode("//*[local-name()='g']");
 
-				svgNode.SetAttributeValue("width", "32px");
-				svgNode.SetAttributeValue("height", "32px");
-				gNode.SetAttributeValue("transform", "matrix(1.0, 0.0, 0.0, 1.0, 16, 16)");
-			}
+			//	svgNode.SetAttributeValue("width", "32px");
+			//	svgNode.SetAttributeValue("height", "32px");
+			//	gNode.SetAttributeValue("transform", "matrix(1.0, 0.0, 0.0, 1.0, 16, 16)");
+			//}
 
 			return document;
 		}
@@ -346,6 +347,8 @@ namespace Library
 
 		// List of Globals (GLOB) by EditorID which we should keep
 		public static List<string> GlobalsToKeep { get; } = new List<string>()
-		{ };
+		{
+			//"EN07_NukeBlastRadius", "HTO_LCP_HostileTakeOver_TargetRadius_Location",
+		};
 	}
 }

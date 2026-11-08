@@ -5,11 +5,11 @@ namespace Library
 {
 	public static class Common
 	{
-		public static string ApplicationTitleName { get; } = "Mappalachia"; // User-friendly name
+		public static string ApplicationTitleName { get; } = "Commonwealth Cartography"; // User-friendly name
 
-		public static string ApplicationSystemName { get; } = "Mappalachia"; // File/URL-friendly name
+		public static string ApplicationSystemName { get; } = "CommonwealthCartography"; // File/URL-friendly name
 
-		public static string GameTargetName { get; } = "Fallout 76"; // User-friendly game title
+		public static string GameTargetName { get; } = "Fallout 4"; // User-friendly game title
 
 		public static string RepositoryName { get; } = $"AHeroicLlama/{ApplicationSystemName}";
 
