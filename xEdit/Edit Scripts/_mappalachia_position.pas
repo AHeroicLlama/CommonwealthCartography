@@ -178,7 +178,7 @@ unit _mappalachia_position;
 				FloatToStr(rotation.x) + ',' +
 				FloatToStr(rotation.y) + ',' +
 				FloatToStr(rotation.z) + ',' +
-				GetEditValue(ElementByName(ElementByName(item, 'Map Marker'), 'TNAM - Type')) + ',' +
+				GetEditValue(ElementByName(ElementByName(ElementByName(item, 'Map Marker'), 'TNAM - TNAM'), 'Type')) + ',' +
 				sanitize(shortName) + ',' +
 				sanitize(GetEditValue(teleportTarget)) + ',' +
 				IntToStr(GetIsInitiallyDisabled(item))
