@@ -16,7 +16,7 @@ unit _mappalachia_locationCell;
 		formID = IntToStr(GetLoadOrderFormID(item));
 		editorID = EditorID(item);
 		displayName = sanitize(DisplayName(item));
-		worldspacesEntry = ElementByName(item, 'Master Worldspace Cells');
+		worldspacesEntry = ElementByName(item, 'Location Cell Encounter Cell');
 		keywordsEntry = ElementBySignature(ElementByName(item, 'Keywords'), 'KWDA');
 	var
 		i, j, k, infestation : Integer;
@@ -33,8 +33,8 @@ unit _mappalachia_locationCell;
 
 		for i:= 0 to elementCount(worldspacesEntry) - 1 do begin
 			worldspaceEntry: = ElementByIndex(worldspacesEntry, i);
-			worldspace: = sanitize(GetEditValue(ElementByName(worldspaceEntry, 'World')));
-			cellsEntry: = ElementByName(worldspaceEntry, 'Cells');
+			worldspace: = sanitize(GetEditValue(ElementByName(worldspaceEntry, 'Location')));
+			cellsEntry: = ElementByName(worldspaceEntry, 'Coordinates');
 
 			for j:= 0 to elementCount(cellsEntry) - 1 do begin
 				cell := ElementByIndex(cellsEntry, j);
