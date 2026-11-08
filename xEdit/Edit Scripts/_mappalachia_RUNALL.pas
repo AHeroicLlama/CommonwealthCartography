@@ -2,7 +2,6 @@
 unit Mappalachia;
 
 uses
-	_mappalachia_component,
 	_mappalachia_global,
 	_mappalachia_entity,
 	_mappalachia_esm,
@@ -22,7 +21,6 @@ uses
 		_mappalachia_locationCell.initialize();
 		_mappalachia_region.initialize();
 		_mappalachia_scrap.initialize();
-		_mappalachia_component.initialize();
 		_mappalachia_entity.initialize();
 		_mappalachia_position.initialize();
 

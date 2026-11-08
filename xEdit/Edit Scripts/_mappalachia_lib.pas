@@ -70,7 +70,6 @@ unit _mappalachia_lib;
 			if(filenameKey = 'Scrap') then _mappalachia_scrap.ripItem(item)
 		else if(filenameKey = 'Location') then _mappalachia_location.ripItem(item)
 		else if(filenameKey = 'LocationCell') then _mappalachia_locationCell.ripItem(item)
-		else if(filenameKey = 'Component') then _mappalachia_component.ripItem(item)
 		else if(filenameKey = 'Region') then _mappalachia_region.ripItem(item)
 		else if(filenameKey = 'Global') then _mappalachia_global.ripItem(item)
 	end;
