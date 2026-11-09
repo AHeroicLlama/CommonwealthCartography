@@ -327,8 +327,6 @@ namespace Library
 
 		// List of Globals (GLOB) by EditorID which we should keep
 		public static List<string> GlobalsToKeep { get; } = new List<string>()
-		{
-			//"EN07_NukeBlastRadius", "HTO_LCP_HostileTakeOver_TargetRadius_Location",
-		};
+		{ };
 	}
 }

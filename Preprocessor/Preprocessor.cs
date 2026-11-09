@@ -104,7 +104,7 @@ namespace Preprocessor
 			SimpleQuery($"CREATE TABLE Position(spaceFormID INTEGER REFERENCES Space(spaceFormID), referenceFormID TEXT REFERENCES Entity(entityFormID), x REAL, y REAL, z REAL, locationFormID TEXT REFERENCES Location(locationFormID), lockLevel TEXT, primitiveShape TEXT, boundX REAL, boundY REAL, boundZ REAL, rotX REAL, rotY REAL, rotZ REAL, mapMarkerName TEXT, shortName TEXT, teleportsToFormID TEXT, initiallyDisabled INTEGER);");
 			SimpleQuery($"CREATE TABLE Space(spaceFormID INTEGER PRIMARY KEY, spaceEditorID TEXT, spaceDisplayName TEXT, isWorldspace INTEGER, isInstanceable INTEGER);");
 			//SimpleQuery($"CREATE TABLE Location(locationFormID INTEGER, parentLocationFormID TEXT, minLevel INTEGER, maxLevel INTEGER, property TEXT, value INTEGER);");
-			SimpleQuery($"CREATE TABLE Region(spaceFormID TEXT REFERENCES Space(spaceFormID), regionFormID INTEGER, regionEditorID TEXT, locationFormID TEXT, subRegionIndex INTEGER, coordIndex INTEGER, x REAL, y REAL, nukable INTEGER);");
+			SimpleQuery($"CREATE TABLE Region(spaceFormID TEXT REFERENCES Space(spaceFormID), regionFormID INTEGER, regionEditorID TEXT, locationFormID TEXT, subRegionIndex INTEGER, coordIndex INTEGER, x REAL, y REAL);");
 			SimpleQuery($"CREATE TABLE Scrap(junkFormID INTEGER REFERENCES Entity(entityFormID), component TEXT, componentQuantity TEXT);");
 			SimpleQuery($"CREATE TABLE Component(component TEXT PRIMARY KEY, singular INTEGER, rare INTEGER, medium INTEGER, low INTEGER, high INTEGER, bulk INTEGER);");
 			SimpleQuery($"CREATE TABLE LocationCell(locationFormID INTEGER, locationEditorId TEXT, locationDisplayName TEXT, spaceFormID TEXT, x INTEGER, y INTEGER);");
@@ -192,9 +192,6 @@ namespace Preprocessor
 			ChangeColumnType("Region", "locationFormID", "INTEGER");
 			AddForeignKey("Region", "locationFormID", "INTEGER", "Location", "locationFormID");
 
-			// Convert Region nukable bools, blanks become true
-			TransformColumn(ConvertNukableBool, "Region", "nukable");
-
 			// For the region table, use the location column to reference the Location table, to find the min and max levels of the region
 			// Then, drop the location column. (Location table is dropped later)
 			SimpleQuery("ALTER TABLE Region ADD COLUMN 'minLevel' INTEGER;");
@@ -212,8 +209,8 @@ namespace Preprocessor
 			AddForeignKey("RegionPoints", "regionFormID", "INTEGER", "Region", "regionFormID");
 
 			// Reduce region rows to distinct rows (now that the points which made them unique are removed)
-			SimpleQuery($"CREATE TABLE TempRegion(regionFormID INTEGER PRIMARY KEY, regionEditorID TEXT, spaceFormID TEXT REFERENCES Space(spaceFormID), minLevel INTEGER, maxLevel INTEGER, nukable INTEGER);");
-			SimpleQuery("INSERT INTO TempRegion SELECT DISTINCT regionFormID, regionEditorID, spaceFormID, minLevel, maxLevel, nukable FROM Region;");
+			SimpleQuery($"CREATE TABLE TempRegion(regionFormID INTEGER PRIMARY KEY, regionEditorID TEXT, spaceFormID TEXT REFERENCES Space(spaceFormID), minLevel INTEGER, maxLevel INTEGER);");
+			SimpleQuery("INSERT INTO TempRegion SELECT DISTINCT regionFormID, regionEditorID, spaceFormID, minLevel, maxLevel FROM Region;");
 			SimpleQuery("DROP TABLE Region;");
 			SimpleQuery("ALTER TABLE TempRegion RENAME TO Region;");
 
@@ -413,7 +410,6 @@ namespace Preprocessor
 			AddToSummaryReport("Avg region spaceFormID as Dec", SimpleQuery("SELECT AVG(spaceFormID) FROM Region;"));
 			AddToSummaryReport("Avg region minLevel", SimpleQuery("SELECT AVG(minLevel) FROM Region;"));
 			AddToSummaryReport("Avg region maxLevel", SimpleQuery("SELECT AVG(maxLevel) FROM Region;"));
-			AddToSummaryReport("Nuke-safe zones", SimpleQuery("SELECT regionEditorId FROM Region WHERE nukable = 0;"));
 			AddToSummaryReport("Avg junkFormID as Dec", SimpleQuery("SELECT AVG(junkFormID) FROM Scrap;"));
 			AddToSummaryReport("Avg X, Y per Space", SimpleQuery("SELECT spaceEditorID, AVG(x), AVG(y) FROM Space JOIN Position ON Position.spaceFormID = Space.spaceFormID GROUP BY Space.spaceFormID ORDER BY isWorldspace DESC, space.spaceEditorID ASC;"));
 			AddToSummaryReport("Avg Container items per container", SimpleQuery("SELECT AVG(contentsCount) FROM (SELECT count(contentFormID) as contentsCount FROM Container GROUP BY ContainerFormID);"));
@@ -665,8 +661,8 @@ namespace Preprocessor
 
 			SimpleQuery("CREATE TABLE temp AS SELECT * FROM Region;");
 			SimpleQuery("DROP TABLE Region;");
-			SimpleQuery("CREATE TABLE Region (regionFormID INTEGER NOT NULL UNIQUE PRIMARY KEY, regionEditorID TEXT NOT NULL, spaceFormID TEXT NOT NULL REFERENCES Space (spaceFormID), minLevel INTEGER NOT NULL, maxLevel INTEGER NOT NULL, nukable INTEGER NOT NULL) STRICT;");
-			SimpleQuery("INSERT INTO Region (regionFormID, regionEditorID, spaceFormID, minLevel, maxLevel, nukable) SELECT regionFormID, regionEditorID, spaceFormID, minLevel, maxLevel, nukable FROM temp;");
+			SimpleQuery("CREATE TABLE Region (regionFormID INTEGER NOT NULL UNIQUE PRIMARY KEY, regionEditorID TEXT NOT NULL, spaceFormID TEXT NOT NULL REFERENCES Space (spaceFormID), minLevel INTEGER NOT NULL, maxLevel INTEGER NOT NULL) STRICT;");
+			SimpleQuery("INSERT INTO Region (regionFormID, regionEditorID, spaceFormID, minLevel, maxLevel) SELECT regionFormID, regionEditorID, spaceFormID, minLevel, maxLevel FROM temp;");
 			SimpleQuery("DROP TABLE temp;");
 
 			SimpleQuery("CREATE TABLE temp AS SELECT * FROM RegionPoints;");
@@ -906,18 +902,6 @@ namespace Preprocessor
 			}
 
 			return lockLevel.WithoutWhitespace();
-		}
-
-		// Source data is "True", "False", or may be blank
-		// We account for blank and convert accordingly
-		static string ConvertNukableBool(string input)
-		{
-			if (input == "False")
-			{
-				return "0";
-			}
-
-			return "1";
 		}
 
 		// Accounts for Delphi returning -1 when converting bools to ints

@@ -1,18 +1,17 @@
 MD5 Checksum
-6B90F1F186FD082FF7094E649096C027
+931B6853E1F0CAF6171C7499EBF2322D
 
 Size
 209292 KB
 
 Built At UTC
-09/11/2026 19:03:09
+09/11/2026 19:10:58
 
 CSV Imported with SQLite Version
 3.54.1 2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76 (64-bit)
 
 Tables
-Cell          Container     Entity     Location      Meta         Position_PreGrouped     RegionPoints     Space
-Component     ESM           Global     MapMarker     Position     Region                  Scrap
+Cell  Component  Container  ESM  Entity  Global  Location  MapMarker  Meta  Position  Position_PreGrouped  Region  RegionPoints  Scrap  Space
 
 Indices
 indexComponent     indexCount     indexGeneral     indexReference     indexSpaceTeleportsTo     indexTeleportsTo
@@ -983,8 +982,6 @@ Avg region minLevel
 
 Avg region maxLevel
 0
-
-Nuke-safe zones
 
 Avg junkFormID as Dec
 6469448.761061947
