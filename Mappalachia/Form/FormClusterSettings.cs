@@ -24,8 +24,6 @@ namespace Mappalachia
 			FormMain = formMain;
 			InitialSettings = FormMain.Settings.PlotSettings.ClusterSettings;
 
-			BlastRadius = Database.GetBlastRadius().GetAwaiter().GetResult();
-
 			trackBarClusterRange.Maximum = ClusterSettings.GetMaxRangeForSpace(FormMain.Settings.Space);
 
 			trackBarClusterRange.Value = Math.Clamp(InitialSettings.Range, trackBarClusterRange.Minimum, trackBarClusterRange.Maximum);
