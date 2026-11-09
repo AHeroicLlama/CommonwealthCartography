@@ -42,7 +42,6 @@ namespace Mappalachia
 				Signature.BNDS => "Spline",
 				Signature.BOOK => "Note/Plan",
 				Signature.CELL => "Cell",
-				Signature.CNCY => "Currency",
 				Signature.CONT => "Container",
 				Signature.DOOR => "Door",
 				Signature.FLOR => "Flora",
@@ -60,12 +59,10 @@ namespace Mappalachia
 				Signature.REGN => "Region",
 				Signature.LCTN => "Location",
 				Signature.SCOL => "Static collection",
-				Signature.SECH => "Echo",
 				Signature.SOUN => "Sound",
 				Signature.STAT => "Static object",
 				Signature.TACT => "Voice activator",
 				Signature.TERM => "Terminal",
-				Signature.TRAP => "Trap",
 				Signature.TXST => "Decal",
 				Signature.WEAP => "Weapon",
 				Signature.WRLD => "World",
@@ -87,7 +84,6 @@ namespace Mappalachia
 				Signature.BNDS => "A curved line shape. Usually used for power lines.",
 				Signature.BOOK => "Note, Plan or Recipe.",
 				Signature.CELL => "Another location separate from the main outside world.",
-				Signature.CNCY => string.Empty,
 				Signature.CONT => "Anything which can hold items.",
 				Signature.DOOR => string.Empty,
 				Signature.FLOR => "Collectable natural resource.",
@@ -106,12 +102,10 @@ namespace Mappalachia
 				Signature.REGN => "A defined bounded area on the map.",
 				Signature.LCTN => "A named location defined by associated grid squares (cells).",
 				Signature.SCOL => "A grouped set of static objects.",
-				Signature.SECH => "Trigger for echo sound effect.",
 				Signature.SOUN => "Trigger for sound effect.",
 				Signature.STAT => "Environmental scenery which does not move and cannot be interacted with.",
 				Signature.TACT => "A trigger/activator which causes a voice line to be played.",
 				Signature.TERM => string.Empty,
-				Signature.TRAP => string.Empty,
 				Signature.TXST => "A decal applied to a surface such as paint or dirt.",
 				Signature.WEAP => string.Empty,
 				Signature.WRLD => "The main outside world.",
@@ -129,7 +123,6 @@ namespace Mappalachia
 				Signature.AMMO or
 				Signature.ARMO or
 				Signature.BOOK or
-				Signature.CNCY or
 				Signature.CONT or
 				Signature.FLOR or
 				Signature.FURN or
@@ -144,7 +137,6 @@ namespace Mappalachia
 				Signature.LCTN or
 				Signature.TACT or
 				Signature.TERM or
-				Signature.TRAP or
 				Signature.WEAP => true,
 
 				_ => false,
