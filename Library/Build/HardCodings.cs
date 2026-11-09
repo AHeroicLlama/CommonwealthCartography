@@ -287,11 +287,10 @@ namespace Library
 		{
 			switch (space.EditorID.ToUpper())
 			{
-				//case "APPALACHIA":
-				//	List<Region> borderRegions = new List<Region>();
-				//	borderRegions.AddRange(await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'76Border%'"));
-				//	borderRegions.AddRange(await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'BurningSpringsSubRegion%'"));
-				//	return borderRegions;
+				case "Commonwealth":
+					List<Region> borderRegions = new List<Region>();
+					borderRegions.AddRange(await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'Border'"));
+					return borderRegions;
 
 				default:
 					return new List<Region>();

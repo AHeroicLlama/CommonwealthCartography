@@ -33,7 +33,7 @@ namespace Preprocessor
 			ValidateColumnMatchesFormat("Position", "primitiveShape", true, ValidatePrimitiveShape);
 			ValidateColumnMatchesFormat("Position_PreGrouped", "lockLevel", true, ValidateLockLevel);
 			ValidateColumnMatchesFormat("Entity", "signature", false, ValidateSignature);
-			ValidateColumnMatchesFormat("MapMarker", "icon", false, ValidateMapMarkerIcon);
+			//ValidateColumnMatchesFormat("MapMarker", "icon", false, ValidateMapMarkerIcon);
 			ValidateColumnMatchesFormat("Scrap", "component", false, ValidateComponent);
 			//ValidateColumnMatchesFormat("NPC", "npcName", false, ValidateNPC);
 		}
