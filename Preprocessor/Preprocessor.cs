@@ -107,7 +107,7 @@ namespace Preprocessor
 			SimpleQuery($"CREATE TABLE Region(spaceFormID TEXT REFERENCES Space(spaceFormID), regionFormID INTEGER, regionEditorID TEXT, locationFormID TEXT, subRegionIndex INTEGER, coordIndex INTEGER, x REAL, y REAL, nukable INTEGER);");
 			SimpleQuery($"CREATE TABLE Scrap(junkFormID INTEGER REFERENCES Entity(entityFormID), component TEXT, componentQuantity TEXT);");
 			SimpleQuery($"CREATE TABLE Component(component TEXT PRIMARY KEY, singular INTEGER, rare INTEGER, medium INTEGER, low INTEGER, high INTEGER, bulk INTEGER);");
-			SimpleQuery($"CREATE TABLE LocationCell(locationFormID INTEGER, locationEditorId TEXT, locationDisplayName TEXT, spaceFormID TEXT, x INTEGER, y INTEGER, infestation INTEGER);");
+			SimpleQuery($"CREATE TABLE LocationCell(locationFormID INTEGER, locationEditorId TEXT, locationDisplayName TEXT, spaceFormID TEXT, x INTEGER, y INTEGER);");
 			SimpleQuery($"CREATE TABLE Global(key TEXT PRIMARY KEY, value REAL);");
 			SimpleQuery($"CREATE TABLE ESM(number INTEGER PRIMARY KEY, name TEXT);");
 
@@ -298,7 +298,7 @@ namespace Preprocessor
 
 			// Now we've dropped the Location table used for NPC spawns, we can repurpose the name for Location Data for cells,
 			// putting cell coords in another new table, and dropping the original LocationCell
-			SimpleQuery("CREATE TABLE Location AS SELECT DISTINCT locationFormID, locationEditorID, locationDisplayName, spaceFormID, infestation FROM LocationCell");
+			SimpleQuery("CREATE TABLE Location AS SELECT DISTINCT locationFormID, locationEditorID, locationDisplayName, spaceFormID FROM LocationCell");
 			SimpleQuery("CREATE TABLE Cell AS SELECT DISTINCT locationFormID, x, y, spaceFormID FROM LocationCell"); // Distinct because the ESM data has duplicates
 			SimpleQuery("DROP TABLE LocationCell");
 
@@ -429,7 +429,6 @@ namespace Preprocessor
 				"WHERE northMarkerCount != 1;"));
 			AddToSummaryReport("Locations", SimpleQuery("SELECT locationFormID, locationEditorID, locationDisplayName, spaceEditorID FROM Location JOIN Space ON Space.spaceFormID = Location.spaceFormID ORDER BY locationEditorID;"));
 			AddToSummaryReport("Cell count by location", SimpleQuery("SELECT locationEditorID, spaceEditorID, count(*) AS count FROM Cell JOIN Location ON Location.locationFormID = Cell.locationFormID JOIN Space ON Space.spaceFormID = Cell.spaceFormID GROUP BY Location.locationFormID, Cell.spaceFormID ORDER BY Location.locationEditorID;"));
-			AddToSummaryReport("Infestation locations", SimpleQuery("SELECT locationEditorID FROM Location WHERE infestation = 1 ORDER BY locationEditorID;"));
 			AddToSummaryReport("Globals", SimpleQuery("SELECT key, value FROM Global;"));
 			AddToSummaryReport("ESMs", SimpleQuery("SELECT number, name FROM ESM;"));
 
@@ -690,8 +689,8 @@ namespace Preprocessor
 
 			SimpleQuery("CREATE TABLE temp AS SELECT * FROM Location;");
 			SimpleQuery("DROP TABLE Location;");
-			SimpleQuery("CREATE TABLE Location (locationFormID INTEGER NOT NULL UNIQUE PRIMARY KEY, locationEditorID TEXT NOT NULL, locationDisplayName TEXT NOT NULL, spaceFormID INTEGER NOT NULL REFERENCES Space (spaceFormID), infestation INTEGER NOT NULL) STRICT;");
-			SimpleQuery("INSERT INTO Location (locationFormID, locationEditorID, locationDisplayName, spaceFormID, infestation) SELECT locationFormID, locationEditorID, locationDisplayName, spaceFormID, infestation FROM temp;");
+			SimpleQuery("CREATE TABLE Location (locationFormID INTEGER NOT NULL UNIQUE PRIMARY KEY, locationEditorID TEXT NOT NULL, locationDisplayName TEXT NOT NULL, spaceFormID INTEGER NOT NULL REFERENCES Space (spaceFormID)) STRICT;");
+			SimpleQuery("INSERT INTO Location (locationFormID, locationEditorID, locationDisplayName, spaceFormID) SELECT locationFormID, locationEditorID, locationDisplayName, spaceFormID FROM temp;");
 			SimpleQuery("DROP TABLE temp;");
 
 			SimpleQuery("CREATE TABLE temp AS SELECT * FROM Cell;");

@@ -1,5 +1,5 @@
 // Gets a list of all LCTN and their cells
-// Header 'locationFormID,locationEditorId,locationDisplayName,space,cellX,cellY,infestation'
+// Header 'locationFormID,locationEditorId,locationDisplayName,space,cellX,cellY'
 unit _mappalachia_locationCell;
 
 	uses _mappalachia_lib;
@@ -19,16 +19,11 @@ unit _mappalachia_locationCell;
 		worldspacesEntry = ElementByName(item, 'Location Cell Encounter Cell');
 		keywordsEntry = ElementBySignature(ElementByName(item, 'Keywords'), 'KWDA');
 	var
-		i, j, k, infestation : Integer;
+		i, j, k : Integer;
 		worldspaceEntry, worldspace, cellsEntry, cell, keyword : IInterface;
 	begin
 		for k:= 0 to elementCount(keywordsEntry) - 1 do begin
 			keyword: = ElementByIndex(keywordsEntry, k);
-
-			if (pos('LocTypeHostileTakeover', GetEditValue(keyword)) <> 0) then begin
-				infestation := 1;
-				break;
-			end;
 		end;
 
 		for i:= 0 to elementCount(worldspacesEntry) - 1 do begin
@@ -44,8 +39,7 @@ unit _mappalachia_locationCell;
 					displayName + ',' +
 					worldspace + ',' +
 					IntToStr(GetEditValue(ElementByName(cell, 'Grid X'))) + ',' +
-					IntToStr(GetEditValue(ElementByName(cell, 'Grid Y'))) + ',' +
-					IntToStr(infestation)
+					IntToStr(GetEditValue(ElementByName(cell, 'Grid Y')))
 				);
 			end;
 		end;

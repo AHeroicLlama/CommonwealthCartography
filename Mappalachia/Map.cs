@@ -103,14 +103,6 @@ namespace Mappalachia
 
 		static int BoundsEdgeThickness { get; } = 1;
 
-		static Color InfestationZoneEdgeColor { get; } = Color.FromArgb(128, 255, 120, 100);
-
-		static Color InfestationZoneInnerColor { get; } = Color.FromArgb(32, 255, 120, 100);
-
-		static Pen InfestationEdgePen { get; } = new Pen(InfestationZoneEdgeColor, 4);
-
-		static Brush InfestationInnerBrush { get; } = new SolidBrush(InfestationZoneInnerColor);
-
 		public static Color DropShadowColor { get; } = Color.FromArgb(128, 0, 0, 0);
 
 		static Brush BrushDropShadow { get; } = new SolidBrush(DropShadowColor);
@@ -174,8 +166,6 @@ namespace Mappalachia
 
 			DrawCoordinateGrid(settings, graphics);
 
-			await DrawInfestations(settings, graphics);
-
 			DrawMapMarkerIconsAndLabels(settings, graphics, progressInfo);
 
 			itemsToPlot = itemsToPlot.OrderBy(i => i.LegendGroup).ToList();
@@ -231,33 +221,6 @@ namespace Mappalachia
 			UpdateProgress(progressInfo, 0, "Done");
 
 			return mapImage;
-		}
-
-		static async Task DrawInfestations(Settings settings, Graphics graphics)
-		{
-			if (!settings.MapSettings.ShowInfestations)
-			{
-				return;
-			}
-
-			List<Location> infestationLocations = await Database.GetInfestationLocations(settings.Space);
-			float infestationRadius = await Database.GetInfestationRadius();
-
-			foreach (Location location in infestationLocations)
-			{
-				Coord cellTopLeftCentroid = location.Cells.GetCentroid();
-				Coord trueCentroid = new Coord(cellTopLeftCentroid.X + (CellSize / 2), cellTopLeftCentroid.Y - (CellSize / 2));
-
-				RectangleF infestationZone = new RectangleF(
-					(float)(trueCentroid.X - infestationRadius),
-					(float)(trueCentroid.Y + infestationRadius),
-					infestationRadius * 2f,
-					infestationRadius * 2f).AsImageRectangle(settings);
-
-				graphics.FillEllipse(InfestationInnerBrush, infestationZone);
-				graphics.DrawEllipse(InfestationEdgePen, infestationZone);
-				graphics.DrawImageCentered(FileIO.GetInfestationMarker(), trueCentroid.AsImagePoint(settings));
-			}
 		}
 
 		static void DrawCoordinateGrid(Settings settings, Graphics graphics)

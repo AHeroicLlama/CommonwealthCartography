@@ -1,11 +1,11 @@
 MD5 Checksum
-B1954D263307079CACA1B63E3BAAC8E3
+6B90F1F186FD082FF7094E649096C027
 
 Size
 209292 KB
 
 Built At UTC
-09/11/2026 18:20:19
+09/11/2026 19:03:09
 
 CSV Imported with SQLite Version
 3.54.1 2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76 (64-bit)
@@ -1827,8 +1827,6 @@ WickedShippingFleetLockupLocation,Commonwealth,1
 WildwoodCemeteryLocation,Commonwealth,6
 WreckOfTheFMSNorthernStarLocation,Commonwealth,3
 YangtzeLocation,Commonwealth,1
-
-Infestation locations
 
 Globals
 
