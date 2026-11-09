@@ -24,11 +24,9 @@ namespace Library
 
 		public static Regex TitleCaseAddSpaceRegex { get; } = new Regex("(.*[a-z])([A-Z].*)");
 
-		public static Regex NPCRegex { get; } = new Regex("ESSChance(Main|Sub|Critter[AB])(BURN)?(.*?)s?(LARGE|GIANTONLY)? " + SignatureFormIDRegex);
+		public static Regex LockLevelRegex { get; } = new Regex(@"(Novice(?= 1| 25)|Advanced|Expert|Master)");
 
-		public static Regex LockLevelRegex { get; } = new Regex(@"(Novice|Advanced|Expert|Master) \((Level [0-3])\)");
-
-		public static Regex ValidateLockLevel { get; } = new Regex("^(Level[0-3]|Chained|Inaccessible|RequiresKey|RequiresTerminal|Unknown|Barred)$");
+		public static Regex ValidateLockLevel { get; } = new Regex("^(Novice|Advanced|Expert|Master|Chained|Inaccessible|RequiresKey|RequiresTerminal|Unknown|Barred)$");
 
 		public static Regex ValidatePrimitiveShape { get; } = new Regex("^(Box|Line|Plane|Sphere|Ellipsoid|Cylinder)$");
 

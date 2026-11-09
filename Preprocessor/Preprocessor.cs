@@ -903,7 +903,7 @@ namespace Preprocessor
 
 			if (match.Success)
 			{
-				lockLevel = match.Groups[2].Value;
+				lockLevel = match.Groups[1].Value;
 			}
 
 			return lockLevel.WithoutWhitespace();
