@@ -80,11 +80,6 @@ namespace Mappalachia
 			return searchTermHints[new Random().Next(searchTermHints.Count)];
 		}
 
-		public bool ShouldSearchForNPC()
-		{
-			return SelectedSignatures.Contains(Signature.NPC_) && SelectedLockLevels.Contains(LockLevel.None);
-		}
-
 		public bool ShouldSearchForScrap()
 		{
 			return SelectedSignatures.Contains(Signature.MISC) && SelectedLockLevels.Contains(LockLevel.None);

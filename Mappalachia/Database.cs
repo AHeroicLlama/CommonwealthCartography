@@ -16,8 +16,6 @@ namespace Mappalachia
 
 		static Regex SubstituteScrap { get; } = new Regex("derived|scrap", RegexOptions.IgnoreCase);
 
-		static Regex SubstituteNPC { get; } = new Regex("derived|spawn", RegexOptions.IgnoreCase);
-
 		static char EscapeChar { get; } = '`';
 
 		static float LookupFuzzyOptimizationClampRange { get; } = 65536; // 2^16
@@ -42,7 +40,6 @@ namespace Mappalachia
 			results.AddRange(await StandardSearch(settings, searchTerm, optionalClause, searchForFormID));
 			results.AddRange(await ContainerSearch(settings, searchTerm, optionalClause, searchForFormID));
 			results.AddRange(await ScrapSearch(settings, searchTerm, optionalClause));
-			results.AddRange(await NPCSearch(settings, searchTerm, allSpacesClause));
 			results.AddRange(await RegionSearch(settings, searchTerm, allSpacesClause, searchForFormID));
 			results.AddRange(await LocationSearch(settings, searchTerm, allSpacesClause, searchForFormID));
 			results.AddRange(await TeleportsToSearch(settings, searchTerm, allSpacesClause, searchForFormID));
@@ -166,38 +163,6 @@ namespace Mappalachia
 					string.Empty,
 					LockLevel.None,
 					reader.GetBool("initiallyDisabled")));
-			}
-
-			return results;
-		}
-
-		static async Task<List<GroupedSearchResult>> NPCSearch(Settings settings, string searchTerm, string optionalClause)
-		{
-			List<GroupedSearchResult> results = new List<GroupedSearchResult>();
-
-			if (!settings.SearchSettings.ShouldSearchForNPC())
-			{
-				return results;
-			}
-
-			string substituteSearch = SubstituteNPC.Replace(searchTerm, string.Empty).Trim();
-
-			string query = "SELECT npcName, spaceFormID, spawnWeight, count(*) AS count " +
-				"FROM NPC " +
-				$"WHERE (npcName LIKE '%{searchTerm}%' ESCAPE '{EscapeChar}' " +
-				$"OR npcName LIKE '%{substituteSearch}%' ESCAPE '{EscapeChar}') " +
-				optionalClause +
-				"GROUP BY NPC.spaceFormID, npcName, spawnWeight;";
-
-			using SqliteDataReader reader = await GetReader(Connection, query);
-
-			while (reader.Read())
-			{
-				results.Add(new GroupedSearchResult(
-					new DerivedNPC(reader.GetString("npcName")),
-					GetSpaceByFormID(reader.GetUInt("spaceFormID")),
-					reader.GetInt("count"),
-					reader.GetDouble("spawnWeight")));
 			}
 
 			return results;
@@ -391,10 +356,6 @@ namespace Mappalachia
 			else if (searchResult.Entity is DerivedScrap)
 			{
 				instances.AddRange(await GetScrapInstances(searchResult, space));
-			}
-			else if (searchResult.Entity is DerivedNPC)
-			{
-				instances.AddRange(await GetNPCInstances(searchResult, space));
 			}
 
 			return instances;
@@ -765,39 +726,6 @@ namespace Mappalachia
 				null);
 
 			return instance;
-		}
-
-		// Returns the instances of a GroupedSearchResult which is an NPC
-		static async Task<List<Instance>> GetNPCInstances(GroupedSearchResult searchResult, Space space)
-		{
-			List<Instance> instances = new List<Instance>();
-
-			string query = "SELECT x, y, z, Position.instanceFormID FROM Position " +
-				"JOIN NPC ON npc.instanceFormID = Position.instanceFormID " +
-				$"WHERE npcName = '{searchResult.Entity.EditorID}' AND npc.spawnWeight = $spawnWeight AND npc.spaceFormID = {space.FormID} AND initiallyDisabled = {searchResult.InitiallyDisabled}";
-
-			Dictionary<string, object> parameters = new Dictionary<string, object>
-			{
-				{ "$spawnWeight", searchResult.SpawnWeight },
-			};
-
-			using SqliteDataReader reader = await GetReader(Connection, query, parameters);
-
-			while (reader.Read())
-			{
-				instances.Add(new Instance(
-					searchResult.Entity,
-					space,
-					reader.GetCoord(),
-					reader.GetUInt("instanceFormID"),
-					searchResult.Label,
-					null,
-					LockLevel.None,
-					null,
-					searchResult.SpawnWeight));
-			}
-
-			return instances;
 		}
 
 		// Returns the instances of a GroupedSearchResult which is scrap

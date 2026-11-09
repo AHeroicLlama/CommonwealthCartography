@@ -44,7 +44,7 @@ namespace Mappalachia
 
 			List<string> additionalInfo = new List<string>();
 
-			if (Entity is DerivedNPC || Entity is DerivedScrap)
+			if (Entity is DerivedScrap)
 			{
 				builder.Append(Entity.DisplayName);
 			}
@@ -71,11 +71,6 @@ namespace Mappalachia
 			if (additionalInfo.Count > 0)
 			{
 				builder.Append($" ({string.Join(", ", additionalInfo)})");
-			}
-
-			if (Entity is DerivedNPC)
-			{
-				builder.Append($" [{Math.Round(SpawnWeight * 100, 2)}%]");
 			}
 
 			if (Entity is DerivedScrap)

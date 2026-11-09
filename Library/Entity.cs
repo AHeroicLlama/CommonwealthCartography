@@ -44,7 +44,6 @@ namespace Library
 
 	// Represents any entity in the ESM
 	[JsonPolymorphic(TypeDiscriminatorPropertyName = "EntityChildType")]
-	[JsonDerivedType(typeof(DerivedNPC), "DerivedNPC")]
 	[JsonDerivedType(typeof(DerivedScrap), "DerivedScrap")]
 	[JsonDerivedType(typeof(Region), "Region")]
 	[JsonDerivedType(typeof(Location), "Location")]

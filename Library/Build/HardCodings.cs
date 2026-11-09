@@ -38,8 +38,6 @@ namespace Library
 
 		public static Regex ValidateComponent { get; } = new Regex("^(Acid|Adhesive|Aluminum|Antiseptic|Asbestos|Ballistic Fiber|Black Titanium|Bone|Ceramic|Circuitry|Cloth|Coal|Concrete|Copper|Cork|Crystal|Fertilizer|Fiber Optics|Fiberglass|Gear|Glass|Gold|Gunpowder|Lead|Leather|Nuclear Material|Oil|Plastic|Rubber|Screw|Silver|Spring|Steel|Ultracite|Wood)$");
 
-		public static Regex ValidateNPC { get; } = new Regex("^(Angler|Beaver|Bloatfly|Bloodbug|Cat|Cave Cricket|Chicken|Deathclaw|Firefly|Fog Crawler|Fox|Frog|Ghoul|Grafton Monster|Gulper|Honey Beast|Insect|Liberator|Lost|Mega Sloth|Mirelurk|Mole Miner|Mole Rat|Opposum|Rabbit|Rad Ant|Rad Rat|Rad Scorpion|Rad Toad|Radroach|Radstag|Robot|Scorched|Snallygaster|Squirrel|Stingwing|Super Mutant|Thrasher|Tick|Vicious Dog|Wolf|Yao Guai)$");
-
 		public static Regex ValidIconFolder { get; } = new Regex("DefineSprite_[0-9]{1,3}_(([A-Z].*Marker)|WhitespringResort|NukaColaQuantumPlant|TrainTrackMark)$");
 
 		public static string MapMarkerIconInitialFileName { get; } = "1.svg"; // Frame 1
@@ -126,21 +124,6 @@ namespace Library
 
 		// For an unknown reason, some entities in xEdit have this invalid primitive shape
 		public static string CorrectPrimitiveShapeQuery { get; } = "UPDATE Position SET primitiveShape = 'Box' WHERE primitiveShape = '7';";
-
-		// Assumes PascalCased names will already have had spaces added
-		public static Dictionary<string, string> NPCNameCorrection { get; } = new Dictionary<string, string>()
-		{
-			//{ "Megasloth", "Mega Sloth" },
-			{ "Molerat", "Mole Rat" },
-			//{ "Mutation", "Snallygaster" },
-			//{ "Rad Frog", "Frog" },
-			{ "Rad Stag", "Radstag" },
-			//{ "Rad Turkey", "Thrasher" },
-			{ "Rat", "Rad Rat" },
-			{ "Scorpion", "Rad Scorpion" },
-			{ "Swamp", "Gulper" },
-			{ "Toad", "Rad Toad" },
-		};
 
 		// Provides the WHERE clause for a query which defines the rules of which cells we should discard, as they are understood to be cut or otherwise inaccessible.
 		public static string DiscardCellsQuery { get; } =

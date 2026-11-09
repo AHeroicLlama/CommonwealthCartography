@@ -1,21 +1,21 @@
 MD5 Checksum
-DE5F484FD8285E6D0CC997C56D6D1E62
+4168EE63941F3172BDBCD801F900D350
 
 Size
-209300 KB
+209260 KB
 
 Built At UTC
-08/11/2026 23:38:03
+09/11/2026 17:48:31
 
 CSV Imported with SQLite Version
 3.54.1 2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76 (64-bit)
 
 Tables
-Cell          Container     Entity     Location      Meta     Position                Region           Scrap
-Component     ESM           Global     MapMarker     NPC      Position_PreGrouped     RegionPoints     Space
+Cell          Container     Entity     Location      Meta         Position_PreGrouped     RegionPoints     Space
+Component     ESM           Global     MapMarker     Position     Region                  Scrap
 
 Indices
-indexComponent    indexCount    indexGeneral    indexNPC    indexReference    indexSpaceTeleportsTo    indexTeleportsTo
+indexComponent     indexCount     indexGeneral     indexReference     indexSpaceTeleportsTo     indexTeleportsTo
 
 Game Version
 1.11.240.0
@@ -398,13 +398,10 @@ Avg Rotation
 70.79179773938912,68.76128270672316,156.052750488384
 
 Lock Levels
-,1742453
-Advanced,434
-Expert,274
+,1743303
+1,628
+25,103
 Inaccessible,48
-Master,142
-Novice1,628
-Novice25,103
 RequiresKey,107
 RequiresTerminal,45
 
@@ -450,10 +447,10 @@ TXST,258
 WEAP,144
 
 Position PreGrouped Count
-178426
+178227
 
 Avg Num Instances per Reference
-9.775671707038212
+9.786586768559197
 
 X-Table Entity Sum
 30717 = 30717 = 30717
@@ -934,8 +931,6 @@ NukaWorld,Ruins - Town,Nuka-Town USA
 NukaWorld,Town,Kiddie Kingdom
 NukaWorldAmphitheater,Custom 80,Bradberton Amphitheater
 NukaWorldMarket,Ruins - Town,Nuka-Town Market
-
-NPCs by Space and Weight
 
 Worldspaces
 60,Commonwealth,Commonwealth,0

@@ -68,7 +68,6 @@ unit _mappalachia_lib;
 	procedure goToRipItem(item: IInterface; filenameKey: String);
 	begin
 			if(filenameKey = 'Scrap') then _mappalachia_scrap.ripItem(item)
-		else if(filenameKey = 'Location') then _mappalachia_location.ripItem(item)
 		else if(filenameKey = 'LocationCell') then _mappalachia_locationCell.ripItem(item)
 		else if(filenameKey = 'Region') then _mappalachia_region.ripItem(item)
 		else if(filenameKey = 'Global') then _mappalachia_global.ripItem(item)

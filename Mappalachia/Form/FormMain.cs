@@ -205,7 +205,7 @@ namespace Mappalachia
 
 				case "SpawnWeight":
 					return "The effective expected value of entities at each individual instance. Most entities are always present (100%).\n" +
-						"However for example an NPC may only spawn 1/5 of the time (20%), but a container may contain 2x of the item (200%), and a piece of junk may contain 3 of the specified scrap (300%)";
+						"However for example a container may contain 2x of the item (200%), and a piece of junk may contain 3 of the specified scrap (300%)";
 
 				case "Count":
 					return "The total number of identical instances of this entity, at this location";
