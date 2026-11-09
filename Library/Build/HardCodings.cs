@@ -40,6 +40,31 @@ namespace Library
 
 		public static string MapMarkerIconInitialFileName { get; } = "1.svg"; // Frame 1
 
+		public static readonly Dictionary<string, string> MarkerIconCorrection = new Dictionary<string, string>()
+		{
+			{ "GovtBuildingMonumentMarker", "MonumentMarker" },
+			{ "MetroStationMarker", "MetroMarker" },
+			{ "OfficeCivicBuildingMarker", "OfficeMarker" },
+			{ "NaturalLandmarkMarker", "LandmarkMarker" },
+			{ "RuinsUrbanMarker", "UrbanRuinsMarker" },
+			{ "RuinsTownMarker", "TownRuinsMarker" },
+			{ "FactoryIndustrialSiteMarker", "FactoryMarker" },
+			{ "SewerUtilityTunnelsMarker", "SewerMarker" },
+			{ "SanctuaryMarker", "SancHillsMarker" },
+			{ "SwanPondMarker", "SwanPondMarker" },
+			{ "BrownstoneTownhouseMarker", "BrownstoneMarker" },
+			{ "LowRiseBuildingMarker", "LowRiseMarker" },
+			{ "MechanistLairRaidersettlementVassalsettlementPotentialVassalsettlementMarker", "MechanistMarker" },
+			{ "Custom66Marker", "RaiderSettlementMarker" },
+			{ "Custom70Marker", "GalacticMarker" },
+			{ "Custom73Marker", "MonorailMarker" },
+			{ "Custom74Marker", "RidesMarker" },
+			{ "Custom75Marker", "SafariMarker" },
+			{ "Custom78Marker", "DisciplesMarker" },
+			{ "Custom79Marker", "OperatorsMarker" },
+			{ "Custom80Marker", "PackMarker" },
+		};
+
 		public static Dictionary<string, string> MarkerLabelCorrection { get; } = new Dictionary<string, string>()
 		{
 			//{ "Abraxodyne Storage Depot", "Meadow Breeze Storage Depot" },
@@ -139,13 +164,13 @@ namespace Library
 			"spaceEditorID LIKE '%Nav%Test%' OR " +
 			"spaceEditorID LIKE 'PackIn%' OR " +
 			"spaceEditorID LIKE 'COPY%'";
-			//"spaceEditorID LIKE 'XPD%SteelTower%' OR " +
-			//"spaceEditorID = 'MILEBlueRidgeHQ' OR " +
-			//"spaceEditorID = 'StormPresidentialBunker' OR " +
-			//"spaceEditorID = 'StormEngineeringVlt63' OR " +
-			//"spaceEditorID = 'XPDPitt02ACCJ' OR " +
-			//"spaceDisplayName = 'Diamond City' OR " +
-			//"spaceDisplayName = 'Goodneighbor'";
+		//"spaceEditorID LIKE 'XPD%SteelTower%' OR " +
+		//"spaceEditorID = 'MILEBlueRidgeHQ' OR " +
+		//"spaceEditorID = 'StormPresidentialBunker' OR " +
+		//"spaceEditorID = 'StormEngineeringVlt63' OR " +
+		//"spaceEditorID = 'XPDPitt02ACCJ' OR " +
+		//"spaceDisplayName = 'Diamond City' OR " +
+		//"spaceDisplayName = 'Goodneighbor'";
 
 		// Operates against already-finalized labels
 		public static string? GetCorrectedMarkerIcon(string markerName)
@@ -279,6 +304,16 @@ namespace Library
 		{
 			return label;
 			return label.Replace("Fast Travel Point: ", string.Empty).Replace("Hornwright Air Cleanser Site", "Hornwright Air Purifier Site");
+		}
+
+		// Format the map marker icon name into one more consistent with the SWF file structure
+		public static string CleanupMapMarkerIconNames(string label)
+		{
+			return label
+			.Replace(" ", string.Empty)
+			.Replace("-", string.Empty)
+			.Replace("/", string.Empty)
+			.Replace("'", string.Empty) + "Marker";
 		}
 
 		// Returns the known world border(s) of the given space

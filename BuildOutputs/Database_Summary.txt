@@ -1,17 +1,18 @@
 MD5 Checksum
-931B6853E1F0CAF6171C7499EBF2322D
+99642117495A7C7D79C90CAE6E8A024F
 
 Size
-209292 KB
+209296 KB
 
 Built At UTC
-09/11/2026 19:10:58
+09/11/2026 23:09:27
 
 CSV Imported with SQLite Version
 3.54.1 2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76 (64-bit)
 
 Tables
-Cell  Component  Container  ESM  Entity  Global  Location  MapMarker  Meta  Position  Position_PreGrouped  Region  RegionPoints  Scrap  Space
+Cell          Container     Entity     Location      Meta         Position_PreGrouped     RegionPoints     Space
+Component     ESM           Global     MapMarker     Position     Region                  Scrap
 
 Indices
 indexComponent     indexCount     indexGeneral     indexReference     indexSpaceTeleportsTo     indexTeleportsTo
@@ -517,421 +518,421 @@ Avg Map Marker X/Y
 -441.41566515083775,-2727.3665962678842
 
 Map Markers
-Commonwealth,Airfield,Boston Airport
-Commonwealth,Airfield,Skylanes Flight 1665
-Commonwealth,Airfield,Skylanes Flight 1981
-Commonwealth,Airfield,Vertibird Wreckage
-Commonwealth,Brownstone Townhouse,Back Street Apparel
-Commonwealth,Bunker,Boston Mayoral Shelter
-Commonwealth,Bunker,Federal Ration Stockpile
-Commonwealth,Bunker,Federal Supply Cache 84NE
-Commonwealth,Bunker,Federal Surveillance Center K-21B
-Commonwealth,Bunker,Listening Post Bravo
-Commonwealth,Bunker,Recon Bunker Theta
-Commonwealth,Bunker Hill,Bunker Hill
-Commonwealth,Camper,Fiddler's Green Trailer Estates
-Commonwealth,Camper,Rocky Narrows Park
-Commonwealth,Car,Freeway Pileup
-Commonwealth,Car,Tucker Memorial Bridge
-Commonwealth,Castle,The Castle
-Commonwealth,Cave,Cave
-Commonwealth,Cave,Cave
-Commonwealth,Cave,Rocky Cave
-Commonwealth,Church,Cambridge Church
-Commonwealth,Church,Forgotten Church
-Commonwealth,Church,Holy Mission Congregation
-Commonwealth,Church,Hopesmarch Pentecostal Church
-Commonwealth,Church,Lonely Chapel
-Commonwealth,Church,Nahant Chapel
-Commonwealth,Church,Old North Church
-Commonwealth,Church,Trinity Plaza
-Commonwealth,City,Layton Towers
-Commonwealth,City,Lexington
-Commonwealth,City,Lexington Apartments
-Commonwealth,City,Monsignor Plaza
-Commonwealth,City,Parkview Apartments
-Commonwealth,Custom 73,Nuka-World Transit Center
-Commonwealth,Custom House,Custom House Tower
-Commonwealth,Drive-In,Starlight Drive In
-Commonwealth,Elevated Highway,Fallen Skybridge
-Commonwealth,Elevated Highway,Footbridge Camp
-Commonwealth,Elevated Highway,Mass Pike Interchange
-Commonwealth,Encampment,Abandoned Shack
-Commonwealth,Encampment,Back Alley Camp
-Commonwealth,Encampment,Boston Airport Ruins
-Commonwealth,Encampment,Charles View Amphitheater
-Commonwealth,Encampment,Easy City Downs
-Commonwealth,Encampment,Gorski Cabin
-Commonwealth,Encampment,Peabody House
-Commonwealth,Encampment,Ranger Cabin
-Commonwealth,Factory / Industrial Site,Cambridge Warehouse
-Commonwealth,Factory / Industrial Site,Capsized Factory
-Commonwealth,Factory / Industrial Site,Electrical Hobbyist's Club
-Commonwealth,Factory / Industrial Site,Mass Fusion Containment Shed
-Commonwealth,Factory / Industrial Site,O�Neill Family Manufacturing
-Commonwealth,Factory / Industrial Site,Parsons Creamery
-Commonwealth,Factory / Industrial Site,Wicked Shipping Fleet Lockup
-Commonwealth,Faneuil Hall,Faneuil Hall
-Commonwealth,Farm,Abernathy Farm
-Commonwealth,Farm,Breakheart Banks
-Commonwealth,Farm,County Crossing
-Commonwealth,Farm,Finch Farm
-Commonwealth,Farm,Graygarden
-Commonwealth,Farm,Greentop Nursery
-Commonwealth,Farm,Nordhagen Beach
-Commonwealth,Farm,Oberland Station
-Commonwealth,Farm,Somerville Place
-Commonwealth,Farm,Tenpines Bluff
-Commonwealth,Farm,The Slog
-Commonwealth,Farm,Warwick Homestead
-Commonwealth,Filling Station,Fort Hagen Filling Station
-Commonwealth,Filling Station,Red Rocket Truck Stop
-Commonwealth,Forested,Robotics Pioneer Park
-Commonwealth,Gov't Building / Monument,Boston Public Library
-Commonwealth,Gov't Building / Monument,Dorchester Heights Monument
-Commonwealth,Gov't Building / Monument,Fraternal Post 115
-Commonwealth,Gov't Building / Monument,Massachusetts State House
-Commonwealth,Gov't Building / Monument,Museum of Freedom
-Commonwealth,Graveyard,Cambridge Graveyard
-Commonwealth,Graveyard,North End Graveyard
-Commonwealth,Graveyard,Old Granary Burying Ground
-Commonwealth,Graveyard,South Boston Graveyard
-Commonwealth,Graveyard,Wildwood Cemetery
-Commonwealth,Hospital,Greater Mass Blood Clinic
-Commonwealth,Hospital,Kendall Hospital
-Commonwealth,Hospital,Mass Bay Medical Center
-Commonwealth,Hospital,Med-Tek Research
-Commonwealth,Hospital,Medford Memorial Hospital
-Commonwealth,Hospital,Milton General Hospital
-Commonwealth,Hospital,Parsons State Insane Asylum
-Commonwealth,Hospital,Sandy Coves Convalescent Home
-Commonwealth,Industrial Dome,Beantown Brewery
-Commonwealth,Industrial Dome,Decayed Reactor Site
-Commonwealth,Industrial Dome,Weston Water Treatment Plant
-Commonwealth,Industrial Stacks,ArcJet Systems
-Commonwealth,Industrial Stacks,Cambridge Polymer Labs
-Commonwealth,Industrial Stacks,Corvega Assembly Plant
-Commonwealth,Industrial Stacks,Decrepit Factory
-Commonwealth,Industrial Stacks,Factory
-Commonwealth,Industrial Stacks,General Atomics Factory
-Commonwealth,Industrial Stacks,Gwinnett Brewery
-Commonwealth,Industrial Stacks,Longneck Lukowski's Cannery
-Commonwealth,Industrial Stacks,Mahkra Fishpacking
-Commonwealth,Industrial Stacks,Poseiden Energy Turbine #18-F
-Commonwealth,Industrial Stacks,Poseidon Energy
-Commonwealth,Industrial Stacks,Poseidon Reservoir
-Commonwealth,Industrial Stacks,Saugus Ironworks
-Commonwealth,Industrial Stacks,Wilson Atomatoys Factory
-Commonwealth,Institute,The Institute
-Commonwealth,Irish Pride,Boxing Gym
-Commonwealth,Irish Pride,Four Leaf Fishpacking Plant
-Commonwealth,Irish Pride,Irish Pride Industries Shipyard
-Commonwealth,Junkyard,Atom Cats Garage
-Commonwealth,Junkyard,Big John's Salvage
-Commonwealth,Junkyard,Hub City Auto Wreckers
-Commonwealth,Junkyard,Jalbert Brothers Disposal
-Commonwealth,Junkyard,Robotics Disposal Ground
-Commonwealth,Junkyard,Rotten Landfill
-Commonwealth,Junkyard,Scrap Palace
-Commonwealth,Libertalia,Liberitalia
-Commonwealth,Low-Rise Building,BADTFL Regional Office
-Commonwealth,Low-Rise Building,Drumlin Diner
-Commonwealth,Low-Rise Building,Lynn Pier Parking
-Commonwealth,Low-Rise Building,Roadside Pines Motel
-Commonwealth,Low-Rise Building,University Point Pharmacy
-Commonwealth,Low-Rise Building,Wilson Atomatoys Corporate HQ
-Commonwealth,Mechanist LairRaider settlementVassal settlementPotential Vassal settlement,The Mechanist's Lair
-Commonwealth,Metro Station,Andrew Station
-Commonwealth,Metro Station,Malden Center
-Commonwealth,Metro Station,Medical Center Metro
-Commonwealth,Metro Station,Park Street Station
-Commonwealth,Metro Station,Revere Beach Station
-Commonwealth,Metro Station,Subway Station
-Commonwealth,Metro Station,Valenti Station
-Commonwealth,Metro Station,West Roxbury Station
-Commonwealth,Military Base,Coast Guard Pier
-Commonwealth,Military Base,Fort Hagen
-Commonwealth,Military Base,Fort Strong
-Commonwealth,Military Base,National Guard Training Yard
-Commonwealth,Military Base,S. Boston Military Checkpoint
-Commonwealth,Military Base,Waypoint Echo
-Commonwealth,Natural Landmark,Boston Common
-Commonwealth,Natural Landmark,Cambridge Baseball Diamond
-Commonwealth,Natural Landmark,Christopher Columbus Park
-Commonwealth,Natural Landmark,Edge of the Glowing Sea
-Commonwealth,Natural Landmark,Lil' Gentry Playground
-Commonwealth,Natural Landmark,Spectacle Island
-Commonwealth,Office / Civic Building,Apartment
-Commonwealth,Office / Civic Building,Boylston Club
-Commonwealth,Office / Civic Building,Bridgeway Trust
-Commonwealth,Office / Civic Building,C.I.T. Ruins
-Commonwealth,Office / Civic Building,Cabot House
-Commonwealth,Office / Civic Building,Cambridge Campus Diner
-Commonwealth,Office / Civic Building,Fallon's Department Store
-Commonwealth,Office / Civic Building,General Atomics Galleria
-Commonwealth,Office / Civic Building,HalluciGen, Inc.
-Commonwealth,Office / Civic Building,Hesters Consumer Robotics
-Commonwealth,Office / Civic Building,Hubris Comics
-Commonwealth,Office / Civic Building,L Street Bathhouse
-Commonwealth,Office / Civic Building,Marlborough House
-Commonwealth,Office / Civic Building,Mean Pastries
-Commonwealth,Office / Civic Building,Old Corner Bookstore
-Commonwealth,Office / Civic Building,Pickman Gallery
-Commonwealth,Office / Civic Building,RobCo Sales & Service Center
-Commonwealth,Office / Civic Building,Salem
-Commonwealth,Office / Civic Building,Taffington Boathouse
-Commonwealth,Office / Civic Building,The Gwinnett Restaurant
-Commonwealth,Office / Civic Building,The Shamrock Taphouse
-Commonwealth,Office / Civic Building,Wattz Consumer Electronics
-Commonwealth,Pier,Egret Tours Marina
-Commonwealth,Pier,Far Harbor
-Commonwealth,Pier,Gibson Point Pier
-Commonwealth,Pier,Kingsport Lighthouse
-Commonwealth,Pier,Long Wharf
-Commonwealth,Pier,Nahant Oceanological Society
-Commonwealth,Pier,Nahant Wharf
-Commonwealth,Pier,Reeb Marina
-Commonwealth,Pier,Science Center Gift Shop
-Commonwealth,Police Station,Cambridge Police Station
-Commonwealth,Police Station,East Boston Police Station
-Commonwealth,Police Station,Nahant Sherrif's Department
-Commonwealth,Police Station,Natick Police Department
-Commonwealth,Police Station,Police Precinct 8
-Commonwealth,Police Station,Quincy Police Station
-Commonwealth,Police Station,South Boston Police Department
-Commonwealth,Pond / Lake,Chestnut Hillock Reservoir
-Commonwealth,Pond / Lake,Dark Hollow Pond
-Commonwealth,Pond / Lake,Lake Cochituate
-Commonwealth,Pond / Lake,Lake Quannapowitt
-Commonwealth,Pond / Lake,Murkwater Construction Site
-Commonwealth,Pond / Lake,Neponset Park
-Commonwealth,Pond / Lake,Old Gullet Sinkhole
-Commonwealth,Pond / Lake,Walden Pond
-Commonwealth,Pond / Lake,Westing Estate
-Commonwealth,Prydwen,The Prydwen
-Commonwealth,Quarry,Dunwich Borers
-Commonwealth,Quarry,Mass Gravel & Sand
-Commonwealth,Quarry,Quincy Quarries
-Commonwealth,Quarry,Thicket Excavations
-Commonwealth,Radio Tower,Gunners Plaza
-Commonwealth,Radio Tower,Outpost Zimonja
-Commonwealth,Radio Tower,Radio Tower 3SM-U81
-Commonwealth,Radio Tower,Relay Tower 0BB-915
-Commonwealth,Radio Tower,Relay Tower 0DB-521
-Commonwealth,Radio Tower,Relay Tower 0MC-810
-Commonwealth,Radio Tower,Relay Tower 0SC-527
-Commonwealth,Radio Tower,Relay Tower 1DL-109
-Commonwealth,Radio Tower,WRVR Broadcast Station
-Commonwealth,Radioactive Area,Crater House
-Commonwealth,Radioactive Area,Crater of Atom
-Commonwealth,Radioactive Area,Hugo's Hole
-Commonwealth,Radioactive Area,Mass Fusion Disposal Site
-Commonwealth,Railroad,Bedford Station
-Commonwealth,Railroad,Boston Police Rationing Site
-Commonwealth,Railroad,NH&M Freight Depot
-Commonwealth,Railroad - Faction,Mercer Safehouse
-Commonwealth,Railroad - Faction,Railroad HQ
-Commonwealth,Ruins - Town,Cambridge Hardware Store
-Commonwealth,Ruins - Town,Coastal Cottage
-Commonwealth,Ruins - Town,Concord
-Commonwealth,Ruins - Town,Croup Manor
-Commonwealth,Ruins - Town,Fairline Hill Estates
-Commonwealth,Ruins - Town,Forest Grove Marsh
-Commonwealth,Ruins - Town,Hardware Town
-Commonwealth,Ruins - Town,Hyde Park
-Commonwealth,Ruins - Town,Ivan's
-Commonwealth,Ruins - Town,Jamaica Plain
-Commonwealth,Ruins - Town,Mystic Pines
-Commonwealth,Ruins - Town,Natick Banks
-Commonwealth,Ruins - Town,Navy Yard
-Commonwealth,Ruins - Town,Nuka-World
-Commonwealth,Ruins - Town,Paul Revere House
-Commonwealth,Ruins - Town,Rook Family House
-Commonwealth,Ruins - Town,West Everett Estates
-Commonwealth,Ruins - Urban,Brookline Building
-Commonwealth,Ruins - Urban,Cambridge Academic Center
-Commonwealth,Ruins - Urban,Cambridge Crater
-Commonwealth,Ruins - Urban,Camp Kendall
-Commonwealth,Ruins - Urban,Campus Law Offices
-Commonwealth,Ruins - Urban,College Square
-Commonwealth,Ruins - Urban,East C.I.T. Raider Camp
-Commonwealth,Ruins - Urban,Evans Way Cul-de-Sac
-Commonwealth,Ruins - Urban,Flagon Tunnel
-Commonwealth,Ruins - Urban,Founder's Triangle
-Commonwealth,Ruins - Urban,Hangman's Alley
-Commonwealth,Ruins - Urban,Harbormaster Hotel
-Commonwealth,Ruins - Urban,Haymarket Mall
-Commonwealth,Ruins - Urban,Jimbo's Tower
-Commonwealth,Ruins - Urban,Kendall Parking Garage
-Commonwealth,Ruins - Urban,Major Crossroad
-Commonwealth,Ruins - Urban,Pizza Parlour
-Commonwealth,Ruins - Urban,Postal Square
-Commonwealth,Ruins - Urban,Prost Bar
-Commonwealth,Ruins - Urban,Raider Alleyway Outpost
-Commonwealth,Ruins - Urban,Raider Drug Den
-Commonwealth,Ruins - Urban,Shenley's Oyster Bar
-Commonwealth,Ruins - Urban,Slocum's Joe Corporate HQ
-Commonwealth,Ruins - Urban,Super Duper Mart
-Commonwealth,Ruins - Urban,Ticker Tape Lounge
-Commonwealth,Ruins - Urban,Tower Apartments
-Commonwealth,Ruins - Urban,Union Man's Circle
-Commonwealth,Ruins - Urban,Warren Theater
-Commonwealth,Ruins - Urban,Water Street Apartments
-Commonwealth,Ruins - Urban,Weatherby Savings & Loan
-Commonwealth,Salem,Museum of Witchcraft
-Commonwealth,Sanctuary,Sanctuary
-Commonwealth,Satellite,Fort Hagen Satellite Array
-Commonwealth,Satellite,Revere Satellite Array
-Commonwealth,Satellite,USAF Satellite Station Olivia
-Commonwealth,School,D.B. Technical High School
-Commonwealth,School,East Boston Preparatory School
-Commonwealth,School,Malden Middle School
-Commonwealth,School,Shaw High School
-Commonwealth,School,South Boston High School
-Commonwealth,School,Suffolk County Charter School
-Commonwealth,School,University Point
-Commonwealth,Sentinel,Sentinel Site
-Commonwealth,Settlement,Cambridge Raider Base
-Commonwealth,Settlement,Combat Zone
-Commonwealth,Settlement,Covenant
-Commonwealth,Settlement,Lynn Woods
-Commonwealth,Settlement,Mass Pike Tunnel East
-Commonwealth,Settlement,Mass Pike Tunnel West
-Commonwealth,Settlement,Nakano Residence
-Commonwealth,Settlement,Nakano Residence
-Commonwealth,Settlement,Quincy Ruins
-Commonwealth,Settlement,Sunshine Tidings Co-op
-Commonwealth,Sewer / Utility Tunnels,Fens Street Sewer
-Commonwealth,Shipwreck,Cutler Bend
-Commonwealth,Shipwreck,Wreck of the FMS Northern Star
-Commonwealth,Shipwreck,Wreck of the USS Riptide
-Commonwealth,Skyscraper,35 Court
-Commonwealth,Skyscraper,Atlantic Offices
-Commonwealth,Skyscraper,Boston Bugle Building
-Commonwealth,Skyscraper,Cambridge Construction Site
-Commonwealth,Skyscraper,Collegiate Administration Building
-Commonwealth,Skyscraper,Commonwealth Bank
-Commonwealth,Skyscraper,Dartmouth Professional Building
-Commonwealth,Skyscraper,Garden Terrace
-Commonwealth,Skyscraper,Greenetech Genetics
-Commonwealth,Skyscraper,Hub 360
-Commonwealth,Skyscraper,Mass Fusion Building
-Commonwealth,Skyscraper,Mass Fusion Executive Suite
-Commonwealth,Skyscraper,Oakwood Residences
-Commonwealth,Skyscraper,South Fens Tower
-Commonwealth,Skyscraper,Ticonderoga
-Commonwealth,Skyscraper,Trinity Tower
-Commonwealth,Skyscraper,Vault-Tec Regional HQ
-Commonwealth,Skyscraper,Weatherby Investment Trust
-Commonwealth,Submarine,Yangtze
-Commonwealth,Swan Pond,Swan's Pond
-Commonwealth,Town,Hawthorne Estate
-Commonwealth,USS Constitution,USS Constitution
-Commonwealth,USS Constitution,USS Constitution
-Commonwealth,USS Constitution,USS Constitution
-Commonwealth,Vault,Vault 111
-Commonwealth,Vault,Vault 114
-Commonwealth,Vault,Vault 75
-Commonwealth,Vault,Vault 81
-Commonwealth,Vault,Vault 81 Atrium
-Commonwealth,Vault,Vault 88
-Commonwealth,Vault,Vault 95
-DLC03FarHarbor,Airfield,Horizon Flight 1207
-DLC03FarHarbor,Bunker,Wind Farm Maintenance
-DLC03FarHarbor,Cave,Kitteredge Pass
-DLC03FarHarbor,Cave,Pine Crest Cavern
-DLC03FarHarbor,Church,Ruined Church
-DLC03FarHarbor,City,The Commonwealth
-DLC03FarHarbor,Drive-In,Beaver Creek Lanes
-DLC03FarHarbor,Drive-In,Eden Meadows Cinemas
-DLC03FarHarbor,Encampment,Longfellow's Cabin
-DLC03FarHarbor,Encampment,Oceanarium
-DLC03FarHarbor,Encampment,Rayburn Point
-DLC03FarHarbor,Factory / Industrial Site,Eagle's Cove Tannery
-DLC03FarHarbor,Factory / Industrial Site,Echo Lake Lumber
-DLC03FarHarbor,Factory / Industrial Site,Vim! Pop Factory
-DLC03FarHarbor,Farm,Coastal Pier
-DLC03FarHarbor,Farm,Cranberry Island Bog
-DLC03FarHarbor,Forested,Glowing Grove
-DLC03FarHarbor,Forested,Huntress Island
-DLC03FarHarbor,Goodneighbor,Harbor Grand Hotel
-DLC03FarHarbor,Hospital,Aldersea Day Spa
-DLC03FarHarbor,Natural Landmark,DiMA's Cache
-DLC03FarHarbor,Natural Landmark,Haddock Cove
-DLC03FarHarbor,Natural Landmark,Radiant Crest Shrine
-DLC03FarHarbor,Observatory,Acadia
-DLC03FarHarbor,Observatory,Brooke's Head Lighthouse
-DLC03FarHarbor,Pier,Cranberry Island Docks
-DLC03FarHarbor,Pier,Cranberry Island Supply Shed
-DLC03FarHarbor,Pier,Fringe Cove Docks
-DLC03FarHarbor,Pier,Rock Point Camp
-DLC03FarHarbor,Pond / Lake,Briney's Bait and Tackle
-DLC03FarHarbor,Pond / Lake,Far Harbor
-DLC03FarHarbor,Pond / Lake,National Park Campground
-DLC03FarHarbor,Pond / Lake,Old Pond House
-DLC03FarHarbor,Quarry,Northwood Ridge Quarry
-DLC03FarHarbor,Radio Tower,Ruined Radio Tower
-DLC03FarHarbor,Radio Tower,Zephyr Ridge Camp
-DLC03FarHarbor,Radioactive Area,Children of Atom Shrine
-DLC03FarHarbor,Radioactive Area,The Nucleus
-DLC03FarHarbor,Radioactive Area,The Nucleus
-DLC03FarHarbor,Ruins - Town,Far Harbor Ruins
-DLC03FarHarbor,Ruins - Town,National Park HQ
-DLC03FarHarbor,Ruins - Town,Southwest Harbor
-DLC03FarHarbor,Ruins - Urban,Cliff's Edge Hotel
-DLC03FarHarbor,School,Waves Crest Orphanage
-DLC03FarHarbor,Settlement,Far Harbor
-DLC03FarHarbor,Settlement,National Park Visitor's Center
-DLC03FarHarbor,Shipwreck,MS Azalea
-DiamondCity,Diamond City,Diamond City
-DiamondCity,Settlement,Diamond City Market
-DiamondCity,Settlement,Home Plate
-Goodneighbor,Goodneighbor,Goodneighbor
-NukaWorld,Airfield,Nuka-World Airfield
-NukaWorld,Cave,Dry Rock Gulch
-NukaWorld,Cave,Safari Adventure Reptile House
-NukaWorld,City,Commonwealth
-NukaWorld,Custom 66,Fizztop Grille
-NukaWorld,Custom 70,Galactic Zone
-NukaWorld,Custom 73,Nuka-Station
-NukaWorld,Custom 74,Cola-Cars Arena
-NukaWorld,Custom 74,Ferris Wheel
-NukaWorld,Custom 74,Fun House
-NukaWorld,Custom 74,Grandchester Mystery Mansion
-NukaWorld,Custom 74,King Cola's Castle
-NukaWorld,Custom 74,Mad Mulligan's Minecart Coaster
-NukaWorld,Custom 74,Nuka-Galaxy
-NukaWorld,Custom 74,RobCo Battlezone
-NukaWorld,Custom 74,Starlight Interstellar Theater
-NukaWorld,Custom 74,Starport Nuka
-NukaWorld,Custom 74,Vault-Tec: Among the Stars
-NukaWorld,Custom 75,Cappy's Treehouse
-NukaWorld,Custom 75,Safari Adventure
-NukaWorld,Custom 75,Safari Adventure Primate House
-NukaWorld,Custom 75,The Angry Anaconda
-NukaWorld,Custom 78,Fizztop Mountain
-NukaWorld,Custom 79,The Parlor
-NukaWorld,Elevated Highway,Bradberton Overpass
-NukaWorld,Encampment,Dunmore Homestead
-NukaWorld,Encampment,Evan's Home
-NukaWorld,Encampment,Hubologist's Camp
-NukaWorld,Encampment,Moonshiner's Camp
-NukaWorld,Factory / Industrial Site,Nuka-Cola Bottling Plant
-NukaWorld,Filling Station,Nuka-World Red Rocket
-NukaWorld,Gov't Building / Monument,Wixon's Shovel Museum
-NukaWorld,Gov't Building / Monument,World of Refreshment
-NukaWorld,Industrial Dome,Nuka-World Power Plant
-NukaWorld,Junkyard,ERROR: <<NO REF LOCATION>>
-NukaWorld,Office / Civic Building,Doc Phosphate's Saloon
-NukaWorld,Office / Civic Building,Dry Rock Gulch Theater
-NukaWorld,Pond / Lake,Northpoint Reservoir
-NukaWorld,Ruins - Town,Bradberton
-NukaWorld,Ruins - Town,Dry Rock Gulch Employee Area
-NukaWorld,Ruins - Town,Morton Residence
-NukaWorld,Ruins - Town,Nuka-Town USA
-NukaWorld,Town,Kiddie Kingdom
-NukaWorldAmphitheater,Custom 80,Bradberton Amphitheater
-NukaWorldMarket,Ruins - Town,Nuka-Town Market
+Commonwealth,AirfieldMarker,Boston Airport
+Commonwealth,AirfieldMarker,Skylanes Flight 1665
+Commonwealth,AirfieldMarker,Skylanes Flight 1981
+Commonwealth,AirfieldMarker,Vertibird Wreckage
+Commonwealth,BrownstoneMarker,Back Street Apparel
+Commonwealth,BunkerHillMarker,Bunker Hill
+Commonwealth,BunkerMarker,Boston Mayoral Shelter
+Commonwealth,BunkerMarker,Federal Ration Stockpile
+Commonwealth,BunkerMarker,Federal Supply Cache 84NE
+Commonwealth,BunkerMarker,Federal Surveillance Center K-21B
+Commonwealth,BunkerMarker,Listening Post Bravo
+Commonwealth,BunkerMarker,Recon Bunker Theta
+Commonwealth,CamperMarker,Fiddler's Green Trailer Estates
+Commonwealth,CamperMarker,Rocky Narrows Park
+Commonwealth,CarMarker,Freeway Pileup
+Commonwealth,CarMarker,Tucker Memorial Bridge
+Commonwealth,CastleMarker,The Castle
+Commonwealth,CaveMarker,Cave
+Commonwealth,CaveMarker,Cave
+Commonwealth,CaveMarker,Rocky Cave
+Commonwealth,ChurchMarker,Cambridge Church
+Commonwealth,ChurchMarker,Forgotten Church
+Commonwealth,ChurchMarker,Holy Mission Congregation
+Commonwealth,ChurchMarker,Hopesmarch Pentecostal Church
+Commonwealth,ChurchMarker,Lonely Chapel
+Commonwealth,ChurchMarker,Nahant Chapel
+Commonwealth,ChurchMarker,Old North Church
+Commonwealth,ChurchMarker,Trinity Plaza
+Commonwealth,CityMarker,Layton Towers
+Commonwealth,CityMarker,Lexington
+Commonwealth,CityMarker,Lexington Apartments
+Commonwealth,CityMarker,Monsignor Plaza
+Commonwealth,CityMarker,Parkview Apartments
+Commonwealth,CustomHouseMarker,Custom House Tower
+Commonwealth,DriveInMarker,Starlight Drive In
+Commonwealth,ElevatedHighwayMarker,Fallen Skybridge
+Commonwealth,ElevatedHighwayMarker,Footbridge Camp
+Commonwealth,ElevatedHighwayMarker,Mass Pike Interchange
+Commonwealth,EncampmentMarker,Abandoned Shack
+Commonwealth,EncampmentMarker,Back Alley Camp
+Commonwealth,EncampmentMarker,Boston Airport Ruins
+Commonwealth,EncampmentMarker,Charles View Amphitheater
+Commonwealth,EncampmentMarker,Easy City Downs
+Commonwealth,EncampmentMarker,Gorski Cabin
+Commonwealth,EncampmentMarker,Peabody House
+Commonwealth,EncampmentMarker,Ranger Cabin
+Commonwealth,FactoryMarker,Cambridge Warehouse
+Commonwealth,FactoryMarker,Capsized Factory
+Commonwealth,FactoryMarker,Electrical Hobbyist's Club
+Commonwealth,FactoryMarker,Mass Fusion Containment Shed
+Commonwealth,FactoryMarker,O�Neill Family Manufacturing
+Commonwealth,FactoryMarker,Parsons Creamery
+Commonwealth,FactoryMarker,Wicked Shipping Fleet Lockup
+Commonwealth,FaneuilHallMarker,Faneuil Hall
+Commonwealth,FarmMarker,Abernathy Farm
+Commonwealth,FarmMarker,Breakheart Banks
+Commonwealth,FarmMarker,County Crossing
+Commonwealth,FarmMarker,Finch Farm
+Commonwealth,FarmMarker,Graygarden
+Commonwealth,FarmMarker,Greentop Nursery
+Commonwealth,FarmMarker,Nordhagen Beach
+Commonwealth,FarmMarker,Oberland Station
+Commonwealth,FarmMarker,Somerville Place
+Commonwealth,FarmMarker,Tenpines Bluff
+Commonwealth,FarmMarker,The Slog
+Commonwealth,FarmMarker,Warwick Homestead
+Commonwealth,FillingStationMarker,Fort Hagen Filling Station
+Commonwealth,FillingStationMarker,Red Rocket Truck Stop
+Commonwealth,ForestedMarker,Robotics Pioneer Park
+Commonwealth,GraveyardMarker,Cambridge Graveyard
+Commonwealth,GraveyardMarker,North End Graveyard
+Commonwealth,GraveyardMarker,Old Granary Burying Ground
+Commonwealth,GraveyardMarker,South Boston Graveyard
+Commonwealth,GraveyardMarker,Wildwood Cemetery
+Commonwealth,HospitalMarker,Greater Mass Blood Clinic
+Commonwealth,HospitalMarker,Kendall Hospital
+Commonwealth,HospitalMarker,Mass Bay Medical Center
+Commonwealth,HospitalMarker,Med-Tek Research
+Commonwealth,HospitalMarker,Medford Memorial Hospital
+Commonwealth,HospitalMarker,Milton General Hospital
+Commonwealth,HospitalMarker,Parsons State Insane Asylum
+Commonwealth,HospitalMarker,Sandy Coves Convalescent Home
+Commonwealth,IndustrialDomeMarker,Beantown Brewery
+Commonwealth,IndustrialDomeMarker,Decayed Reactor Site
+Commonwealth,IndustrialDomeMarker,Weston Water Treatment Plant
+Commonwealth,IndustrialStacksMarker,ArcJet Systems
+Commonwealth,IndustrialStacksMarker,Cambridge Polymer Labs
+Commonwealth,IndustrialStacksMarker,Corvega Assembly Plant
+Commonwealth,IndustrialStacksMarker,Decrepit Factory
+Commonwealth,IndustrialStacksMarker,Factory
+Commonwealth,IndustrialStacksMarker,General Atomics Factory
+Commonwealth,IndustrialStacksMarker,Gwinnett Brewery
+Commonwealth,IndustrialStacksMarker,Longneck Lukowski's Cannery
+Commonwealth,IndustrialStacksMarker,Mahkra Fishpacking
+Commonwealth,IndustrialStacksMarker,Poseiden Energy Turbine #18-F
+Commonwealth,IndustrialStacksMarker,Poseidon Energy
+Commonwealth,IndustrialStacksMarker,Poseidon Reservoir
+Commonwealth,IndustrialStacksMarker,Saugus Ironworks
+Commonwealth,IndustrialStacksMarker,Wilson Atomatoys Factory
+Commonwealth,InstituteMarker,The Institute
+Commonwealth,IrishPrideMarker,Boxing Gym
+Commonwealth,IrishPrideMarker,Four Leaf Fishpacking Plant
+Commonwealth,IrishPrideMarker,Irish Pride Industries Shipyard
+Commonwealth,JunkyardMarker,Atom Cats Garage
+Commonwealth,JunkyardMarker,Big John's Salvage
+Commonwealth,JunkyardMarker,Hub City Auto Wreckers
+Commonwealth,JunkyardMarker,Jalbert Brothers Disposal
+Commonwealth,JunkyardMarker,Robotics Disposal Ground
+Commonwealth,JunkyardMarker,Rotten Landfill
+Commonwealth,JunkyardMarker,Scrap Palace
+Commonwealth,LandmarkMarker,Boston Common
+Commonwealth,LandmarkMarker,Cambridge Baseball Diamond
+Commonwealth,LandmarkMarker,Christopher Columbus Park
+Commonwealth,LandmarkMarker,Edge of the Glowing Sea
+Commonwealth,LandmarkMarker,Lil' Gentry Playground
+Commonwealth,LandmarkMarker,Spectacle Island
+Commonwealth,LibertaliaMarker,Liberitalia
+Commonwealth,LowRiseMarker,BADTFL Regional Office
+Commonwealth,LowRiseMarker,Drumlin Diner
+Commonwealth,LowRiseMarker,Lynn Pier Parking
+Commonwealth,LowRiseMarker,Roadside Pines Motel
+Commonwealth,LowRiseMarker,University Point Pharmacy
+Commonwealth,LowRiseMarker,Wilson Atomatoys Corporate HQ
+Commonwealth,MechanistMarker,The Mechanist's Lair
+Commonwealth,MetroMarker,Andrew Station
+Commonwealth,MetroMarker,Malden Center
+Commonwealth,MetroMarker,Medical Center Metro
+Commonwealth,MetroMarker,Park Street Station
+Commonwealth,MetroMarker,Revere Beach Station
+Commonwealth,MetroMarker,Subway Station
+Commonwealth,MetroMarker,Valenti Station
+Commonwealth,MetroMarker,West Roxbury Station
+Commonwealth,MilitaryBaseMarker,Coast Guard Pier
+Commonwealth,MilitaryBaseMarker,Fort Hagen
+Commonwealth,MilitaryBaseMarker,Fort Strong
+Commonwealth,MilitaryBaseMarker,National Guard Training Yard
+Commonwealth,MilitaryBaseMarker,S. Boston Military Checkpoint
+Commonwealth,MilitaryBaseMarker,Waypoint Echo
+Commonwealth,MonorailMarker,Nuka-World Transit Center
+Commonwealth,MonumentMarker,Boston Public Library
+Commonwealth,MonumentMarker,Dorchester Heights Monument
+Commonwealth,MonumentMarker,Fraternal Post 115
+Commonwealth,MonumentMarker,Massachusetts State House
+Commonwealth,MonumentMarker,Museum of Freedom
+Commonwealth,OfficeMarker,Apartment
+Commonwealth,OfficeMarker,Boylston Club
+Commonwealth,OfficeMarker,Bridgeway Trust
+Commonwealth,OfficeMarker,C.I.T. Ruins
+Commonwealth,OfficeMarker,Cabot House
+Commonwealth,OfficeMarker,Cambridge Campus Diner
+Commonwealth,OfficeMarker,Fallon's Department Store
+Commonwealth,OfficeMarker,General Atomics Galleria
+Commonwealth,OfficeMarker,HalluciGen, Inc.
+Commonwealth,OfficeMarker,Hesters Consumer Robotics
+Commonwealth,OfficeMarker,Hubris Comics
+Commonwealth,OfficeMarker,L Street Bathhouse
+Commonwealth,OfficeMarker,Marlborough House
+Commonwealth,OfficeMarker,Mean Pastries
+Commonwealth,OfficeMarker,Old Corner Bookstore
+Commonwealth,OfficeMarker,Pickman Gallery
+Commonwealth,OfficeMarker,RobCo Sales & Service Center
+Commonwealth,OfficeMarker,Salem
+Commonwealth,OfficeMarker,Taffington Boathouse
+Commonwealth,OfficeMarker,The Gwinnett Restaurant
+Commonwealth,OfficeMarker,The Shamrock Taphouse
+Commonwealth,OfficeMarker,Wattz Consumer Electronics
+Commonwealth,PierMarker,Egret Tours Marina
+Commonwealth,PierMarker,Far Harbor
+Commonwealth,PierMarker,Gibson Point Pier
+Commonwealth,PierMarker,Kingsport Lighthouse
+Commonwealth,PierMarker,Long Wharf
+Commonwealth,PierMarker,Nahant Oceanological Society
+Commonwealth,PierMarker,Nahant Wharf
+Commonwealth,PierMarker,Reeb Marina
+Commonwealth,PierMarker,Science Center Gift Shop
+Commonwealth,PoliceStationMarker,Cambridge Police Station
+Commonwealth,PoliceStationMarker,East Boston Police Station
+Commonwealth,PoliceStationMarker,Nahant Sherrif's Department
+Commonwealth,PoliceStationMarker,Natick Police Department
+Commonwealth,PoliceStationMarker,Police Precinct 8
+Commonwealth,PoliceStationMarker,Quincy Police Station
+Commonwealth,PoliceStationMarker,South Boston Police Department
+Commonwealth,PondLakeMarker,Chestnut Hillock Reservoir
+Commonwealth,PondLakeMarker,Dark Hollow Pond
+Commonwealth,PondLakeMarker,Lake Cochituate
+Commonwealth,PondLakeMarker,Lake Quannapowitt
+Commonwealth,PondLakeMarker,Murkwater Construction Site
+Commonwealth,PondLakeMarker,Neponset Park
+Commonwealth,PondLakeMarker,Old Gullet Sinkhole
+Commonwealth,PondLakeMarker,Walden Pond
+Commonwealth,PondLakeMarker,Westing Estate
+Commonwealth,PrydwenMarker,The Prydwen
+Commonwealth,QuarryMarker,Dunwich Borers
+Commonwealth,QuarryMarker,Mass Gravel & Sand
+Commonwealth,QuarryMarker,Quincy Quarries
+Commonwealth,QuarryMarker,Thicket Excavations
+Commonwealth,RadioTowerMarker,Gunners Plaza
+Commonwealth,RadioTowerMarker,Outpost Zimonja
+Commonwealth,RadioTowerMarker,Radio Tower 3SM-U81
+Commonwealth,RadioTowerMarker,Relay Tower 0BB-915
+Commonwealth,RadioTowerMarker,Relay Tower 0DB-521
+Commonwealth,RadioTowerMarker,Relay Tower 0MC-810
+Commonwealth,RadioTowerMarker,Relay Tower 0SC-527
+Commonwealth,RadioTowerMarker,Relay Tower 1DL-109
+Commonwealth,RadioTowerMarker,WRVR Broadcast Station
+Commonwealth,RadioactiveAreaMarker,Crater House
+Commonwealth,RadioactiveAreaMarker,Crater of Atom
+Commonwealth,RadioactiveAreaMarker,Hugo's Hole
+Commonwealth,RadioactiveAreaMarker,Mass Fusion Disposal Site
+Commonwealth,RailroadFactionMarker,Mercer Safehouse
+Commonwealth,RailroadFactionMarker,Railroad HQ
+Commonwealth,RailroadMarker,Bedford Station
+Commonwealth,RailroadMarker,Boston Police Rationing Site
+Commonwealth,RailroadMarker,NH&M Freight Depot
+Commonwealth,SalemMarker,Museum of Witchcraft
+Commonwealth,SancHillsMarker,Sanctuary
+Commonwealth,SatelliteMarker,Fort Hagen Satellite Array
+Commonwealth,SatelliteMarker,Revere Satellite Array
+Commonwealth,SatelliteMarker,USAF Satellite Station Olivia
+Commonwealth,SchoolMarker,D.B. Technical High School
+Commonwealth,SchoolMarker,East Boston Preparatory School
+Commonwealth,SchoolMarker,Malden Middle School
+Commonwealth,SchoolMarker,Shaw High School
+Commonwealth,SchoolMarker,South Boston High School
+Commonwealth,SchoolMarker,Suffolk County Charter School
+Commonwealth,SchoolMarker,University Point
+Commonwealth,SentinelMarker,Sentinel Site
+Commonwealth,SettlementMarker,Cambridge Raider Base
+Commonwealth,SettlementMarker,Combat Zone
+Commonwealth,SettlementMarker,Covenant
+Commonwealth,SettlementMarker,Lynn Woods
+Commonwealth,SettlementMarker,Mass Pike Tunnel East
+Commonwealth,SettlementMarker,Mass Pike Tunnel West
+Commonwealth,SettlementMarker,Nakano Residence
+Commonwealth,SettlementMarker,Nakano Residence
+Commonwealth,SettlementMarker,Quincy Ruins
+Commonwealth,SettlementMarker,Sunshine Tidings Co-op
+Commonwealth,SewerMarker,Fens Street Sewer
+Commonwealth,ShipwreckMarker,Cutler Bend
+Commonwealth,ShipwreckMarker,Wreck of the FMS Northern Star
+Commonwealth,ShipwreckMarker,Wreck of the USS Riptide
+Commonwealth,SkyscraperMarker,35 Court
+Commonwealth,SkyscraperMarker,Atlantic Offices
+Commonwealth,SkyscraperMarker,Boston Bugle Building
+Commonwealth,SkyscraperMarker,Cambridge Construction Site
+Commonwealth,SkyscraperMarker,Collegiate Administration Building
+Commonwealth,SkyscraperMarker,Commonwealth Bank
+Commonwealth,SkyscraperMarker,Dartmouth Professional Building
+Commonwealth,SkyscraperMarker,Garden Terrace
+Commonwealth,SkyscraperMarker,Greenetech Genetics
+Commonwealth,SkyscraperMarker,Hub 360
+Commonwealth,SkyscraperMarker,Mass Fusion Building
+Commonwealth,SkyscraperMarker,Mass Fusion Executive Suite
+Commonwealth,SkyscraperMarker,Oakwood Residences
+Commonwealth,SkyscraperMarker,South Fens Tower
+Commonwealth,SkyscraperMarker,Ticonderoga
+Commonwealth,SkyscraperMarker,Trinity Tower
+Commonwealth,SkyscraperMarker,Vault-Tec Regional HQ
+Commonwealth,SkyscraperMarker,Weatherby Investment Trust
+Commonwealth,SubmarineMarker,Yangtze
+Commonwealth,SwanPondMarker,Swan's Pond
+Commonwealth,TownMarker,Hawthorne Estate
+Commonwealth,TownRuinsMarker,Cambridge Hardware Store
+Commonwealth,TownRuinsMarker,Coastal Cottage
+Commonwealth,TownRuinsMarker,Concord
+Commonwealth,TownRuinsMarker,Croup Manor
+Commonwealth,TownRuinsMarker,Fairline Hill Estates
+Commonwealth,TownRuinsMarker,Forest Grove Marsh
+Commonwealth,TownRuinsMarker,Hardware Town
+Commonwealth,TownRuinsMarker,Hyde Park
+Commonwealth,TownRuinsMarker,Ivan's
+Commonwealth,TownRuinsMarker,Jamaica Plain
+Commonwealth,TownRuinsMarker,Mystic Pines
+Commonwealth,TownRuinsMarker,Natick Banks
+Commonwealth,TownRuinsMarker,Navy Yard
+Commonwealth,TownRuinsMarker,Nuka-World
+Commonwealth,TownRuinsMarker,Paul Revere House
+Commonwealth,TownRuinsMarker,Rook Family House
+Commonwealth,TownRuinsMarker,West Everett Estates
+Commonwealth,USSConstitutionMarker,USS Constitution
+Commonwealth,USSConstitutionMarker,USS Constitution
+Commonwealth,USSConstitutionMarker,USS Constitution
+Commonwealth,UrbanRuinsMarker,Brookline Building
+Commonwealth,UrbanRuinsMarker,Cambridge Academic Center
+Commonwealth,UrbanRuinsMarker,Cambridge Crater
+Commonwealth,UrbanRuinsMarker,Camp Kendall
+Commonwealth,UrbanRuinsMarker,Campus Law Offices
+Commonwealth,UrbanRuinsMarker,College Square
+Commonwealth,UrbanRuinsMarker,East C.I.T. Raider Camp
+Commonwealth,UrbanRuinsMarker,Evans Way Cul-de-Sac
+Commonwealth,UrbanRuinsMarker,Flagon Tunnel
+Commonwealth,UrbanRuinsMarker,Founder's Triangle
+Commonwealth,UrbanRuinsMarker,Hangman's Alley
+Commonwealth,UrbanRuinsMarker,Harbormaster Hotel
+Commonwealth,UrbanRuinsMarker,Haymarket Mall
+Commonwealth,UrbanRuinsMarker,Jimbo's Tower
+Commonwealth,UrbanRuinsMarker,Kendall Parking Garage
+Commonwealth,UrbanRuinsMarker,Major Crossroad
+Commonwealth,UrbanRuinsMarker,Pizza Parlour
+Commonwealth,UrbanRuinsMarker,Postal Square
+Commonwealth,UrbanRuinsMarker,Prost Bar
+Commonwealth,UrbanRuinsMarker,Raider Alleyway Outpost
+Commonwealth,UrbanRuinsMarker,Raider Drug Den
+Commonwealth,UrbanRuinsMarker,Shenley's Oyster Bar
+Commonwealth,UrbanRuinsMarker,Slocum's Joe Corporate HQ
+Commonwealth,UrbanRuinsMarker,Super Duper Mart
+Commonwealth,UrbanRuinsMarker,Ticker Tape Lounge
+Commonwealth,UrbanRuinsMarker,Tower Apartments
+Commonwealth,UrbanRuinsMarker,Union Man's Circle
+Commonwealth,UrbanRuinsMarker,Warren Theater
+Commonwealth,UrbanRuinsMarker,Water Street Apartments
+Commonwealth,UrbanRuinsMarker,Weatherby Savings & Loan
+Commonwealth,VaultMarker,Vault 111
+Commonwealth,VaultMarker,Vault 114
+Commonwealth,VaultMarker,Vault 75
+Commonwealth,VaultMarker,Vault 81
+Commonwealth,VaultMarker,Vault 81 Atrium
+Commonwealth,VaultMarker,Vault 88
+Commonwealth,VaultMarker,Vault 95
+DLC03FarHarbor,AirfieldMarker,Horizon Flight 1207
+DLC03FarHarbor,BunkerMarker,Wind Farm Maintenance
+DLC03FarHarbor,CaveMarker,Kitteredge Pass
+DLC03FarHarbor,CaveMarker,Pine Crest Cavern
+DLC03FarHarbor,ChurchMarker,Ruined Church
+DLC03FarHarbor,CityMarker,The Commonwealth
+DLC03FarHarbor,DriveInMarker,Beaver Creek Lanes
+DLC03FarHarbor,DriveInMarker,Eden Meadows Cinemas
+DLC03FarHarbor,EncampmentMarker,Longfellow's Cabin
+DLC03FarHarbor,EncampmentMarker,Oceanarium
+DLC03FarHarbor,EncampmentMarker,Rayburn Point
+DLC03FarHarbor,FactoryMarker,Eagle's Cove Tannery
+DLC03FarHarbor,FactoryMarker,Echo Lake Lumber
+DLC03FarHarbor,FactoryMarker,Vim! Pop Factory
+DLC03FarHarbor,FarmMarker,Coastal Pier
+DLC03FarHarbor,FarmMarker,Cranberry Island Bog
+DLC03FarHarbor,ForestedMarker,Glowing Grove
+DLC03FarHarbor,ForestedMarker,Huntress Island
+DLC03FarHarbor,GoodneighborMarker,Harbor Grand Hotel
+DLC03FarHarbor,HospitalMarker,Aldersea Day Spa
+DLC03FarHarbor,LandmarkMarker,DiMA's Cache
+DLC03FarHarbor,LandmarkMarker,Haddock Cove
+DLC03FarHarbor,LandmarkMarker,Radiant Crest Shrine
+DLC03FarHarbor,ObservatoryMarker,Acadia
+DLC03FarHarbor,ObservatoryMarker,Brooke's Head Lighthouse
+DLC03FarHarbor,PierMarker,Cranberry Island Docks
+DLC03FarHarbor,PierMarker,Cranberry Island Supply Shed
+DLC03FarHarbor,PierMarker,Fringe Cove Docks
+DLC03FarHarbor,PierMarker,Rock Point Camp
+DLC03FarHarbor,PondLakeMarker,Briney's Bait and Tackle
+DLC03FarHarbor,PondLakeMarker,Far Harbor
+DLC03FarHarbor,PondLakeMarker,National Park Campground
+DLC03FarHarbor,PondLakeMarker,Old Pond House
+DLC03FarHarbor,QuarryMarker,Northwood Ridge Quarry
+DLC03FarHarbor,RadioTowerMarker,Ruined Radio Tower
+DLC03FarHarbor,RadioTowerMarker,Zephyr Ridge Camp
+DLC03FarHarbor,RadioactiveAreaMarker,Children of Atom Shrine
+DLC03FarHarbor,RadioactiveAreaMarker,The Nucleus
+DLC03FarHarbor,RadioactiveAreaMarker,The Nucleus
+DLC03FarHarbor,SchoolMarker,Waves Crest Orphanage
+DLC03FarHarbor,SettlementMarker,Far Harbor
+DLC03FarHarbor,SettlementMarker,National Park Visitor's Center
+DLC03FarHarbor,ShipwreckMarker,MS Azalea
+DLC03FarHarbor,TownRuinsMarker,Far Harbor Ruins
+DLC03FarHarbor,TownRuinsMarker,National Park HQ
+DLC03FarHarbor,TownRuinsMarker,Southwest Harbor
+DLC03FarHarbor,UrbanRuinsMarker,Cliff's Edge Hotel
+DiamondCity,DiamondCityMarker,Diamond City
+DiamondCity,SettlementMarker,Diamond City Market
+DiamondCity,SettlementMarker,Home Plate
+Goodneighbor,GoodneighborMarker,Goodneighbor
+NukaWorld,AirfieldMarker,Nuka-World Airfield
+NukaWorld,CaveMarker,Dry Rock Gulch
+NukaWorld,CaveMarker,Safari Adventure Reptile House
+NukaWorld,CityMarker,Commonwealth
+NukaWorld,DisciplesMarker,Fizztop Mountain
+NukaWorld,ElevatedHighwayMarker,Bradberton Overpass
+NukaWorld,EncampmentMarker,Dunmore Homestead
+NukaWorld,EncampmentMarker,Evan's Home
+NukaWorld,EncampmentMarker,Hubologist's Camp
+NukaWorld,EncampmentMarker,Moonshiner's Camp
+NukaWorld,FactoryMarker,Nuka-Cola Bottling Plant
+NukaWorld,FillingStationMarker,Nuka-World Red Rocket
+NukaWorld,GalacticMarker,Galactic Zone
+NukaWorld,IndustrialDomeMarker,Nuka-World Power Plant
+NukaWorld,JunkyardMarker,ERROR: <<NO REF LOCATION>>
+NukaWorld,MonorailMarker,Nuka-Station
+NukaWorld,MonumentMarker,Wixon's Shovel Museum
+NukaWorld,MonumentMarker,World of Refreshment
+NukaWorld,OfficeMarker,Doc Phosphate's Saloon
+NukaWorld,OfficeMarker,Dry Rock Gulch Theater
+NukaWorld,OperatorsMarker,The Parlor
+NukaWorld,PondLakeMarker,Northpoint Reservoir
+NukaWorld,RaiderSettlementMarker,Fizztop Grille
+NukaWorld,RidesMarker,Cola-Cars Arena
+NukaWorld,RidesMarker,Ferris Wheel
+NukaWorld,RidesMarker,Fun House
+NukaWorld,RidesMarker,Grandchester Mystery Mansion
+NukaWorld,RidesMarker,King Cola's Castle
+NukaWorld,RidesMarker,Mad Mulligan's Minecart Coaster
+NukaWorld,RidesMarker,Nuka-Galaxy
+NukaWorld,RidesMarker,RobCo Battlezone
+NukaWorld,RidesMarker,Starlight Interstellar Theater
+NukaWorld,RidesMarker,Starport Nuka
+NukaWorld,RidesMarker,Vault-Tec: Among the Stars
+NukaWorld,SafariMarker,Cappy's Treehouse
+NukaWorld,SafariMarker,Safari Adventure
+NukaWorld,SafariMarker,Safari Adventure Primate House
+NukaWorld,SafariMarker,The Angry Anaconda
+NukaWorld,TownMarker,Kiddie Kingdom
+NukaWorld,TownRuinsMarker,Bradberton
+NukaWorld,TownRuinsMarker,Dry Rock Gulch Employee Area
+NukaWorld,TownRuinsMarker,Morton Residence
+NukaWorld,TownRuinsMarker,Nuka-Town USA
+NukaWorldAmphitheater,PackMarker,Bradberton Amphitheater
+NukaWorldMarket,TownRuinsMarker,Nuka-Town Market
 
 Worldspaces
 60,Commonwealth,Commonwealth,0
@@ -1368,15 +1369,15 @@ Locations
 152760,AtomatoysFactoryLocation,Wilson Atomatoys Factory,Commonwealth
 202730,BADTFLLocation,BADTFL Regional Office,Commonwealth
 320727,BackStreetApparelLocation,Back Street Apparel,Commonwealth
-260691,BarneysBunkerLocation,Barney''s Bunker,Commonwealth
+260691,BarneysBunkerLocation,Barney's Bunker,Commonwealth
 2021250,BeaconHillApartmentsLocation,Beacon Hill Apartments,Commonwealth
 2021252,BeaconHillBostonBugleLocation,The Boston Bugle,Commonwealth
 238856,BeantownBreweryLocation,Beantown Brewery,Commonwealth
 151437,BedfordStationLocation,Bedford Station,Commonwealth
-374623,BigJohnsSalvageLocation,Big John''s Salvage,Commonwealth
-1196470,BillysHouseLocation,Billy''s House,Commonwealth
+374623,BigJohnsSalvageLocation,Big John's Salvage,Commonwealth
+1196470,BillysHouseLocation,Billy's House,Commonwealth
 767035,BoSBattleSiteLocation,Ruined Clinic,Commonwealth
-1608506,BobbisNewPlace,Bobbi''s Place,Commonwealth
+1608506,BobbisNewPlace,Bobbi's Place,Commonwealth
 543408,BostonAirportLocation,Boston Airport,Commonwealth
 290929,BostonCommonLocation,The Common,Commonwealth
 298470,BostonMayoralShelterLocation,Boston Mayoral Shelter,Commonwealth
@@ -1405,9 +1406,9 @@ Locations
 241091,CustomHouseLocation,Custom House,Commonwealth
 137857,CutlerBendLocation,Cutler Bend,Commonwealth
 240778,DBTechHighSchoolLocation,D.B. Technical High School,Commonwealth
-16842746,DLC01CaravanLocation,Jackson''s Caravan,Commonwealth
+16842746,DLC01CaravanLocation,Jackson's Caravan,Commonwealth
 16847714,DLC01GeneralAtomicsFactoryLocation,General Atomics Factory,Commonwealth
-16779428,DLC01LairLocation,The Mechanist''s Lair,Commonwealth
+16779428,DLC01LairLocation,The Mechanist's Lair,Commonwealth
 1591507,DNPrimeBridge01Location,DNPrime Bridge01 Location,Commonwealth
 1933292,DNPrimeBridge03Location,DNPrime Bridge03 Location,Commonwealth
 1474751,DarkHollowPondLocation,Dark Hollow Pond,Commonwealth
@@ -1420,7 +1421,7 @@ Locations
 362588,EasyCityDownsLocation,Easy City Downs,Commonwealth
 137855,EgretToursMarinaLocation,Egret Tours Marina,Commonwealth
 572848,FairlineHillEstatesLocation,Fairline Hill Estates,Commonwealth
-251876,FallonsDepartmentStoreLocation,Fallon''s Department Store,Commonwealth
+251876,FallonsDepartmentStoreLocation,Fallon's Department Store,Commonwealth
 362591,FaneuilHallLocation,Faneuil Hall,Commonwealth
 635316,Farm01Location,Tenpines Bluff,Commonwealth
 635317,Farm02Location,Nordhagen Beach,Commonwealth
@@ -1434,8 +1435,8 @@ Locations
 1788889,FensEvansWayLocation,Evans Way Cul-de-Sac,Commonwealth
 1674460,FensIntersectionLocation,Fens Intersection,Commonwealth
 2054031,FensParkviewLoungeLocation,Parkview Lounge,Commonwealth
-1805395,FensRaiderCampLocation,Hangman''s Alley,Commonwealth
-2168641,FiddlersGreenLocation,Fiddler''s Green,Commonwealth
+1805395,FensRaiderCampLocation,Hangman's Alley,Commonwealth
+2168641,FiddlersGreenLocation,Fiddler's Green,Commonwealth
 156810,FinchFarmLocation,Finch Farm,Commonwealth
 137858,ForestGroveMarshLocation,Forest Grove Marsh,Commonwealth
 764618,FortHagenLocation,Fort Hagen,Commonwealth
@@ -1447,22 +1448,22 @@ Locations
 168398,GNNLocation,GNN,Commonwealth
 236942,GeneralAtomicsGalleriaLocation,General Atomics Galleria,Commonwealth
 889999,GibsonPointPierLocation,Gibson Point Pier,Commonwealth
-2339946,GlowingSeaCraterLocation,Atom''s Glow,Commonwealth
+2339946,GlowingSeaCraterLocation,Atom's Glow,Commonwealth
 140816,GoodneighborLocation,Goodneighbor,Commonwealth
 151465,GorskiCabinLocation,Gorski Cabin,Commonwealth
 295631,GraygardenLocation,Graygarden,Commonwealth
 324864,GreaterMassBloodClinicLocation,Greater Mass Blood Clinic,Commonwealth
 513720,GreenetechGeneticsLocation,Greenetech Genetics,Commonwealth
 298386,GwinnettBreweryLocation,Gwinnett Brewery,Commonwealth
-213735,HalluciGenLocation,HalluciGen:COMMA: Inc.,Commonwealth
+213735,HalluciGenLocation,HalluciGen, Inc.,Commonwealth
 254156,HardwareTownLocation,Hardware Town,Commonwealth
-151463,HestersConsumerRoboticsLocation,Hester''s Consumer Robotics,Commonwealth
+151463,HestersConsumerRoboticsLocation,Hester's Consumer Robotics,Commonwealth
 315701,HubCityAutoWreckersLocation,Hub City Auto Wreckers,Commonwealth
 284176,HubrisComicsLocation,Hubris Comics,Commonwealth
 630364,HydeParkLocation,Hyde Park,Commonwealth
 2039290,InstituteExteriorLocation,The Institute,Commonwealth
 293269,IrishPrideShipyardLocation,Irish Pride Industries Shipyard,Commonwealth
-682781,IvansLocation,Ivan''s,Commonwealth
+682781,IvansLocation,Ivan's,Commonwealth
 333786,JalbertBrothersLocation,Jalbert Brothers Disposal,Commonwealth
 330760,JamaicaPlainLocation,Jamaica Plain,Commonwealth
 370148,KingsportLighthouseLocation,Kingsport Lighthouse,Commonwealth
@@ -1472,7 +1473,7 @@ Locations
 151464,LexingtonLocation,Lexington,Commonwealth
 931654,LibertaliaLocation,Libertalia,Commonwealth
 856232,ListeningPostBravoLocation,Listening Post Bravo,Commonwealth
-243443,LongneckLukowskisLocation,Longneck Lukowski''s Cannery,Commonwealth
+243443,LongneckLukowskisLocation,Longneck Lukowski's Cannery,Commonwealth
 368411,LynnWoodsLocation,Lynn Woods,Commonwealth
 1472739,MQ106TrackingSite01Location,,Commonwealth
 1472740,MQ106TrackingSite02Location,,Commonwealth
@@ -1527,7 +1528,7 @@ Locations
 343449,PoseidonReservoirLocation,Poseidon Reservoir,Commonwealth
 284411,ProspectHillLocation,Prospect Hill,Commonwealth
 370141,QuincyRuinsLocation,Quincy Ruins,Commonwealth
-330124,RR303VertibirdAmbushLocation,RR303''s Vertibird Ambush,Commonwealth
+330124,RR303VertibirdAmbushLocation,RR303's Vertibird Ambush,Commonwealth
 151466,RangerCabinLocation,Ranger Cabin,Commonwealth
 755757,ReconBunkerThetaLocation,Recon Bunker Theta,Commonwealth
 391848,RedRocketCaveLocation,Mole Rat Den,Commonwealth
@@ -1537,7 +1538,7 @@ Locations
 349186,RelayTowerZimonjaLocation,Outpost Zimonja,Commonwealth
 402695,RevereBeachStationLocation,Revere Beach Station,Commonwealth
 384734,RevereSatelliteArrayLocation,Revere Satellite Array,Commonwealth
-886373,RickyOverpassLocation,Ricky Dalton''s Overpass (RR102),Commonwealth
+886373,RickyOverpassLocation,Ricky Dalton's Overpass (RR102),Commonwealth
 168394,RoadsidePinesMotelLocation,Roadside Pines Motel,Commonwealth
 151468,RoboticsDisposalGroundLocation,Robotics Disposal Ground,Commonwealth
 728295,RoboticsPioneerParkLocation,Robotics Pioneer Park,Commonwealth
@@ -1552,14 +1553,14 @@ Locations
 283599,ShamrockTaphouseLocation,The Shamrock Taphouse,Commonwealth
 246012,ShawHighSchoolLocation,Shaw High School,Commonwealth
 333926,SkylanesFlightLocation,Skylanes Flight 1981,Commonwealth
-332705,SlocumsJoeHQLocation,Slocum''s Joe Corporate HQ,Commonwealth
+332705,SlocumsJoeHQLocation,Slocum's Joe Corporate HQ,Commonwealth
 543199,SouthBostonCheckpointLocation,South Boston Military Checkpoint,Commonwealth
 534556,SpectacleIslandLocation,Spectacle Island,Commonwealth
 151446,StarlightDriveInLocation,Starlight Drive-In,Commonwealth
 173241,SuffolkCountyCharterSchoolLocation,Suffolk County Charter School,Commonwealth
 151469,SunshineTidingsCoopLocation,Sunshine Tidings Co-op,Commonwealth
 205202,SuperDuperMartLocation,Super Duper Mart,Commonwealth
-242029,SwansPondLocation,Swan''s Pond,Commonwealth
+242029,SwansPondLocation,Swan's Pond,Commonwealth
 739199,SwitchboardLocation,The Switchboard,Commonwealth
 355514,TaffingtonBoatHouseLocation,Taffington Boathouse,Commonwealth
 421562,TheCastleLocation,The Castle,Commonwealth
