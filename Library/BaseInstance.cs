@@ -4,16 +4,13 @@
 	{
 		// Order is used to define perceived relevance and thus sort in the UI
 		None,
-		Level0,
-		Level1,
-		Level2,
-		Level3,
+		Novice,
+		Advanced,
+		Expert,
+		Master,
 		RequiresTerminal,
 		RequiresKey,
-		Chained,
-		Barred,
 		Inaccessible,
-		Unknown,
 	}
 
 	// Abstract of the shared properties of Instance or GroupedInstance

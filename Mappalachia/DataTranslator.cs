@@ -10,16 +10,13 @@ namespace Mappalachia
 			return lockLevel switch
 			{
 				LockLevel.None => "None",
-				LockLevel.Level0 => "Level 0",
-				LockLevel.Level1 => "Level 1",
-				LockLevel.Level2 => "Level 2",
-				LockLevel.Level3 => "Level 3",
+				LockLevel.Novice => "Novice",
+				LockLevel.Advanced => "Advanced",
+				LockLevel.Expert => "Expert",
+				LockLevel.Master => "Master",
 				LockLevel.RequiresKey => "Requires Key",
 				LockLevel.Inaccessible => "Inaccessible",
 				LockLevel.RequiresTerminal => "Requires Terminal",
-				LockLevel.Barred => "Barred",
-				LockLevel.Chained => "Chained",
-				LockLevel.Unknown => "Unknown",
 				_ => string.Concat(lockLevel.ToString().Select(c => char.IsUpper(c) || char.IsAsciiDigit(c) ? " " + c : c.ToString())).Trim(),
 			};
 		}

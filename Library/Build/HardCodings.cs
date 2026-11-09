@@ -26,7 +26,7 @@ namespace Library
 
 		public static Regex LockLevelRegex { get; } = new Regex(@"(Novice(?= 1| 25)|Advanced|Expert|Master)");
 
-		public static Regex ValidateLockLevel { get; } = new Regex("^(Novice|Advanced|Expert|Master|Chained|Inaccessible|RequiresKey|RequiresTerminal|Unknown|Barred)$");
+		public static Regex ValidateLockLevel { get; } = new Regex("^(Novice|Advanced|Expert|Master|Inaccessible|RequiresKey|RequiresTerminal)$");
 
 		public static Regex ValidatePrimitiveShape { get; } = new Regex("^(Box|Line|Plane|Sphere|Ellipsoid|Cylinder)$");
 
