@@ -153,24 +153,25 @@ namespace Library
 			"spaceDisplayName = '' OR " +
 			"spaceDisplayName LIKE '%Test%World%' OR " +
 			"spaceDisplayName LIKE '%Test%Cell%' OR " +
+			"spaceEditorID LIKE 'zUnused%' OR " +
 			"spaceEditorID LIKE 'zCUT%' OR " +
+			"spaceEditorID LIKE 'zz%' OR " +
 			"spaceEditorID LIKE '%OLD' OR " +
 			"spaceEditorID LIKE 'Warehouse%' OR " +
+			"spaceEditorID LIKE 'DLC04Warehouse%' OR " +
 			"spaceEditorID LIKE 'Test%' OR " +
 			"spaceEditorID LIKE '%Debug%' OR " +
-			"spaceEditorID LIKE 'zz%' OR " +
-			//"spaceEditorID LIKE '76%' OR " +
-			"spaceEditorID LIKE '%Worldspace' OR " +
 			"spaceEditorID LIKE '%Nav%Test%' OR " +
 			"spaceEditorID LIKE 'PackIn%' OR " +
-			"spaceEditorID LIKE 'COPY%'";
-		//"spaceEditorID LIKE 'XPD%SteelTower%' OR " +
-		//"spaceEditorID = 'MILEBlueRidgeHQ' OR " +
-		//"spaceEditorID = 'StormPresidentialBunker' OR " +
-		//"spaceEditorID = 'StormEngineeringVlt63' OR " +
-		//"spaceEditorID = 'XPDPitt02ACCJ' OR " +
-		//"spaceDisplayName = 'Diamond City' OR " +
-		//"spaceDisplayName = 'Goodneighbor'";
+			"spaceEditorID LIKE 'COPY%' OR " +
+			"spaceEditorID LIKE '%AliasCell' OR " +
+			"spaceEditorID LIKE '%HoldingCell' OR " +
+			"spaceEditorID = 'SanctuaryRosaHouse' OR " +
+			"spaceEditorID = 'DiamondCityFX' OR " +
+			"spaceEditorID = 'QASmoke' OR " +
+			"spaceEditorID = 'PrewarTVStudio' OR " +
+			"spaceEditorID = 'aaaMarkers' OR " +
+			"spaceEditorID = 'ccTOSFO4001'";
 
 		// Operates against already-finalized labels
 		public static string? GetCorrectedMarkerIcon(string markerName)

@@ -1,4 +1,5 @@
 spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
+100698122,DLC04AliasCell,DLC04 Alias Cell,0,0
 100698966,TestMadWorld,MadWorld,1,0
 100699459,,,0,0
 100699460,,,0,0
@@ -15,6 +16,7 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 100785311,PackInDLC04TrashLoot020StorageCell,,0,0
 100785312,,,0,0
 100787217,,,0,0
+100787218,DLC04WarehouseAmbush,Ambush Warehouse Cell,0,0
 100810866,,,0,0
 100810867,,,0,0
 100810868,,,0,0
@@ -25,9 +27,11 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 100813570,,,0,0
 100816129,,,0,0
 100816130,PackInFloraFeverBlossom01PackInStorageCell,,0,0
+100859917,DLC04NoLocHoldingCell,Holding Cell,0,0
 100872037,PackInDLC04RobotLiftPackInStorageCell,,0,0
 100873818,,,0,0
 100873819,,,0,0
+100914727,DLC04KiddieKingdomHoldingCell,Holding Cell,0,0
 100915765,,,0,0
 100915766,,,0,0
 100915767,,,0,0
@@ -56,12 +60,15 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 1014858,COPY0050,,0,0
 1014861,COPY0048,,0,0
 1014863,COPY0047,,0,0
+1022106,zUnusedGrenades,Cellar,0,0
 1027269,COPY0049,,0,0
 1059712,PackInterminalProtectron_PackInStorageCell,,0,0
+1059714,zUnusedSubwayTerminalShowcase,Terminals & Holotapes, Oh My.,0,0
 1082946,PackInCircuitBreakerPackInStorageCell,,0,0
 1083894,COPY0043,,0,0
 111286,COPY0256,,0,0
 1114885,COPY0044,,0,0
+1124016,Vault81HoldingCell,Vault 81 Holding Cell,0,0
 1124134,COPY0051,,0,0
 1124136,PackInCZSpotlightMainStorageCell,,0,0
 1148054,COPY0055,,0,0
@@ -97,6 +104,8 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 1225876,PackInBldPlugCLight01GoboStorageCell,,0,0
 1227429,COPY0059DUPLICATE000,,0,0
 1227547,COPY0006DUPLICATE000,,0,0
+127896,SanctuaryRosaHouse,Rosa Residence,0,0
+128937,QASmoke,Tunnels,0,0
 1310390,COPY0061,,0,0
 1311956,PackInGurney01WithCushionStorageCell,,0,0
 1312104,COPY0064,,0,0
@@ -136,6 +145,7 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 1409060,PackInHighTechLightCeiling02PackInsStorageCell,,0,0
 1409065,PackInTesttestestStorageCell,,0,0
 1417697,PackInFloorTypesPackInStorageCell,,0,0
+1422662,zUnusedFalloutShelter02,Shelter,0,0
 1442263,WarehouseIndustrialMachines,The Incredible Machines,0,0
 1444720,COPY0079,,0,0
 1444722,COPY0075,,0,0
@@ -164,6 +174,7 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 1512891,COPY0100,,0,0
 1512893,COPY0099,,0,0
 1512895,COPY0098,,0,0
+1516183,BostonAirportAliasCell,Airport Alias Cell,0,0
 1523160,COPY0101,,0,0
 1530748,COPY0105,,0,0
 1530750,COPY0104,,0,0
@@ -378,6 +389,8 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 1675370,,,0,0
 1675371,PackInDummy_Weap_10mm_Pistol_SemiAutoStorageCell,,0,0
 1675372,,,0,0
+1676848,CombatZoneHoldingCell,Combat Zone Holding Cell,0,0
+16779426,DLC01LairHoldingCell,DLC01 Holding Cell,0,0
 16781610,TestCory01,Quick Test Cell,0,0
 16786575,DLC01HoldingCell,Quick Test Cell,0,0
 16786979,TestTony,BoS Holding Cell,0,0
@@ -474,6 +487,7 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 1775933,COPY0312,,0,0
 1775935,COPY0310,,0,0
 178441,COPY0257,,0,0
+178516,zUnusedCave,Breakheart Banks,0,0
 1788899,COPY0317,,0,0
 1788901,COPY0316,,0,0
 1788903,COPY0315,,0,0
@@ -703,6 +717,7 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 2249435,PackInCanneryRetort01PackInStorageCell,,0,0
 2255311,,,0,0
 2255312,,,0,0
+2274752,BoSHoldingCell,BoS Holding Cell,0,0
 2274795,,,0,0
 2274796,,,0,0
 2277870,,,0,0
@@ -730,6 +745,7 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 2394096,,,0,0
 2394821,PackInBuoy_Bell_RedStorageCell,,0,0
 2394822,PackInBuoy_Bell_GreenStorageCell,,0,0
+2400663,ccTOSFO4001,Noir Penthouse,0,0
 2400673,ccZSEFO4002Interior01,Quick Test Cell,0,0
 2400674,ccTOSFO4002Interior01,Quick Test Cell,0,0
 2401006,ccZSEFO4VLTInterior01,Quick Test Cell,0,0
@@ -752,6 +768,7 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 288355,REHoldingCellTraderRylee,Quick Test Cell,0,0
 293369,PackInDN085RadioactiveGeyserStorageCell,,0,0
 306535,PackInNukaColaMachineStorageCellDUPLICATE000,,0,0
+316436,zUnusedFinancial23,Atlantic Offices,0,0
 334151,WarehouseAmbushes,Quick Test Cell,0,0
 33556767,CTESTCOPY0000,Quick Test Cell,0,0
 33557475,DLC02HoldingCell,Quick Test Cell,0,0
@@ -765,10 +782,12 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 356650,PackInLvlRadRoachAmbushFloorStorageCell,,0,0
 356651,PackInLvlRadRoachAmbushWallStorageCell,,0,0
 358243,DebugJPSA,Companion Situational Awareness,0,0
+362837,aaaMarkers,Marker Cell,0,0
 362886,PackInPortADinerPackinStorageCell,,0,0
 37,NavMeshGenCell,,0,0
 377810,PackInLightBulbChandelier_LargeStorageCell,,0,0
 377811,PackInLightBulbChandelier_SmallStorageCell,,0,0
+3987,DiamondCityFX,Diamond City,1,0
 402759,WorkshopHoldingCell,Quick Test Cell,0,0
 414067,PackInShellBrick3Story2x5StorageCell,,0,0
 432148,COPY0253,,0,0
@@ -790,6 +809,7 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 471795,COPY0267,,0,0
 471804,COPY0266,,0,0
 471820,COPY0265,,0,0
+492200,MinutemenHoldingCell,Minutemen Holding Cell,0,0
 50333697,DLC03DungeonTemplate,Quick Test Cell,0,0
 50333712,TestClaraCoast,Clara Land,1,0
 50337012,TestMadCoast,,1,0
@@ -803,7 +823,6 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 50348453,,,0,0
 50348454,,,0,0
 50348455,,,0,0
-50351780,DLC03VRWorldspace,Simulation,1,0
 50359898,TestMattD,Quick Test Cell,0,0
 50366513,TestTony,Quick Test Cell,0,0
 50367311,PackInDLC03InformationBoardMediumPackInStorageCell,,0,0
@@ -839,6 +858,7 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 50537330,PackInDLC03REPackInCampStorageCell,,0,0
 50537332,PackInDLC03REPackInAssaultStorageCell,,0,0
 50555630,,,0,0
+50559280,DLC03Vault118HoldingCell,V118 Holding Cell,0,0
 50561086,TestGrantDLC03,Quick Test Cell,0,0
 50590151,PackInDLC03HangingPlant01StorageCell,,0,0
 50597197,,,0,0
@@ -995,6 +1015,7 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 737458,PackInEncSentryBotAggro512PackInStorageCell,,0,0
 737459,PackInEncSentryBotAmbushPackInStorageCell,,0,0
 765764,PackInDummy_LaserMusketStorageCell,,0,0
+797546,TheCastleAttackersHoldingCell,Holding Cell,0,0
 806573,PackInLvlMirelurkHunterAggro1200GroundDelayedPackInStorageCell,,0,0
 806574,PackInLvlMirelurkHunterAggro512GroundDelayedPackInStorageCell,,0,0
 806575,PackInLvlMirelurkHunterAggro1670GroundPackInStorageCell,,0,0
@@ -1010,7 +1031,9 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 83894949,,,0,0
 83902345,,,0,0
 851270,COPY0285,,0,0
+856164,BoSAliasCell,Brotherhood of Steel Alias Cell,0,0
 911928,COPY0046DUPLICATE000,,0,0
+924417,zUnusedCellar02,Cellar,0,0
 937608,COPY0002,,0,0
 937609,COPY0003,,0,0
 937610,COPY0004,,0,0
@@ -1062,5 +1085,6 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 96756,PlayerHomeInterior,,0,0
 96850,COPY0255,,0,0
 96852,COPY0254,,0,0
+969981,PrewarTVStudio,Colonial's Department Store,0,0
 970865,COPY0045,,0,0
 973145,COPY0046,,0,0
