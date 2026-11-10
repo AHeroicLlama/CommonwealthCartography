@@ -28,6 +28,9 @@ unit _mappalachia_esm;
             end;
         end;
 
-        outputToFile(i, outputFile, outputStrings);
+        createDir('Output\');
+		AddMessage('Writing output to file: ' + outputFile);
+		outputStrings.SaveToFile(outputFile);
+		outputStrings.Free;
     end;
 end.
