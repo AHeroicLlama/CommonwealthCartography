@@ -170,6 +170,7 @@ namespace Library
 			"spaceEditorID = 'DiamondCityFX' OR " +
 			"spaceEditorID = 'QASmoke' OR " +
 			"spaceEditorID = 'PrewarTVStudio' OR " +
+			"spaceEditorID = 'REObject02Interior' OR " +
 			"spaceEditorID = 'aaaMarkers' OR " +
 			"spaceEditorID = 'ccTOSFO4001'";
 
