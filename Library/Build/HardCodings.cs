@@ -324,7 +324,7 @@ namespace Library
 		{
 			switch (space.EditorID.ToUpper())
 			{
-				case "Commonwealth":
+				case "COMMONWEALTH":
 					List<Region> borderRegions = new List<Region>();
 					borderRegions.AddRange(await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'Border'"));
 					return borderRegions;

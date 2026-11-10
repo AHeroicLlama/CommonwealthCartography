@@ -22,7 +22,7 @@ unit _mappalachia_esm;
 
             if (GetIsEsm(targetESM) = true) then begin
                 outputStrings.Add(
-                    IntToStr(i) + ',' +
+                    IntToStr(GetLoadOrder(targetESM)) + ',' +
                     fileName
                 );
             end;
