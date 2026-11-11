@@ -124,6 +124,8 @@ namespace Library
 		// Spaces which appear to be copy/pastes or alternates of the same thing, and therefore can and should share scaling/adjustments
 		public static List<List<string>> SisterSpaces { get; } = new List<List<string>>()
 		{
+			new List<string>() { "ElevTransHiTech", "ElevTransHiTechInstitute" },
+			new List<string>() { "ElevMinUseTransUtil", "ElevTransUtil" },
 			//new List<string>() { "ArktosPharmaLab01", "ArktosPharmaLabDungeon" },
 			//new List<string>() { "CharGen01", "CharGen02", "CharGen03", "CharGen04", "CharGen05", "NPEVault7601", "NVEVault7601" },
 			//new List<string>() { "GlassedCavern01", "GlassedCavernDungeon" },
