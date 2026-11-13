@@ -22,19 +22,16 @@ namespace Library
 		WEAP,
 		AMMO,
 		PROJ,
-		CNCY,
 		KEYM,
 		REGN,
 		LCTN,
 		ACTI,
 		TACT,
-		TRAP,
 		DOOR,
 		HAZD,
 		IDLM,
 		LIGH,
 		SOUN,
-		SECH,
 		ASPC,
 		TXST,
 		BNDS,
@@ -44,9 +41,7 @@ namespace Library
 
 	// Represents any entity in the ESM
 	[JsonPolymorphic(TypeDiscriminatorPropertyName = "EntityChildType")]
-	[JsonDerivedType(typeof(DerivedNPC), "DerivedNPC")]
 	[JsonDerivedType(typeof(DerivedScrap), "DerivedScrap")]
-	[JsonDerivedType(typeof(DerivedRawFlux), "DerivedRawFlux")]
 	[JsonDerivedType(typeof(Region), "Region")]
 	[JsonDerivedType(typeof(Location), "Location")]
 	public class Entity(uint formID, string editorID, string displayName, Signature signature, Bounds? bounds = null)

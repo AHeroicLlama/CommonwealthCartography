@@ -158,8 +158,6 @@ namespace Mappalachia
 
 		public bool ShowCoordinateGrid { get; set; } = false;
 
-		public bool ShowInfestations { get; set; } = false;
-
 		[JsonInclude]
 		CoordinateGridPrecision coordinateGridPrecision = CoordinateGridPrecision.Medium;
 

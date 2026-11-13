@@ -67,19 +67,13 @@ namespace Library
 
 		public static string DoorMarkerPath { get; } = ImagePath + "DoorMarker" + Common.MapMarkerImageFileType;
 
-		public static string InfestationMarkerPath { get; } = ImagePath + "InfestationMarker" + Common.MapMarkerImageFileType;
-
 		public static string CompassRosePath { get; } = ImagePath + "CompassRose.png";
 
-		static string GamePath { get; } = @"C:\Program Files (x86)\Steam\steamapps\common\Fallout76\";
+		static string GamePath { get; } = @"C:\Program Files (x86)\Steam\steamapps\common\Fallout 4\";
 
 		public static string GameDataPath { get; } = @$"{GamePath}Data\";
 
-		public static string GameESMPath { get; } = @$"{GameDataPath}SeventySix.esm";
-
-		public static string GameTerrainPath { get; } = @$"{GameDataPath}Terrain\Appalachia.btd";
-
-		public static string GameExePath { get; } = $"{GamePath}Fallout76.exe";
+		public static string GameExePath { get; } = $"{GamePath}Fallout4.exe";
 
 		public static ConsoleColor ColorInfo { get; } = ConsoleColor.DarkYellow;
 

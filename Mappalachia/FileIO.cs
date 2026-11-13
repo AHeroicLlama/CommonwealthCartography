@@ -42,15 +42,6 @@ namespace Mappalachia
 			return doorMarker;
 		}
 
-		static Image? infestationMarker;
-
-		// Return the Infestation Marker icon
-		public static Image GetInfestationMarker()
-		{
-			infestationMarker ??= LoadSVGIcon(Paths.InfestationMarkerPath);
-			return infestationMarker;
-		}
-
 		static Image? compassRose;
 
 		public static Image CompassRose

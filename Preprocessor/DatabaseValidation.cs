@@ -33,10 +33,9 @@ namespace Preprocessor
 			ValidateColumnMatchesFormat("Position", "primitiveShape", true, ValidatePrimitiveShape);
 			ValidateColumnMatchesFormat("Position_PreGrouped", "lockLevel", true, ValidateLockLevel);
 			ValidateColumnMatchesFormat("Entity", "signature", false, ValidateSignature);
-			ValidateColumnMatchesFormat("MapMarker", "icon", false, ValidateMapMarkerIcon);
+			//ValidateColumnMatchesFormat("MapMarker", "icon", false, ValidateMapMarkerIcon);
 			ValidateColumnMatchesFormat("Scrap", "component", false, ValidateComponent);
-			ValidateColumnMatchesFormat("Flux", "color", false, ValidateFluxColor);
-			ValidateColumnMatchesFormat("NPC", "npcName", false, ValidateNPC);
+			//ValidateColumnMatchesFormat("NPC", "npcName", false, ValidateNPC);
 		}
 
 		// Validate all rows of the table column match the regex pattern, including optional blanks

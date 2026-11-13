@@ -24,8 +24,6 @@ namespace Mappalachia
 			FormMain = formMain;
 			InitialSettings = FormMain.Settings.PlotSettings.ClusterSettings;
 
-			BlastRadius = Database.GetBlastRadius().GetAwaiter().GetResult();
-
 			trackBarClusterRange.Maximum = ClusterSettings.GetMaxRangeForSpace(FormMain.Settings.Space);
 
 			trackBarClusterRange.Value = Math.Clamp(InitialSettings.Range, trackBarClusterRange.Minimum, trackBarClusterRange.Maximum);
@@ -105,30 +103,6 @@ namespace Mappalachia
 			{
 				await FormMain.ClusterSettingsLiveUpdate(ClusterSettings);
 			}
-		}
-
-		private void LabelClusterRange_MouseClick(object sender, MouseEventArgs e)
-		{
-			if (e.Button != MouseButtons.Right)
-			{
-				return;
-			}
-
-			if (!FormMain.Settings.Space.IsNukable() || trackBarClusterRange.Maximum < BlastRadius)
-			{
-				return;
-			}
-
-			ContextMenuStrip contextMenu = new ContextMenuStrip();
-			ToolStripMenuItem setToNukerange = new ToolStripMenuItem() { Text = "Set to Nuke blast zone radius" };
-
-			setToNukerange.Click += (s, args) =>
-			{
-				trackBarClusterRange.Value = (int)BlastRadius;
-			};
-
-			contextMenu.Items.Add(setToNukerange);
-			contextMenu.Show(this, e.Location);
 		}
 	}
 }

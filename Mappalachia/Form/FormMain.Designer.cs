@@ -48,7 +48,6 @@ namespace Mappalachia
 			grayscaleToolStripMenuItem = new ToolStripMenuItem();
 			backgroundBrightnessToolStripMenuItem = new ToolStripMenuItem();
 			highlightWaterToolStripMenuItem = new ToolStripMenuItem();
-			showInfestationsToolStripMenuItem = new ToolStripMenuItem();
 			coordinateGridToolStripMenuItem = new ToolStripMenuItem();
 			coordinateGridEnabledToolStripMenuItem = new ToolStripMenuItem();
 			coordinateGridPrecisionToolStripMenuItem = new ToolStripMenuItem();
@@ -167,7 +166,7 @@ namespace Mappalachia
 			// 
 			// mapMenuItem
 			// 
-			mapMenuItem.DropDownItems.AddRange(new ToolStripItem[] { showPreviewToolStripMenuItem, openExternallyToolStripMenuItem, setTitleToolStripMenuItem, fontSizesToolStripMenuItem, mapMapMarkersToolStripMenuItem, backgroundImageMenuItem, grayscaleToolStripMenuItem, backgroundBrightnessToolStripMenuItem, highlightWaterToolStripMenuItem, showInfestationsToolStripMenuItem, coordinateGridToolStripMenuItem, showCompassToolStripMenuItem, lookupToolStripMenuItem, legendToolStripMenuItem, loadRecipeToolStripMenuItem, saveAsRecipeToolStripMenuItem, exportToFileToolStripMenuItem, quickSaveToolStripMenuItem, clearPlotsToolStripMenuItem, resetToolStripMenuItem });
+			mapMenuItem.DropDownItems.AddRange(new ToolStripItem[] { showPreviewToolStripMenuItem, openExternallyToolStripMenuItem, setTitleToolStripMenuItem, fontSizesToolStripMenuItem, mapMapMarkersToolStripMenuItem, backgroundImageMenuItem, grayscaleToolStripMenuItem, backgroundBrightnessToolStripMenuItem, highlightWaterToolStripMenuItem, coordinateGridToolStripMenuItem, showCompassToolStripMenuItem, lookupToolStripMenuItem, legendToolStripMenuItem, loadRecipeToolStripMenuItem, saveAsRecipeToolStripMenuItem, exportToFileToolStripMenuItem, quickSaveToolStripMenuItem, clearPlotsToolStripMenuItem, resetToolStripMenuItem });
 			mapMenuItem.Name = "mapMenuItem";
 			mapMenuItem.Size = new Size(43, 20);
 			mapMenuItem.Text = "Map";
@@ -293,14 +292,6 @@ namespace Mappalachia
 			highlightWaterToolStripMenuItem.ToolTipText = "Overlay a blue highlight showing accessible surface water.";
 			highlightWaterToolStripMenuItem.Click += Map_HighlightWater_Click;
 			// 
-			// showInfestationsToolStripMenuItem
-			// 
-			showInfestationsToolStripMenuItem.Name = "showInfestationsToolStripMenuItem";
-			showInfestationsToolStripMenuItem.Size = new Size(240, 22);
-			showInfestationsToolStripMenuItem.Text = "Show Infestations";
-			showInfestationsToolStripMenuItem.ToolTipText = "Plot the area of all possible infestations.";
-			showInfestationsToolStripMenuItem.Click += Map_ShowInfestations_Click;
-			// 
 			// coordinateGridToolStripMenuItem
 			// 
 			coordinateGridToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { coordinateGridEnabledToolStripMenuItem, coordinateGridPrecisionToolStripMenuItem });
@@ -312,7 +303,7 @@ namespace Mappalachia
 			// coordinateGridEnabledToolStripMenuItem
 			// 
 			coordinateGridEnabledToolStripMenuItem.Name = "coordinateGridEnabledToolStripMenuItem";
-			coordinateGridEnabledToolStripMenuItem.Size = new Size(122, 22);
+			coordinateGridEnabledToolStripMenuItem.Size = new Size(180, 22);
 			coordinateGridEnabledToolStripMenuItem.Text = "Enabled";
 			coordinateGridEnabledToolStripMenuItem.ToolTipText = "Toggle showing the coordinate grid.";
 			coordinateGridEnabledToolStripMenuItem.Click += Map_CoordinateGrid_Enabled_Click;
@@ -321,7 +312,7 @@ namespace Mappalachia
 			// 
 			coordinateGridPrecisionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { coordinateGridPrecisionFineToolStripMenuItem, coordinateGridPrecisionMediumToolStripMenuItem, coordinateGridPrecisionLargeToolStripMenuItem });
 			coordinateGridPrecisionToolStripMenuItem.Name = "coordinateGridPrecisionToolStripMenuItem";
-			coordinateGridPrecisionToolStripMenuItem.Size = new Size(122, 22);
+			coordinateGridPrecisionToolStripMenuItem.Size = new Size(180, 22);
 			coordinateGridPrecisionToolStripMenuItem.Text = "Precision";
 			coordinateGridPrecisionToolStripMenuItem.ToolTipText = "Control the precision of the coordinate grid.";
 			// 
@@ -1305,7 +1296,6 @@ namespace Mappalachia
 		private ToolStripMenuItem legendVerticalTopToolStripMenuItem;
 		private ToolStripMenuItem legendVerticalCenterToolStripMenuItem;
 		private ToolStripMenuItem legendVerticalBottomToolStripMenuItem;
-		private ToolStripMenuItem showInfestationsToolStripMenuItem;
 		private ToolStripMenuItem lookupToolStripMenuItem;
 		private ToolStripMenuItem lookupRangeToolStripMenuItem;
 		private ToolStripMenuItem lookupRangeSmallToolStripMenuItem;

@@ -1,15 +1,15 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 
 namespace Library
 {
 	public static class Common
 	{
-		public static string ApplicationTitleName { get; } = "Mappalachia"; // User-friendly name
+		public static string ApplicationTitleName { get; } = "Commonwealth Cartography"; // User-friendly name
 
-		public static string ApplicationSystemName { get; } = "Mappalachia"; // File/URL-friendly name
+		public static string ApplicationSystemName { get; } = "CommonwealthCartography"; // File/URL-friendly name
 
-		public static string GameTargetName { get; } = "Fallout 76"; // User-friendly game title
+		public static string GameTargetName { get; } = "Fallout 4"; // User-friendly game title
 
 		public static string RepositoryName { get; } = $"AHeroicLlama/{ApplicationSystemName}";
 
@@ -54,15 +54,6 @@ namespace Library
 
 		public static int CellSize { get; } = 4096;
 
-		public enum FluxColor
-		{
-			Crimson,
-			Cobalt,
-			Fluorescent,
-			Violet,
-			Yellowcake,
-		}
-
 		// Return if this string appears to represent a FormID in hexadecimal
 		public static bool IsHexFormID(this string formID)
 		{
@@ -82,6 +73,24 @@ namespace Library
 		public static uint HexToInt(string hex)
 		{
 			return Convert.ToUInt32(FormID.Matches(hex)[0].Value, 16);
+		}
+
+		// Convert a load order FormID to a fixed FormID
+		public static uint ToFixedFormId(this uint loadOrderFormId)
+		{
+			// First byte 0x00 indicates base game record - no change
+			if (GetEsmNumber(loadOrderFormId) == 0x00)
+			{
+				return loadOrderFormId;
+			}
+
+			// Set just the first byte to 0x01
+			return (loadOrderFormId & 0x00FFFFFF) | 0x01000000;
+		}
+
+		public static uint GetEsmNumber(uint formId)
+		{
+			return formId >> 24;
 		}
 
 		public static string WithoutWhitespace(this string input)

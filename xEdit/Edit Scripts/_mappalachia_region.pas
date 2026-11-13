@@ -1,5 +1,5 @@
 // Gets the region coordinates of relevant REGNs
-// Header 'spaceFormID,regionFormID,regionEditorID,location,regionNum,coordNum,x,y,nukable'
+// Header 'spaceFormID,regionFormID,regionEditorID,location,regionNum,coordNum,x,y'
 unit _mappalachia_region;
 
 	uses _mappalachia_lib;
@@ -18,7 +18,6 @@ unit _mappalachia_region;
 		editorID =  EditorID(item);
 		spaceFormID = sanitize(GetEditValue(ElementBySignature(item, 'WNAM')));
 		location = sanitize(GetEditValue(ElementBySignature(item, 'LNAM')));
-		nukable = GetEditValue(ElementBySignature(item, 'RCBN'));
 	var
 		i, p : Integer;
 		currentRegionArea, regionAreaPoints, currentPoint : IInterface;
@@ -36,8 +35,7 @@ unit _mappalachia_region;
 					IntToStr(i) + ',' + // region #
 					IntToStr(p) + ',' + // point #
 					GetEditValue(ElementByName(currentPoint, 'X')) + ',' +
-					GetEditValue(ElementByName(currentPoint, 'Y')) + ',' +
-					nukable
+					GetEditValue(ElementByName(currentPoint, 'Y'))
 				);
 			end;
 		end;

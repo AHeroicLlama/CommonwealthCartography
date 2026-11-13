@@ -12,8 +12,8 @@ unit _mappalachia_position;
 		i : integer;
 	begin
 		for i := 0 to FileCount() -1 do begin
-			esmNumber := i;
-			targetESM := FileByIndex(esmNumber);
+			esmIndex := i;
+			targetESM := FileByIndex(esmIndex);
 			fileName := GetFileName(targetESM);
 
 			if (GetIsEsm(targetESM) = false) then begin
@@ -23,7 +23,7 @@ unit _mappalachia_position;
 
 			AddMessage('Running Position export on ' + fileName);
 
-			outputFile := ProgramPath + 'Output\ESM_' + IntToStr(esmNumber) + '\Position.csv';
+			outputFile := ProgramPath + 'Output\ESM_' + IntToStr(GetLoadOrder(targetESM)) + '\Position.csv';
 
 			outputStrings := TStringList.Create;
 
@@ -32,7 +32,7 @@ unit _mappalachia_position;
 			AddMessage('Mappalachia interior position  (' + fileName + ')');
 			ripInteriors();
 
-			outputToFile(esmNumber, outputFile, outputStrings);
+			outputToFile(esmIndex, outputFile, outputStrings);
 		end;
 	end;
 
@@ -178,7 +178,7 @@ unit _mappalachia_position;
 				FloatToStr(rotation.x) + ',' +
 				FloatToStr(rotation.y) + ',' +
 				FloatToStr(rotation.z) + ',' +
-				GetEditValue(ElementByName(ElementByName(item, 'Map Marker'), 'TNAM - Type')) + ',' +
+				GetEditValue(ElementByName(ElementByName(ElementByName(item, 'Map Marker'), 'TNAM - TNAM'), 'Type')) + ',' +
 				sanitize(shortName) + ',' +
 				sanitize(GetEditValue(teleportTarget)) + ',' +
 				IntToStr(GetIsInitiallyDisabled(item))
