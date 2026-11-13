@@ -79,13 +79,18 @@ namespace Library
 		public static uint ToFixedFormId(this uint loadOrderFormId)
 		{
 			// First byte 0x00 indicates base game record - no change
-			if (loadOrderFormId >> 24 == 0x00)
+			if (GetEsmNumber(loadOrderFormId) == 0x00)
 			{
 				return loadOrderFormId;
 			}
 
 			// Set just the first byte to 0x01
 			return (loadOrderFormId & 0x00FFFFFF) | 0x01000000;
+		}
+
+		public static uint GetEsmNumber(uint formId)
+		{
+			return formId >> 24;
 		}
 
 		public static string WithoutWhitespace(this string input)

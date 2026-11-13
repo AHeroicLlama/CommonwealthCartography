@@ -12,6 +12,8 @@ namespace Library
 	{
 		static string FissureSiteLabel { get; } = "Fissure Site";
 
+		public static string DefaultTextureFormID { get; } = "0x000AB07E";
+
 		public static Regex SpaceFormIDRegex { get; } = new Regex(@"\[(WRLD|CELL):([0-9A-F]{8})\]");
 
 		public static Regex SignatureFormIDRegex { get; } = new Regex(@"\[[A-Z_]{4}:([0-9A-F]{8})\]");
