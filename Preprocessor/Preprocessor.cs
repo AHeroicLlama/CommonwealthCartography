@@ -139,6 +139,7 @@ namespace Preprocessor
 			SimpleQuery($"DELETE FROM MapMarker WHERE label LIKE '{MapMarkersToRemovePattern}';");
 			SimpleQuery(AddMissingMarkersQuery);
 			SimpleQuery(CorrectDuplicateMarkersQuery);
+			TransformColumn(CorrectIconsByDict, "MapMarker", "icon");
 			TransformColumn(CorrectLabelsByDict, "MapMarker", "label");
 			TransformColumn(CorrectFissureLabels, "MapMarker", "label");
 			TransformColumn(CorrectCommonBadLabels, "MapMarker", "label");
@@ -602,7 +603,7 @@ namespace Preprocessor
 
 			SimpleQuery($"CREATE INDEX {tempIndex} ON {tableName} ({sourceColumn});", true);
 
-			string readQuery = $"SELECT {sourceColumn}, ROWID FROM {tableName} ORDER BY ROWID";
+			string readQuery = $"SELECT ROWID, {sourceColumn} FROM {tableName} ORDER BY ROWID";
 			string updateQuery = $"UPDATE {tableName} SET {targetColumn} = @new WHERE ROWID = @rowID";
 
 			Console.WriteLine($"Transform {tableName}.{sourceColumn} -> {targetColumn}: {method.Method.Name}");
@@ -617,8 +618,8 @@ namespace Preprocessor
 
 			while (reader.Read())
 			{
-				string originalValue = reader.GetString(0);
-				int rowID = reader.GetInt32(1);
+				int rowID = reader.GetInt32(0);
+				string originalValue = reader.GetString(sourceColumn);
 				string? newValue = method(originalValue);
 
 				// If the new value is null (method indicates value should not be changed), skip
@@ -645,7 +646,7 @@ namespace Preprocessor
 
 			SimpleQuery($"CREATE INDEX {tempIndex} ON {tableName} ({sourceColumnA}, {sourceColumnB});", true);
 
-			string readQuery = $"SELECT {sourceColumnA}, {sourceColumnB}, ROWID FROM {tableName} ORDER BY ROWID";
+			string readQuery = $"SELECT ROWID, {sourceColumnA}, {sourceColumnB} FROM {tableName} ORDER BY ROWID";
 			string updateQuery = $"UPDATE {tableName} SET {targetColumn} = @new WHERE ROWID = @rowID";
 
 			Console.WriteLine($"Transform {tableName}.{sourceColumnA},{sourceColumnB} -> {targetColumn}: {method.Method.Name}");
@@ -660,9 +661,9 @@ namespace Preprocessor
 
 			while (reader.Read())
 			{
-				string originalValueA = reader.GetString(0);
-				string originalValueB = reader.GetString(1);
-				int rowID = reader.GetInt32(2);
+				int rowID = reader.GetInt32(0);
+				string originalValueA = reader.GetString(sourceColumnA);
+				string originalValueB = reader.GetString(sourceColumnB);
 				string? newValue = method(originalValueA, originalValueB);
 
 				// If the new value is null (method indicates value should not be changed), skip.
@@ -977,6 +978,17 @@ namespace Preprocessor
 			return label;
 		}
 
+		// Returns the corrected icon for the given map marker icon
+		static string? CorrectIconsByDict(string icon)
+		{
+			if (MarkerIconCorrection.TryGetValue(icon, out string? correctedIcon))
+			{
+				return correctedIcon;
+			}
+
+			return icon;
+		}
+
 		static string GetNorthAngle(string spaceFormID)
 		{
 			string query = $"SELECT MAX(rotZ) AS rotation FROM Position WHERE referenceFormID = '{NorthMarkerFormID}' AND spaceFormID = {spaceFormID}";
@@ -990,7 +1002,7 @@ namespace Preprocessor
 			using SqliteCommand command = new SqliteCommand(query, GetNewConnection());
 			using SqliteDataReader reader = command.ExecuteReader();
 
-			if (!reader.Read() || reader.IsDBNull(0))
+			if (!reader.Read() || reader.IsDBNull("rotation"))
 			{
 				return "0";
 			}
