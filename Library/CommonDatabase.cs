@@ -184,14 +184,20 @@ namespace Library
 			return $"({string.Join(",", elements.Select(e => "\'" + e?.ToString() + "\'"))})";
 		}
 
-		public static async Task<string> GetESMName(SqliteConnection connection, uint formId)
+		// Return the name of the given ESM, plus all masters
+		public static async Task<List<string>> GetEsmNameWithMasters(SqliteConnection connection, uint esmNumber)
 		{
-			uint esmNumber = formId >> 24;
-			string queryText = $"SELECT name FROM ESM WHERE number = {esmNumber};";
+			List<string> masterEsmNames = new List<string>();
+
+			string queryText = $"SELECT name FROM ESM WHERE masterCount = 0 OR number = {esmNumber} ORDER BY number;";
 			using SqliteDataReader reader = await GetReader(connection, queryText);
 
-			reader.Read();
-			return reader.GetString(0);
+			while (reader.Read())
+			{
+				masterEsmNames.Add(reader.GetString("name"));
+			}
+
+			return masterEsmNames;
 		}
 	}
 }

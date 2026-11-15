@@ -426,15 +426,7 @@ namespace BackgroundRenderer
 		static async Task<string> GetEsmPaths(Space space)
 		{
 			SqliteConnection connection = GetNewConnection();
-
-			// Always include the master ESM
-			List<string> esmNames = new List<string> { await CommonDatabase.GetESMName(connection, 0x0) };
-
-			if (GetEsmNumber(space.FormID) != 0x0)
-			{
-				esmNames.Add(await CommonDatabase.GetESMName(connection, space.FormID));
-			}
-
+			List<string> esmNames = await CommonDatabase.GetEsmNameWithMasters(connection, GetEsmNumber(space.FormID));
 			return string.Join(",", esmNames.Select(n => $"\"{GameDataPath}{n}\""));
 		}
 

@@ -109,7 +109,7 @@ namespace Preprocessor
 			SimpleQuery($"CREATE TABLE Component(component TEXT PRIMARY KEY, singular INTEGER, rare INTEGER, medium INTEGER, low INTEGER, high INTEGER, bulk INTEGER);");
 			SimpleQuery($"CREATE TABLE LocationCell(locationFormID INTEGER, locationEditorId TEXT, locationDisplayName TEXT, spaceFormID TEXT, x INTEGER, y INTEGER);");
 			SimpleQuery($"CREATE TABLE Global(key TEXT PRIMARY KEY, value REAL);");
-			SimpleQuery($"CREATE TABLE ESM(number INTEGER PRIMARY KEY, name TEXT);");
+			SimpleQuery($"CREATE TABLE ESM(number INTEGER PRIMARY KEY, name TEXT, masterCount INTEGER);");
 
 			// Import to tables from xedit exports
 			ImportTableFromCSV("Entity");
@@ -429,7 +429,7 @@ namespace Preprocessor
 			AddToSummaryReport("Locations", SimpleQuery("SELECT locationFormID, locationEditorID, locationDisplayName, spaceEditorID FROM Location JOIN Space ON Space.spaceFormID = Location.spaceFormID ORDER BY locationEditorID;"));
 			AddToSummaryReport("Cell count by location", SimpleQuery("SELECT locationEditorID, spaceEditorID, count(*) AS count FROM Cell JOIN Location ON Location.locationFormID = Cell.locationFormID JOIN Space ON Space.spaceFormID = Cell.spaceFormID GROUP BY Location.locationFormID, Cell.spaceFormID ORDER BY Location.locationEditorID;"));
 			AddToSummaryReport("Globals", SimpleQuery("SELECT key, value FROM Global;"));
-			AddToSummaryReport("ESMs", SimpleQuery("SELECT number, name FROM ESM;"));
+			AddToSummaryReport("ESMs", SimpleQuery("SELECT number, name, masterCount FROM ESM;"));
 
 			List<string> spaceExterns = new List<string>();
 			List<string> spaceChecksums = new List<string>();
@@ -706,8 +706,8 @@ namespace Preprocessor
 
 			SimpleQuery("CREATE TABLE temp AS SELECT * FROM ESM;");
 			SimpleQuery("DROP TABLE ESM;");
-			SimpleQuery("CREATE TABLE ESM (number INTEGER NOT NULL UNIQUE PRIMARY KEY, name TEXT NOT NULL UNIQUE) STRICT;");
-			SimpleQuery("INSERT INTO ESM (number, name) SELECT number, name FROM temp;");
+			SimpleQuery("CREATE TABLE ESM (number INTEGER NOT NULL UNIQUE PRIMARY KEY, name TEXT NOT NULL UNIQUE, masterCount INTEGER NOT NULL) STRICT;");
+			SimpleQuery("INSERT INTO ESM (number, name, masterCount) SELECT number, name, masterCount FROM temp;");
 			SimpleQuery("DROP TABLE temp;");
 		}
 

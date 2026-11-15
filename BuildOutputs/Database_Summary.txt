@@ -1,11 +1,11 @@
 MD5 Checksum
-3912513136C902D2117F3A320EDBF353
+705A0E9E703C8BFD7EF26A3FA8A7FC60
 
 Size
 211024 KB
 
 Built At UTC
-13/11/2026 21:48:42
+15/11/2026 11:34:59
 
 CSV Imported with SQLite Version
 3.54.1 2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76 (64-bit)
@@ -1779,13 +1779,13 @@ YangtzeLocation,Commonwealth,1
 Globals
 
 ESMs
-0,Fallout4.esm
-1,DLCRobot.esm
-2,DLCworkshop01.esm
-3,DLCCoast.esm
-4,DLCworkshop02.esm
-5,DLCworkshop03.esm
-6,DLCNukaWorld.esm
+0,Fallout4.esm,0
+1,DLCRobot.esm,1
+2,DLCworkshop01.esm,1
+3,DLCCoast.esm,1
+4,DLCworkshop02.esm,1
+5,DLCworkshop03.esm,1
+6,DLCNukaWorld.esm,1
 
 Entities outside of space range
 Commonwealth:1715
