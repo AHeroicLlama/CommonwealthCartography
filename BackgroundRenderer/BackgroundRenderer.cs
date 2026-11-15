@@ -3,6 +3,7 @@ using Library;
 using Microsoft.Data.Sqlite;
 using static Library.BuildTools;
 using static Library.Common;
+using static Library.CommonDatabase;
 
 namespace BackgroundRenderer
 {
@@ -330,46 +331,6 @@ namespace BackgroundRenderer
 				tiles = tiles.Where(t => t.HasEntities().Result).ToList();
 			}
 
-			if (space.IsWorldspace)
-			{
-				StdOutWithColor($"Depending on your hardware, Spotlight rendering an entire worldspace ({space.EditorID}) may take a few hours. Would you like to:\n1:Render the whole space\n2:Render only missing tiles\n3:Define a target area to render", ColorQuestion);
-
-				switch (Console.ReadKey().KeyChar)
-				{
-					case '1':
-						break;
-
-					case '2':
-						tiles = tiles.Where(t => !File.Exists(t.GetFilePath())).ToList();
-						break;
-
-					case '3':
-						StdOutWithColor("\nEnter 3 values: X and Y coordinate of the center tile, and the radius of tiles around it.", ColorQuestion);
-
-						StdOutWithColor("Center X:", ColorQuestion);
-						int xCenter = int.Parse(Console.ReadLine() ?? "0");
-
-						StdOutWithColor("Center Y:", ColorQuestion);
-						int yCenter = int.Parse(Console.ReadLine() ?? "0");
-
-						StdOutWithColor("Radius (tiles):", ColorQuestion);
-						int radius = int.Parse(Console.ReadLine() ?? "0");
-
-						tiles = tiles.Where(t =>
-							Math.Abs(t.XId - xCenter) <= radius &&
-							Math.Abs(t.YId - yCenter) <= radius)
-							.ToList();
-
-						break;
-
-					default:
-						StdOutWithColor("Unrecognized input. Skipping this operation. Please try again.", ColorError);
-						return;
-				}
-
-				Console.WriteLine();
-			}
-
 			StdOutWithColor($"Spotlight Rendering {tiles.Count} tile{Pluralize(tiles)} of {space.EditorID}", ColorInfo);
 
 			Stopwatch stopwatch = Stopwatch.StartNew();
@@ -436,7 +397,7 @@ namespace BackgroundRenderer
 			string countQuery = $"SELECT count(*) as count FROM Position WHERE SpaceFormID = {tile.Space.FormID} AND " +
 				$"x >= {tile.XCenter - TileRadius} AND x <= {tile.XCenter + TileRadius} AND y >= {tile.YCenter - TileRadius} AND y <= {tile.YCenter + TileRadius}";
 
-			SqliteDataReader reader = await CommonDatabase.GetReader(GetNewConnection(), countQuery);
+			SqliteDataReader reader = await GetReader(GetNewConnection(), countQuery);
 			reader.Read();
 
 			return Convert.ToInt32(reader["count"]) > 0;
@@ -500,19 +461,19 @@ namespace BackgroundRenderer
 			if (input.EqualsIgnoreCase("cell") || input.EqualsIgnoreCase("world"))
 			{
 				int worldspaceFlag = input.EqualsIgnoreCase("world") ? 1 : 0;
-				return await CommonDatabase.GetSpaces(GetNewConnection(), $"SELECT * FROM Space WHERE isWorldSpace == {worldspaceFlag} ORDER BY spaceEditorID ASC;");
+				return await GetSpaces(GetNewConnection(), $"SELECT * FROM Space WHERE isWorldSpace == {worldspaceFlag} ORDER BY spaceEditorID ASC;");
 			}
 
 			if (input.IsNullOrWhiteSpace())
 			{
-				return await CommonDatabase.GetAllSpaces(GetNewConnection());
+				return await GetAllSpaces(GetNewConnection());
 			}
 
 			List<string> requestedIDs = input.Split(" ").Where(space => !space.IsNullOrWhiteSpace()).ToList();
 
 			// Select spaces unconditionally if none provided, otherwise select only the list of provided spaces
 			string query = $"SELECT * FROM Space WHERE spaceEditorID IN {requestedIDs.ToSqliteCollection()} ORDER BY isWorldspace DESC, spaceEditorID ASC;";
-			List<Space> spaces = await CommonDatabase.GetSpaces(GetNewConnection(), query);
+			List<Space> spaces = await GetSpaces(GetNewConnection(), query);
 
 			// If we specified cells, ensure we found them all in the DB before proceeding
 			if (spaces.Count != requestedIDs.Count)
@@ -531,7 +492,7 @@ namespace BackgroundRenderer
 				StdOutWithColor("\nEnter the EditorID of the space:", ColorQuestion);
 				string input = Console.ReadLine() ?? string.Empty;
 
-				Space? space = await CommonDatabase.GetSpaceByEditorID(GetNewConnection(), input);
+				Space? space = await GetSpaceByEditorID(GetNewConnection(), input);
 
 				if (space is null)
 				{

@@ -39,7 +39,7 @@ namespace Library
 		{
 			using SqliteDataReader reader = await GetReader(connection, "SELECT value FROM Meta WHERE Key = 'GameVersion';");
 			reader.Read();
-			return reader.GetString(0);
+			return reader.GetString("value");
 		}
 
 		// Returns the results of the given query as a collection of MapMarker
