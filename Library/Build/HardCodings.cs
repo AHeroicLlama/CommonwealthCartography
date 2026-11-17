@@ -12,6 +12,8 @@ namespace Library
 	{
 		static string FissureSiteLabel { get; } = "Fissure Site";
 
+		public static string NoWaterEspPath { get; } = "mappalachia_noWater.esp";
+
 		public static string DefaultTextureFormID { get; } = "0x000AB07E";
 
 		public static Regex SpaceFormIDRegex { get; } = new Regex(@"\[(WRLD|CELL):([0-9A-F]{8})\]");
@@ -176,6 +178,8 @@ namespace Library
 			"spaceEditorID = 'PrewarTVStudio' OR " +
 			"spaceEditorID = 'REObject02Interior' OR " +
 			"spaceEditorID = 'aaaMarkers' OR " +
+			"spaceEditorID = 'ThicketExcavations01' OR " +
+			"spaceEditorID = 'Vault111Start' OR " +
 			"spaceEditorID = 'ccTOSFO4001'";
 
 		// Operates against already-finalized labels

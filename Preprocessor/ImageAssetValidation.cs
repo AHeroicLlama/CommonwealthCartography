@@ -10,7 +10,7 @@ namespace Preprocessor
 {
 	internal partial class Preprocessor
 	{
-		static uint MinRenderedCellImageSizeKB { get; } = 500;
+		static uint MinRenderedCellImageSizeKB { get; } = 200;
 
 		static uint MaxRenderedCellImageSizeKB { get; } = 6500;
 
@@ -26,7 +26,7 @@ namespace Preprocessor
 
 		static uint MaxMapMarkerImageSizeBytes { get; } = 16000;
 
-		static float MaxBlackPixelsBackgroundPerc { get; } = 90f;
+		static float MaxBlackPixelsBackgroundPerc { get; } = 93f;
 
 		static async Task ValidateImageAssets()
 		{

@@ -604,6 +604,7 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 2075403,,,0,0
 2075404,,,0,0
 2087384,,,0,0
+210664,ThicketExcavations01,Thicket Excavations,0,0
 2112279,,,0,0
 2112281,,,0,0
 2112282,,,0,0
@@ -934,6 +935,7 @@ spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable
 583573,PackInOilLampOnPackInStorageCell,,0,0
 584706,PackInCeilingLightHangingCageStorageCell,,0,0
 584707,PackInCeilingLightHangingStorageCell,,0,0
+5849,Vault111Start,Vault 111 Main Entrance,0,0
 587164,PackInCeilingLightHangingCageShortStorageCell,,0,0
 587165,PackInCeilingLightHangingShortStorageCell,,0,0
 587166,PackInSpotlight_45_OnStorageCell,,0,0
