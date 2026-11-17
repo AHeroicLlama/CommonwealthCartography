@@ -334,7 +334,7 @@ namespace Library
 			{
 				case "COMMONWEALTH":
 					List<Region> borderRegions = new List<Region>();
-					borderRegions.AddRange(await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'Border'"));
+					borderRegions.AddRange(await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"%Border%"));
 					return borderRegions;
 
 				default:
