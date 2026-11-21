@@ -339,9 +339,11 @@ namespace Library
 			switch (space.EditorID.ToUpper())
 			{
 				case "COMMONWEALTH":
-					List<Region> borderRegions = new List<Region>();
-					borderRegions.AddRange(await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"%Border%"));
-					return borderRegions;
+				case "NUKAWORLD":
+					return await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"%Border%");
+
+				case "DLC03FARHARBOR":
+					return await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"DLC03BorderRegion");
 
 				default:
 					return new List<Region>();
