@@ -46,12 +46,6 @@ namespace Library
 			return EditorID.EqualsIgnoreCase("APPALACHIA");
 		}
 
-		// Return if this Space can be targeted (or otherwise somehow affected) by a nuke
-		public bool IsNukable()
-		{
-			return IsAppalachia();
-		}
-
 		// Return the spotlight tiles for the space
 		public List<SpotlightTile> GetTiles()
 		{
