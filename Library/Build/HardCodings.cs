@@ -77,7 +77,7 @@ namespace Library
 
 		public static Dictionary<string, string> MarkerLabelCorrection { get; } = new Dictionary<string, string>()
 		{
-			//{ "Abraxodyne Storage Depot", "Meadow Breeze Storage Depot" },
+			{ "O�Neill Family Manufacturing", "O'Neill Family Manufacturing" },
 			//{ "Animal Cave", "Hopewell Cave" },
 			//{ "Bleeding Kate's Grinder", "Bleeding Kate's Grindhouse" },
 			//{ "Building Summersville Dam", "Summersville Dam" },
@@ -340,10 +340,10 @@ namespace Library
 			{
 				case "COMMONWEALTH":
 				case "NUKAWORLD":
-					return await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"%Border%");
+					return await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'%Border%'");
 
 				case "DLC03FARHARBOR":
-					return await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"DLC03BorderRegion");
+					return await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'DLC03BorderRegion'");
 
 				default:
 					return new List<Region>();
