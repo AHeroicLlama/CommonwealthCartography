@@ -470,11 +470,11 @@ namespace Mappalachia
 			}
 
 			// Disable some now unavailable settings, for clarity
-			backgroundNormalToolStripMenuItem.Enabled = Settings.Space.IsWorldspace;
+			backgroundNormalToolStripMenuItem.Enabled = Settings.Space.IsPrimaryWorldspace;
 			backgroundMilitaryToolStripMenuItem.Enabled = Settings.Space.IsAppalachia();
 
-			highlightWaterToolStripMenuItem.Enabled = Settings.Space.IsWorldspace;
-			mapMapMarkersToolStripMenuItem.Enabled = Settings.Space.IsWorldspace;
+			highlightWaterToolStripMenuItem.Enabled = Settings.Space.IsPrimaryWorldspace;
+			mapMapMarkersToolStripMenuItem.Enabled = Settings.Space.IsPrimaryWorldspace;
 
 			UpdateDataGridAppearances();
 

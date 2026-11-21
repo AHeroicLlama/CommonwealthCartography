@@ -44,6 +44,12 @@ namespace Library
 
 		public static string MapMarkerIconInitialFileName { get; } = "1.svg"; // Frame 1
 
+		// Defines if the worldspace should have a menu background image, and a watermask
+		public static List<string> PrimaryWorldspaceEditorIds { get; } = new List<string>()
+		{
+			"Commonwealth", "DLC03FarHarbor", "NukaWorld",
+		};
+
 		public static readonly Dictionary<string, string> MarkerIconCorrection = new Dictionary<string, string>()
 		{
 			{ "GovtBuildingMonumentMarker", "MonumentMarker" },
