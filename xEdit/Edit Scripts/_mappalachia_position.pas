@@ -163,6 +163,8 @@ unit _mappalachia_position;
 				end;
 			end;
 
+			if(GetEditValue(ElementBySignature(item, 'XLYR')) = 'ZMarkersLayer [LAYR:001C26C3]') then exit;
+
 			outputStrings.Add(
 				spaceFormID + ',' +
 				sanitize(displayName) + ',' +

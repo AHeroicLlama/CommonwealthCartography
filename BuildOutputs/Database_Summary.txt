@@ -1,11 +1,11 @@
 MD5 Checksum
-0FA2F156782A5588D88D47984183C26A
+A9C85EFB2F7F22EB14DC3E1F76AF0F6C
 
 Size
-211012 KB
+211008 KB
 
 Built At UTC
-21/11/2026 14:31:54
+21/11/2026 23:07:31
 
 CSV Imported with SQLite Version
 3.54.1 2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76 (64-bit)
@@ -488,14 +488,13 @@ Steel,1.8620689655172413
 Wood,2.5
 
 Avg Map Marker X/Y
--441.41566515083775,-2727.3665962678842
+-1853.6123749034318,-1169.706052307299
 
 Map Markers
 Commonwealth,AirfieldMarker,Boston Airport
 Commonwealth,AirfieldMarker,Skylanes Flight 1665
 Commonwealth,AirfieldMarker,Skylanes Flight 1981
 Commonwealth,AirfieldMarker,Vertibird Wreckage
-Commonwealth,BrownstoneMarker,Back Street Apparel
 Commonwealth,BunkerHillMarker,Bunker Hill
 Commonwealth,BunkerMarker,Boston Mayoral Shelter
 Commonwealth,BunkerMarker,Federal Ration Stockpile
@@ -505,15 +504,12 @@ Commonwealth,BunkerMarker,Listening Post Bravo
 Commonwealth,BunkerMarker,Recon Bunker Theta
 Commonwealth,CamperMarker,Fiddler's Green Trailer Estates
 Commonwealth,CamperMarker,Rocky Narrows Park
-Commonwealth,CarMarker,Freeway Pileup
 Commonwealth,CarMarker,Tucker Memorial Bridge
 Commonwealth,CastleMarker,The Castle
 Commonwealth,CaveMarker,Cave
 Commonwealth,CaveMarker,Cave
 Commonwealth,CaveMarker,Rocky Cave
-Commonwealth,ChurchMarker,Cambridge Church
 Commonwealth,ChurchMarker,Forgotten Church
-Commonwealth,ChurchMarker,Holy Mission Congregation
 Commonwealth,ChurchMarker,Hopesmarch Pentecostal Church
 Commonwealth,ChurchMarker,Lonely Chapel
 Commonwealth,ChurchMarker,Nahant Chapel
@@ -527,21 +523,18 @@ Commonwealth,CityMarker,Parkview Apartments
 Commonwealth,CustomHouseMarker,Custom House Tower
 Commonwealth,DriveInMarker,Starlight Drive In
 Commonwealth,ElevatedHighwayMarker,Fallen Skybridge
-Commonwealth,ElevatedHighwayMarker,Footbridge Camp
 Commonwealth,ElevatedHighwayMarker,Mass Pike Interchange
 Commonwealth,EncampmentMarker,Abandoned Shack
-Commonwealth,EncampmentMarker,Back Alley Camp
 Commonwealth,EncampmentMarker,Boston Airport Ruins
 Commonwealth,EncampmentMarker,Charles View Amphitheater
 Commonwealth,EncampmentMarker,Easy City Downs
 Commonwealth,EncampmentMarker,Gorski Cabin
 Commonwealth,EncampmentMarker,Peabody House
 Commonwealth,EncampmentMarker,Ranger Cabin
-Commonwealth,FactoryMarker,Cambridge Warehouse
 Commonwealth,FactoryMarker,Capsized Factory
 Commonwealth,FactoryMarker,Electrical Hobbyist's Club
 Commonwealth,FactoryMarker,Mass Fusion Containment Shed
-Commonwealth,FactoryMarker,O�Neill Family Manufacturing
+Commonwealth,FactoryMarker,O'Neill Family Manufacturing
 Commonwealth,FactoryMarker,Parsons Creamery
 Commonwealth,FactoryMarker,Wicked Shipping Fleet Lockup
 Commonwealth,FaneuilHallMarker,Faneuil Hall
@@ -560,10 +553,7 @@ Commonwealth,FarmMarker,Warwick Homestead
 Commonwealth,FillingStationMarker,Fort Hagen Filling Station
 Commonwealth,FillingStationMarker,Red Rocket Truck Stop
 Commonwealth,ForestedMarker,Robotics Pioneer Park
-Commonwealth,GraveyardMarker,Cambridge Graveyard
-Commonwealth,GraveyardMarker,North End Graveyard
 Commonwealth,GraveyardMarker,Old Granary Burying Ground
-Commonwealth,GraveyardMarker,South Boston Graveyard
 Commonwealth,GraveyardMarker,Wildwood Cemetery
 Commonwealth,HospitalMarker,Greater Mass Blood Clinic
 Commonwealth,HospitalMarker,Kendall Hospital
@@ -580,7 +570,6 @@ Commonwealth,IndustrialStacksMarker,ArcJet Systems
 Commonwealth,IndustrialStacksMarker,Cambridge Polymer Labs
 Commonwealth,IndustrialStacksMarker,Corvega Assembly Plant
 Commonwealth,IndustrialStacksMarker,Decrepit Factory
-Commonwealth,IndustrialStacksMarker,Factory
 Commonwealth,IndustrialStacksMarker,General Atomics Factory
 Commonwealth,IndustrialStacksMarker,Gwinnett Brewery
 Commonwealth,IndustrialStacksMarker,Longneck Lukowski's Cannery
@@ -591,7 +580,6 @@ Commonwealth,IndustrialStacksMarker,Poseidon Reservoir
 Commonwealth,IndustrialStacksMarker,Saugus Ironworks
 Commonwealth,IndustrialStacksMarker,Wilson Atomatoys Factory
 Commonwealth,InstituteMarker,The Institute
-Commonwealth,IrishPrideMarker,Boxing Gym
 Commonwealth,IrishPrideMarker,Four Leaf Fishpacking Plant
 Commonwealth,IrishPrideMarker,Irish Pride Industries Shipyard
 Commonwealth,JunkyardMarker,Atom Cats Garage
@@ -602,10 +590,7 @@ Commonwealth,JunkyardMarker,Robotics Disposal Ground
 Commonwealth,JunkyardMarker,Rotten Landfill
 Commonwealth,JunkyardMarker,Scrap Palace
 Commonwealth,LandmarkMarker,Boston Common
-Commonwealth,LandmarkMarker,Cambridge Baseball Diamond
-Commonwealth,LandmarkMarker,Christopher Columbus Park
 Commonwealth,LandmarkMarker,Edge of the Glowing Sea
-Commonwealth,LandmarkMarker,Lil' Gentry Playground
 Commonwealth,LandmarkMarker,Spectacle Island
 Commonwealth,LibertaliaMarker,Liberitalia
 Commonwealth,LowRiseMarker,BADTFL Regional Office
@@ -620,8 +605,6 @@ Commonwealth,MetroMarker,Malden Center
 Commonwealth,MetroMarker,Medical Center Metro
 Commonwealth,MetroMarker,Park Street Station
 Commonwealth,MetroMarker,Revere Beach Station
-Commonwealth,MetroMarker,Subway Station
-Commonwealth,MetroMarker,Valenti Station
 Commonwealth,MetroMarker,West Roxbury Station
 Commonwealth,MilitaryBaseMarker,Coast Guard Pier
 Commonwealth,MilitaryBaseMarker,Fort Hagen
@@ -631,13 +614,10 @@ Commonwealth,MilitaryBaseMarker,S. Boston Military Checkpoint
 Commonwealth,MilitaryBaseMarker,Waypoint Echo
 Commonwealth,MonorailMarker,Nuka-World Transit Center
 Commonwealth,MonumentMarker,Boston Public Library
-Commonwealth,MonumentMarker,Dorchester Heights Monument
 Commonwealth,MonumentMarker,Fraternal Post 115
 Commonwealth,MonumentMarker,Massachusetts State House
 Commonwealth,MonumentMarker,Museum of Freedom
-Commonwealth,OfficeMarker,Apartment
 Commonwealth,OfficeMarker,Boylston Club
-Commonwealth,OfficeMarker,Bridgeway Trust
 Commonwealth,OfficeMarker,C.I.T. Ruins
 Commonwealth,OfficeMarker,Cabot House
 Commonwealth,OfficeMarker,Cambridge Campus Diner
@@ -646,8 +626,6 @@ Commonwealth,OfficeMarker,General Atomics Galleria
 Commonwealth,OfficeMarker,HalluciGen, Inc.
 Commonwealth,OfficeMarker,Hesters Consumer Robotics
 Commonwealth,OfficeMarker,Hubris Comics
-Commonwealth,OfficeMarker,L Street Bathhouse
-Commonwealth,OfficeMarker,Marlborough House
 Commonwealth,OfficeMarker,Mean Pastries
 Commonwealth,OfficeMarker,Old Corner Bookstore
 Commonwealth,OfficeMarker,Pickman Gallery
@@ -665,12 +643,10 @@ Commonwealth,PierMarker,Long Wharf
 Commonwealth,PierMarker,Nahant Oceanological Society
 Commonwealth,PierMarker,Nahant Wharf
 Commonwealth,PierMarker,Reeb Marina
-Commonwealth,PierMarker,Science Center Gift Shop
 Commonwealth,PoliceStationMarker,Cambridge Police Station
 Commonwealth,PoliceStationMarker,East Boston Police Station
 Commonwealth,PoliceStationMarker,Nahant Sherrif's Department
 Commonwealth,PoliceStationMarker,Natick Police Department
-Commonwealth,PoliceStationMarker,Police Precinct 8
 Commonwealth,PoliceStationMarker,Quincy Police Station
 Commonwealth,PoliceStationMarker,South Boston Police Department
 Commonwealth,PondLakeMarker,Chestnut Hillock Reservoir
@@ -718,7 +694,6 @@ Commonwealth,SchoolMarker,South Boston High School
 Commonwealth,SchoolMarker,Suffolk County Charter School
 Commonwealth,SchoolMarker,University Point
 Commonwealth,SentinelMarker,Sentinel Site
-Commonwealth,SettlementMarker,Cambridge Raider Base
 Commonwealth,SettlementMarker,Combat Zone
 Commonwealth,SettlementMarker,Covenant
 Commonwealth,SettlementMarker,Lynn Woods
@@ -732,28 +707,19 @@ Commonwealth,SewerMarker,Fens Street Sewer
 Commonwealth,ShipwreckMarker,Cutler Bend
 Commonwealth,ShipwreckMarker,Wreck of the FMS Northern Star
 Commonwealth,ShipwreckMarker,Wreck of the USS Riptide
-Commonwealth,SkyscraperMarker,35 Court
 Commonwealth,SkyscraperMarker,Atlantic Offices
 Commonwealth,SkyscraperMarker,Boston Bugle Building
-Commonwealth,SkyscraperMarker,Cambridge Construction Site
 Commonwealth,SkyscraperMarker,Collegiate Administration Building
-Commonwealth,SkyscraperMarker,Commonwealth Bank
 Commonwealth,SkyscraperMarker,Dartmouth Professional Building
 Commonwealth,SkyscraperMarker,Garden Terrace
 Commonwealth,SkyscraperMarker,Greenetech Genetics
-Commonwealth,SkyscraperMarker,Hub 360
 Commonwealth,SkyscraperMarker,Mass Fusion Building
 Commonwealth,SkyscraperMarker,Mass Fusion Executive Suite
-Commonwealth,SkyscraperMarker,Oakwood Residences
-Commonwealth,SkyscraperMarker,South Fens Tower
 Commonwealth,SkyscraperMarker,Ticonderoga
 Commonwealth,SkyscraperMarker,Trinity Tower
 Commonwealth,SkyscraperMarker,Vault-Tec Regional HQ
-Commonwealth,SkyscraperMarker,Weatherby Investment Trust
 Commonwealth,SubmarineMarker,Yangtze
 Commonwealth,SwanPondMarker,Swan's Pond
-Commonwealth,TownMarker,Hawthorne Estate
-Commonwealth,TownRuinsMarker,Cambridge Hardware Store
 Commonwealth,TownRuinsMarker,Coastal Cottage
 Commonwealth,TownRuinsMarker,Concord
 Commonwealth,TownRuinsMarker,Croup Manor
@@ -761,47 +727,25 @@ Commonwealth,TownRuinsMarker,Fairline Hill Estates
 Commonwealth,TownRuinsMarker,Forest Grove Marsh
 Commonwealth,TownRuinsMarker,Hardware Town
 Commonwealth,TownRuinsMarker,Hyde Park
-Commonwealth,TownRuinsMarker,Ivan's
 Commonwealth,TownRuinsMarker,Jamaica Plain
 Commonwealth,TownRuinsMarker,Mystic Pines
 Commonwealth,TownRuinsMarker,Natick Banks
 Commonwealth,TownRuinsMarker,Navy Yard
 Commonwealth,TownRuinsMarker,Nuka-World
-Commonwealth,TownRuinsMarker,Paul Revere House
 Commonwealth,TownRuinsMarker,Rook Family House
 Commonwealth,TownRuinsMarker,West Everett Estates
 Commonwealth,USSConstitutionMarker,USS Constitution
 Commonwealth,USSConstitutionMarker,USS Constitution
 Commonwealth,USSConstitutionMarker,USS Constitution
-Commonwealth,UrbanRuinsMarker,Brookline Building
-Commonwealth,UrbanRuinsMarker,Cambridge Academic Center
 Commonwealth,UrbanRuinsMarker,Cambridge Crater
-Commonwealth,UrbanRuinsMarker,Camp Kendall
 Commonwealth,UrbanRuinsMarker,Campus Law Offices
 Commonwealth,UrbanRuinsMarker,College Square
-Commonwealth,UrbanRuinsMarker,East C.I.T. Raider Camp
-Commonwealth,UrbanRuinsMarker,Evans Way Cul-de-Sac
-Commonwealth,UrbanRuinsMarker,Flagon Tunnel
-Commonwealth,UrbanRuinsMarker,Founder's Triangle
 Commonwealth,UrbanRuinsMarker,Hangman's Alley
 Commonwealth,UrbanRuinsMarker,Harbormaster Hotel
 Commonwealth,UrbanRuinsMarker,Haymarket Mall
-Commonwealth,UrbanRuinsMarker,Jimbo's Tower
-Commonwealth,UrbanRuinsMarker,Kendall Parking Garage
-Commonwealth,UrbanRuinsMarker,Major Crossroad
-Commonwealth,UrbanRuinsMarker,Pizza Parlour
 Commonwealth,UrbanRuinsMarker,Postal Square
-Commonwealth,UrbanRuinsMarker,Prost Bar
-Commonwealth,UrbanRuinsMarker,Raider Alleyway Outpost
-Commonwealth,UrbanRuinsMarker,Raider Drug Den
-Commonwealth,UrbanRuinsMarker,Shenley's Oyster Bar
 Commonwealth,UrbanRuinsMarker,Slocum's Joe Corporate HQ
 Commonwealth,UrbanRuinsMarker,Super Duper Mart
-Commonwealth,UrbanRuinsMarker,Ticker Tape Lounge
-Commonwealth,UrbanRuinsMarker,Tower Apartments
-Commonwealth,UrbanRuinsMarker,Union Man's Circle
-Commonwealth,UrbanRuinsMarker,Warren Theater
-Commonwealth,UrbanRuinsMarker,Water Street Apartments
 Commonwealth,UrbanRuinsMarker,Weatherby Savings & Loan
 Commonwealth,VaultMarker,Vault 111
 Commonwealth,VaultMarker,Vault 114
@@ -931,7 +875,7 @@ Avg contentFormID as Dec
 7078929.181937173
 
 Avg MapMarker spaceFormID as Dec
-16619470.737349398
+19211913.637883008
 
 Avg Psn spaceFormID as Dec
 21019636.817472428

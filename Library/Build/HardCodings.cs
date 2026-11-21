@@ -122,7 +122,7 @@ namespace Library
 
 		public static List<string> MapMarkersToRemove { get; } = new List<string>()
 		{
-			//"Fissure Site Delta",
+			"ERROR: <<NO REF LOCATION>>",
 			//"Fissure Site Theta",
 			//"Fissure Site Kappa",
 			//"Fissure Site Tau",
