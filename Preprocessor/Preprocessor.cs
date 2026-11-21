@@ -245,6 +245,10 @@ namespace Preprocessor
 				SimpleQuery($"UPDATE Space SET centerX = {centerX}, centerY = {centerY}, maxRange = {maxRange} WHERE spaceEditorID = '{Path.GetFileNameWithoutExtension(file)}';");
 			}
 
+			// Add PrimaryWorldspace flag column to Space
+			SimpleQuery("ALTER TABLE Space ADD COLUMN isPrimaryWorldspace INTEGER;");
+			TransformColumn(GetIsPrimaryWorldspace, "Space", "spaceEditorID", "isPrimaryWorldspace");
+
 			// For spaces which are sister spaces, we copy the scaling of the first onto the others
 			foreach (List<string> spaceCollection in SisterSpaces)
 			{
@@ -323,10 +327,6 @@ namespace Preprocessor
 			// Add NorthAngle column to Space
 			SimpleQuery("ALTER TABLE Space ADD COLUMN northAngle REAL;");
 			TransformColumn(GetNorthAngle, "Space", "spaceFormID", "northAngle");
-
-			// Add PrimaryWorldspace flag column to Space
-			SimpleQuery("ALTER TABLE Space ADD COLUMN isPrimaryWorldspace INTEGER;");
-			TransformColumn(GetIsPrimaryWorldspace, "Space", "spaceEditorID", "isPrimaryWorldspace");
 
 			// Null empty rows which are not TEXT
 			SimpleQuery("UPDATE Position SET teleportsToFormID = NULL WHERE teleportsToFormID = '';");
