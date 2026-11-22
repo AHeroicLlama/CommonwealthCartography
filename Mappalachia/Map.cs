@@ -67,6 +67,8 @@ namespace Mappalachia
 
 	public static class Map
 	{
+		public static Color MapMarkerColor { get; } = Color.FromArgb(220, 0, 255, 0);
+
 		public static int CompassSize { get; } = MapImageResolution / 8;
 
 		public static double IconScale { get; } = 1.5;
@@ -110,6 +112,8 @@ namespace Mappalachia
 		static Brush BrushGeneric { get; } = Brushes.White;
 
 		static Brush BrushGenericTransparent { get; } = new SolidBrush(Color.FromArgb(128, 255, 255, 255));
+
+		static Brush BrushMapMarker { get; } = new SolidBrush(MapMarkerColor);
 
 		static Brush CoordinateGridLabelBrush { get; } = new SolidBrush(Color.White);
 
@@ -1288,7 +1292,7 @@ namespace Mappalachia
 
 				if (settings.MapSettings.MapMarkerIcons)
 				{
-					Image image = marker.GetMapMarkerImage();
+					Image image = marker.GetMapMarkerImage(MapMarkerColor);
 
 					// Hidden option - convert a new copy to grayscale
 					if (settings.MapSettings.MapMarkerGrayscale)
@@ -1303,7 +1307,7 @@ namespace Mappalachia
 
 				if (settings.MapSettings.MapMarkerLabels)
 				{
-					graphics.DrawStringCentered(marker.Label, font, BrushGeneric, new PointF(coord.X, coord.Y + labelOffset), !settings.MapSettings.MapMarkerIcons);
+					graphics.DrawStringCentered(marker.Label, font, BrushMapMarker, new PointF(coord.X, coord.Y + labelOffset), !settings.MapSettings.MapMarkerIcons);
 				}
 			}
 		}

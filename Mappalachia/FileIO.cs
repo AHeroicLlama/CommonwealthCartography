@@ -233,7 +233,7 @@ namespace Mappalachia
 		}
 
 		// Returns the image for the icon of the mapMarker, uses caching
-		public static Image GetMapMarkerImage(this MapMarker mapMarker)
+		public static Image GetMapMarkerImage(this MapMarker mapMarker, Color? color = null)
 		{
 			string path = Paths.MapMarkersPath + mapMarker.Icon + MapMarkerImageFileType;
 
@@ -243,6 +243,11 @@ namespace Mappalachia
 			}
 
 			Image marker = LoadSVGIcon(path, Map.IconScale);
+
+			if (color.HasValue)
+			{
+				marker = marker.SetColor(color.Value);
+			}
 
 			MapMarkerIconImageCache[mapMarker.Icon] = marker;
 			return marker;
