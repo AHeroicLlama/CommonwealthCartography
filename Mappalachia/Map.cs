@@ -1240,11 +1240,6 @@ namespace Mappalachia
 
 			string text = $"{settings.Space.DisplayName} ({settings.Space.EditorID})";
 
-			if (settings.Space.IsInstanceable)
-			{
-				text += " (Instanced)";
-			}
-
 			if (settings.MapSettings.ShowCoordinateGrid)
 			{
 				int range, x, y;

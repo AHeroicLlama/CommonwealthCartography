@@ -10,27 +10,6 @@ namespace Mappalachia
 
 		public string SearchTerm { get; set; } = GetRandomSearchHint();
 
-		bool searchInstancesOnly = false;
-
-		public bool SearchInInstancesOnly
-		{
-			get
-			{
-				return searchInstancesOnly;
-			}
-
-			set
-			{
-				searchInstancesOnly = value;
-
-				// Search in instances only implies searching in all spaces
-				if (searchInstancesOnly)
-				{
-					SearchInAllSpaces = true;
-				}
-			}
-		}
-
 		public bool IncludeInitiallyDisabled { get; set; } = false;
 
 		public List<Signature> SelectedSignatures { get; set; } = Enum.GetValues<Signature>().ToList().Where(s => s.IsRecommendedSelection()).ToList();

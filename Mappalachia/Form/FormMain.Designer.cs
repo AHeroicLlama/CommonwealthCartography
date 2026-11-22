@@ -91,7 +91,6 @@ namespace Mappalachia
 			resetToolStripMenuItem = new ToolStripMenuItem();
 			searchSettingsToolStripMenuItem = new ToolStripMenuItem();
 			searchInAllSpacesToolStripMenuItem = new ToolStripMenuItem();
-			searchInInstancesOnlyToolStripMenuItem = new ToolStripMenuItem();
 			showInitiallyDisabledToolStripMenuItem = new ToolStripMenuItem();
 			advancedModeToolStripMenuItem = new ToolStripMenuItem();
 			plotSettingsMenuItem = new ToolStripMenuItem();
@@ -303,7 +302,7 @@ namespace Mappalachia
 			// coordinateGridEnabledToolStripMenuItem
 			// 
 			coordinateGridEnabledToolStripMenuItem.Name = "coordinateGridEnabledToolStripMenuItem";
-			coordinateGridEnabledToolStripMenuItem.Size = new Size(180, 22);
+			coordinateGridEnabledToolStripMenuItem.Size = new Size(122, 22);
 			coordinateGridEnabledToolStripMenuItem.Text = "Enabled";
 			coordinateGridEnabledToolStripMenuItem.ToolTipText = "Toggle showing the coordinate grid.";
 			coordinateGridEnabledToolStripMenuItem.Click += Map_CoordinateGrid_Enabled_Click;
@@ -312,7 +311,7 @@ namespace Mappalachia
 			// 
 			coordinateGridPrecisionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { coordinateGridPrecisionFineToolStripMenuItem, coordinateGridPrecisionMediumToolStripMenuItem, coordinateGridPrecisionLargeToolStripMenuItem });
 			coordinateGridPrecisionToolStripMenuItem.Name = "coordinateGridPrecisionToolStripMenuItem";
-			coordinateGridPrecisionToolStripMenuItem.Size = new Size(180, 22);
+			coordinateGridPrecisionToolStripMenuItem.Size = new Size(122, 22);
 			coordinateGridPrecisionToolStripMenuItem.Text = "Precision";
 			coordinateGridPrecisionToolStripMenuItem.ToolTipText = "Control the precision of the coordinate grid.";
 			// 
@@ -605,7 +604,7 @@ namespace Mappalachia
 			// 
 			// searchSettingsToolStripMenuItem
 			// 
-			searchSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { searchInAllSpacesToolStripMenuItem, searchInInstancesOnlyToolStripMenuItem, showInitiallyDisabledToolStripMenuItem, advancedModeToolStripMenuItem });
+			searchSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { searchInAllSpacesToolStripMenuItem, showInitiallyDisabledToolStripMenuItem, advancedModeToolStripMenuItem });
 			searchSettingsToolStripMenuItem.Name = "searchSettingsToolStripMenuItem";
 			searchSettingsToolStripMenuItem.Size = new Size(99, 20);
 			searchSettingsToolStripMenuItem.Text = "Search Settings";
@@ -613,23 +612,15 @@ namespace Mappalachia
 			// searchInAllSpacesToolStripMenuItem
 			// 
 			searchInAllSpacesToolStripMenuItem.Name = "searchInAllSpacesToolStripMenuItem";
-			searchInAllSpacesToolStripMenuItem.Size = new Size(200, 22);
+			searchInAllSpacesToolStripMenuItem.Size = new Size(192, 22);
 			searchInAllSpacesToolStripMenuItem.Text = "Search in all Spaces";
 			searchInAllSpacesToolStripMenuItem.ToolTipText = "Constrain the search to the selected Space only, or search all Spaces.";
 			searchInAllSpacesToolStripMenuItem.Click += Search_SearchInAllSpaces_Click;
 			// 
-			// searchInInstancesOnlyToolStripMenuItem
-			// 
-			searchInInstancesOnlyToolStripMenuItem.Name = "searchInInstancesOnlyToolStripMenuItem";
-			searchInInstancesOnlyToolStripMenuItem.Size = new Size(200, 22);
-			searchInInstancesOnlyToolStripMenuItem.Text = "Search in instances only";
-			searchInInstancesOnlyToolStripMenuItem.ToolTipText = "Only show results for spaces which are (or may be) instances.";
-			searchInInstancesOnlyToolStripMenuItem.Click += Search_SearchInInstancesOnly_click;
-			// 
 			// showInitiallyDisabledToolStripMenuItem
 			// 
 			showInitiallyDisabledToolStripMenuItem.Name = "showInitiallyDisabledToolStripMenuItem";
-			showInitiallyDisabledToolStripMenuItem.Size = new Size(200, 22);
+			showInitiallyDisabledToolStripMenuItem.Size = new Size(192, 22);
 			showInitiallyDisabledToolStripMenuItem.Text = "Show Initially Disabled";
 			showInitiallyDisabledToolStripMenuItem.ToolTipText = "Include search results which are disabled by default.";
 			showInitiallyDisabledToolStripMenuItem.Click += Search_IncludeInitiallyDisabled_click;
@@ -637,7 +628,7 @@ namespace Mappalachia
 			// advancedModeToolStripMenuItem
 			// 
 			advancedModeToolStripMenuItem.Name = "advancedModeToolStripMenuItem";
-			advancedModeToolStripMenuItem.Size = new Size(200, 22);
+			advancedModeToolStripMenuItem.Size = new Size(192, 22);
 			advancedModeToolStripMenuItem.Text = "Advanced Mode";
 			advancedModeToolStripMenuItem.ToolTipText = "Toggle displaying search results in technical formats, and enable searching by FormID.";
 			advancedModeToolStripMenuItem.Click += Search_AdvancedMode_Click;
@@ -1179,7 +1170,7 @@ namespace Mappalachia
 			Icon = (Icon)resources.GetObject("$this.Icon");
 			MainMenuStrip = menuStripMain;
 			Name = "FormMain";
-			Text = Common.ApplicationTitleName;
+			Text = "Commonwealth Cartography";
 			FormClosing += FormMain_FormClosing;
 			Shown += FormMain_Shown;
 			Click += Search_IncludeInitiallyDisabled_click;
@@ -1267,7 +1258,6 @@ namespace Mappalachia
 		private Label labelSearchResults;
 		private Label labelItemsToPlot;
 		private ToolStripMenuItem installSpotlightToolStripMenuItem;
-		private ToolStripMenuItem searchInInstancesOnlyToolStripMenuItem;
 		private ToolStripMenuItem fontSizesToolStripMenuItem;
 		private ToolStripMenuItem showCompassToolStripMenuItem;
 		private ToolStripMenuItem compassAlwaysToolStripMenuItem;

@@ -45,15 +45,6 @@ namespace Mappalachia
 			results.AddRange(await TeleportsToSearch(settings, searchTerm, allSpacesClause, searchForFormID));
 			results.AddRange(await InstanceSearch(searchTerm, searchForFormID));
 
-			// We use LINQ to filter out results here, to avoid joining on the Space table in each search function
-			if (settings.SearchSettings.SearchInInstancesOnly)
-			{
-				return results.Where(
-					r => r is SingularSearchResult ||
-					r.Space.IsInstanceable)
-					.ToList();
-			}
-
 			return results;
 		}
 

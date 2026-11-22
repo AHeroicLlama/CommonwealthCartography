@@ -270,7 +270,6 @@ namespace Mappalachia
 			mapMarkerIconsToolStripMenuItem.Checked = Settings.MapSettings.MapMarkerIcons;
 			mapMarkerLabelsToolStripMenuItem.Checked = Settings.MapSettings.MapMarkerLabels;
 			searchInAllSpacesToolStripMenuItem.Checked = Settings.SearchSettings.SearchInAllSpaces;
-			searchInInstancesOnlyToolStripMenuItem.Checked = Settings.SearchSettings.SearchInInstancesOnly;
 			showInitiallyDisabledToolStripMenuItem.Checked = Settings.SearchSettings.IncludeInitiallyDisabled;
 			advancedModeToolStripMenuItem.Checked = Settings.SearchSettings.Advanced;
 			drawInstanceFormIDToolStripMenuItem.Checked = Settings.PlotSettings.DrawInstanceFormID;
@@ -1255,11 +1254,6 @@ namespace Mappalachia
 		private async void Search_SearchInAllSpaces_Click(object sender, EventArgs e)
 		{
 			await SetSetting(() => Settings.SearchSettings.SearchInAllSpaces = !Settings.SearchSettings.SearchInAllSpaces, false, true);
-		}
-
-		private async void Search_SearchInInstancesOnly_click(object sender, EventArgs e)
-		{
-			await SetSetting(() => Settings.SearchSettings.SearchInInstancesOnly = !Settings.SearchSettings.SearchInInstancesOnly, false, true);
 		}
 
 		private async void Search_IncludeInitiallyDisabled_click(object sender, EventArgs e)
