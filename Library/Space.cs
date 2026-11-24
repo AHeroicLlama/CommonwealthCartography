@@ -41,11 +41,6 @@ namespace Library
 		[JsonIgnore]
 		public string FriendlyName => $"{DisplayName} ({EditorID})";
 
-		public bool IsAppalachia()
-		{
-			return EditorID.EqualsIgnoreCase("APPALACHIA");
-		}
-
 		// Return the spotlight tiles for the space
 		public List<SpotlightTile> GetTiles()
 		{

@@ -33,8 +33,6 @@ namespace Library
 
 		public static string BackgroundMenuAddendum { get; } = "_menu";
 
-		public static string BackgroundMilitaryAddendum { get; } = "_military";
-
 		public static int MapImageResolution { get; } = 4096;
 
 		public static int SpotlightMaxSize { get; } = 16; // The maximum user-selectable spotlight size, in tiles.

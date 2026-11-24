@@ -43,7 +43,6 @@ namespace Mappalachia
 			backgroundImageMenuItem = new ToolStripMenuItem();
 			backgroundNormalToolStripMenuItem = new ToolStripMenuItem();
 			backgroundSatelliteToolStripMenuItem = new ToolStripMenuItem();
-			backgroundMilitaryToolStripMenuItem = new ToolStripMenuItem();
 			backgroundNoneToolStripMenuItem = new ToolStripMenuItem();
 			grayscaleToolStripMenuItem = new ToolStripMenuItem();
 			backgroundBrightnessToolStripMenuItem = new ToolStripMenuItem();
@@ -228,7 +227,7 @@ namespace Mappalachia
 			// 
 			// backgroundImageMenuItem
 			// 
-			backgroundImageMenuItem.DropDownItems.AddRange(new ToolStripItem[] { backgroundNormalToolStripMenuItem, backgroundSatelliteToolStripMenuItem, backgroundMilitaryToolStripMenuItem, backgroundNoneToolStripMenuItem });
+			backgroundImageMenuItem.DropDownItems.AddRange(new ToolStripItem[] { backgroundNormalToolStripMenuItem, backgroundSatelliteToolStripMenuItem, backgroundNoneToolStripMenuItem });
 			backgroundImageMenuItem.Name = "backgroundImageMenuItem";
 			backgroundImageMenuItem.Size = new Size(240, 22);
 			backgroundImageMenuItem.Text = "Background Image";
@@ -236,7 +235,7 @@ namespace Mappalachia
 			// backgroundNormalToolStripMenuItem
 			// 
 			backgroundNormalToolStripMenuItem.Name = "backgroundNormalToolStripMenuItem";
-			backgroundNormalToolStripMenuItem.Size = new Size(115, 22);
+			backgroundNormalToolStripMenuItem.Size = new Size(180, 22);
 			backgroundNormalToolStripMenuItem.Text = "Normal";
 			backgroundNormalToolStripMenuItem.ToolTipText = "Set the background image to the typical pause menu map.";
 			backgroundNormalToolStripMenuItem.Click += Map_Background_Normal_Click;
@@ -244,23 +243,15 @@ namespace Mappalachia
 			// backgroundSatelliteToolStripMenuItem
 			// 
 			backgroundSatelliteToolStripMenuItem.Name = "backgroundSatelliteToolStripMenuItem";
-			backgroundSatelliteToolStripMenuItem.Size = new Size(115, 22);
+			backgroundSatelliteToolStripMenuItem.Size = new Size(180, 22);
 			backgroundSatelliteToolStripMenuItem.Text = "Satellite";
 			backgroundSatelliteToolStripMenuItem.ToolTipText = "Set the background image to a top-down render of the in-game world.";
 			backgroundSatelliteToolStripMenuItem.Click += Map_Background_Satellite_Click;
 			// 
-			// backgroundMilitaryToolStripMenuItem
-			// 
-			backgroundMilitaryToolStripMenuItem.Name = "backgroundMilitaryToolStripMenuItem";
-			backgroundMilitaryToolStripMenuItem.Size = new Size(115, 22);
-			backgroundMilitaryToolStripMenuItem.Text = "Military";
-			backgroundMilitaryToolStripMenuItem.ToolTipText = "Set the background image to the military-style topographic map found in train stations.";
-			backgroundMilitaryToolStripMenuItem.Click += Map_Background_Military_Click;
-			// 
 			// backgroundNoneToolStripMenuItem
 			// 
 			backgroundNoneToolStripMenuItem.Name = "backgroundNoneToolStripMenuItem";
-			backgroundNoneToolStripMenuItem.Size = new Size(115, 22);
+			backgroundNoneToolStripMenuItem.Size = new Size(180, 22);
 			backgroundNoneToolStripMenuItem.Text = "None";
 			backgroundNoneToolStripMenuItem.ToolTipText = "Disable the background map image.";
 			backgroundNoneToolStripMenuItem.Click += Map_Background_None_Click;
@@ -1210,7 +1201,6 @@ namespace Mappalachia
 		private ToolStripMenuItem backgroundImageMenuItem;
 		private ToolStripMenuItem backgroundNormalToolStripMenuItem;
 		private ToolStripMenuItem backgroundSatelliteToolStripMenuItem;
-		private ToolStripMenuItem backgroundMilitaryToolStripMenuItem;
 		private ToolStripMenuItem backgroundNoneToolStripMenuItem;
 		private ToolStripMenuItem legendToolStripMenuItem;
 		private ToolStripMenuItem legendHorizontalToolStripMenuItem;

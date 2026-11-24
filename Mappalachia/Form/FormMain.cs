@@ -302,9 +302,6 @@ namespace Mappalachia
 				case BackgroundImageType.Render:
 					backgroundSatelliteToolStripMenuItem.Checked = true;
 					break;
-				case BackgroundImageType.Military:
-					backgroundMilitaryToolStripMenuItem.Checked = true;
-					break;
 				case BackgroundImageType.None:
 					backgroundNoneToolStripMenuItem.Checked = true;
 					break;
@@ -470,7 +467,6 @@ namespace Mappalachia
 
 			// Disable some now unavailable settings, for clarity
 			backgroundNormalToolStripMenuItem.Enabled = Settings.Space.IsPrimaryWorldspace;
-			backgroundMilitaryToolStripMenuItem.Enabled = Settings.Space.IsAppalachia();
 
 			highlightWaterToolStripMenuItem.Enabled = Settings.Space.IsPrimaryWorldspace;
 			mapMapMarkersToolStripMenuItem.Enabled = Settings.Space.IsPrimaryWorldspace;
@@ -977,11 +973,6 @@ namespace Mappalachia
 		private async void Map_Background_Satellite_Click(object sender, EventArgs e)
 		{
 			await SetSetting(() => Settings.MapSettings.BackgroundImage = BackgroundImageType.Render);
-		}
-
-		private async void Map_Background_Military_Click(object sender, EventArgs e)
-		{
-			await SetSetting(() => Settings.MapSettings.BackgroundImage = BackgroundImageType.Military);
 		}
 
 		private async void Map_Background_None_Click(object sender, EventArgs e)

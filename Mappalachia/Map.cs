@@ -11,7 +11,6 @@ namespace Mappalachia
 	{
 		Render,
 		Menu,
-		Military,
 		None,
 	}
 

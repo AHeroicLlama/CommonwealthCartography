@@ -198,9 +198,6 @@ namespace Mappalachia
 				case BackgroundImageType.Menu:
 					path += BackgroundMenuAddendum;
 					break;
-				case BackgroundImageType.Military:
-					path += BackgroundMilitaryAddendum;
-					break;
 				default:
 					throw new Exception("Unexpected BackgroundImageType: " + backgroundImageType);
 			}
