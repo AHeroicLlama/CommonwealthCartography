@@ -1,21 +1,21 @@
 MD5 Checksum
-BE885198AC97BFCF398202BCBA029E38
+E479A21DB6DE13FC20A268CF3851E9AB
 
 Size
-211008 KB
+210984 KB
 
 Built At UTC
-22/11/2026 16:20:09
+26/11/2026 18:18:43
 
 CSV Imported with SQLite Version
 3.54.1 2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76 (64-bit)
 
 Tables
-Cell          Container     Entity     Location      Meta         Position_PreGrouped     RegionPoints     Space
-Component     ESM           Global     MapMarker     Position     Region                  Scrap
+Cell          ESM        Global       MapMarker     Position                Region           Scrap
+Container     Entity     Location     Meta          Position_PreGrouped     RegionPoints     Space
 
 Indices
-indexComponent     indexCount     indexGeneral     indexReference     indexSpaceTeleportsTo     indexTeleportsTo
+indexCount     indexGeneral     indexReference     indexSpaceTeleportsTo     indexTeleportsTo
 
 Game Version
 1.11.240.0
@@ -488,7 +488,7 @@ Steel,1.8620689655172413
 Wood,2.5
 
 Avg Map Marker X/Y
--1853.6123749034318,-1169.706052307299
+-1760.3766552802572,-1117.4650077606714
 
 Map Markers
 Commonwealth,AirfieldMarker,Boston Airport
@@ -819,7 +819,6 @@ NukaWorld,FactoryMarker,Nuka-Cola Bottling Plant
 NukaWorld,FillingStationMarker,Nuka-World Red Rocket
 NukaWorld,GalacticMarker,Galactic Zone
 NukaWorld,IndustrialDomeMarker,Nuka-World Power Plant
-NukaWorld,JunkyardMarker,ERROR: <<NO REF LOCATION>>
 NukaWorld,MonorailMarker,Nuka-Station
 NukaWorld,MonumentMarker,Wixon's Shovel Museum
 NukaWorld,MonumentMarker,World of Refreshment
@@ -875,7 +874,7 @@ Avg contentFormID as Dec
 7078929.181937173
 
 Avg MapMarker spaceFormID as Dec
-19211913.637883008
+18984366.44972067
 
 Avg Psn spaceFormID as Dec
 21019636.817472428

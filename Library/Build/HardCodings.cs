@@ -1,5 +1,4 @@
 using System.Text.RegularExpressions;
-using System.Xml;
 using static Library.Common;
 
 namespace Library
@@ -10,8 +9,6 @@ namespace Library
 	// Notably Map Markers are the main offenders of this
 	public static partial class BuildTools
 	{
-		static string FissureSiteLabel { get; } = "Fissure Site";
-
 		public static string NoWaterEspPath { get; } = "mappalachia_noWater.esp";
 
 		public static string DefaultTextureFormID { get; } = "0x000AB07E";
@@ -36,9 +33,7 @@ namespace Library
 
 		public static Regex ValidateSignature { get; } = new Regex("^(ACTI|ALCH|AMMO|ARMO|ASPC|BNDS|BOOK|CONT|DOOR|FLOR|FURN|HAZD|IDLM|KEYM|LIGH|LVLI|MISC|MSTT|NOTE|NPC_|PROJ|SCOL|SOUN|STAT|TACT|TERM|TXST|WEAP)$");
 
-		public static Regex ValidateMapMarkerIcon { get; } = new Regex("^(WhitespringResort|NukaColaQuantumPlant|TrainTrackMark|.*Marker)$");
-
-		public static Regex ValidateComponent { get; } = new Regex("^(Acid|Adhesive|Aluminum|Antiseptic|Asbestos|Ballistic Fiber|Black Titanium|Bone|Ceramic|Circuitry|Cloth|Coal|Concrete|Copper|Cork|Crystal|Fertilizer|Fiber Optics|Fiberglass|Gear|Glass|Gold|Gunpowder|Lead|Leather|Nuclear Material|Oil|Plastic|Rubber|Screw|Silver|Spring|Steel|Ultracite|Wood)$");
+		public static Regex ValidateComponent { get; } = new Regex("^(Acid|Adhesive|Aluminum|Antiseptic|Asbestos|Ballistic Fiber|Bone|Ceramic|Circuitry|Cloth|Concrete|Copper|Cork|Crystal|Fertilizer|Fiber Optics|Fiberglass|Gear|Glass|Gold|Lead|Leather|Nuclear Material|Oil|Plastic|Rubber|Screw|Silver|Spring|Steel|Wood)$");
 
 		public static Regex ValidIconFolder { get; } = new Regex("DefineSprite_[0-9]{1,3}_(([A-Z].*Marker)|WhitespringResort|NukaColaQuantumPlant|TrainTrackMark)$");
 
@@ -78,87 +73,19 @@ namespace Library
 		public static Dictionary<string, string> MarkerLabelCorrection { get; } = new Dictionary<string, string>()
 		{
 			{ "O�Neill Family Manufacturing", "O'Neill Family Manufacturing" },
-			//{ "Animal Cave", "Hopewell Cave" },
-			//{ "Bleeding Kate's Grinder", "Bleeding Kate's Grindhouse" },
-			//{ "Building Summersville Dam", "Summersville Dam" },
-			//{ "Burning Mine", "The Burning Mine" },
-			//{ "Cranberry Bog Region", "Quarry X3" },
-			//{ "Cranberry Glade", "Sacramental Glade" },
-			//{ "Crater Outpost", "Crater Watchstation" },
-			//{ "Derelict Power Substation", "Abraxodyne Chemical Power Substation" },
-			//{ "Desolate Encampment", "Hamley Run Camp" },
-			//{ "Emmett Mt. Disposal Site", "Emmett Mountain Disposal Site" },
-			//{ "Federal Field NG-17", "Big Meadows Gas Well" },
-			//{ "Garrahan Excavations Headquarters", "Garrahan Mining Headquarters" },
-			//{ "Hawke's Refuge", "Dagger's Den" },
-			//{ "Hillside Church", "Shade Hill Church" },
-			//{ "Lightning Pylon A", "Research Site Saxony" },
-			//{ "Lightning Pylon B", "Research Site Bavaria" },
-			//{ "Lightning Pylon C", "Research Site Rhineland" },
-			//{ "Lumber Camp", "Sylvie & Sons Logging Camp" },
-			//{ "Maybell Pond", "Beckwith Farm" },
-			//{ "Middle Mountain Cabins", "Middle Mountain Pitstop" },
-			//{ "Mine Shaft No. 9", "AMS Testing Site" },
-			//{ "Mire", "Harpers Ferry Tunnel" },
-			//{ "Morgantown Regional Airfield", "Morgantown Airport" },
-			//{ "Mountain Region", "Colonel Kelly Monument" },
-			//{ "Nuked Crater", "Foundation Outpost" },
-			//{ "Pine Bluff Overlook", "Prospect Hill" },
-			//{ "Relay Tower 2", "Relay Tower HN-B1-12" },
-			//{ "Relay Tower 3", "Relay Tower DP-B5-21" },
-			//{ "Relay Tower 4", "Relay Tower LW-B1-22" },
-			//{ "Relay Tower 5", "Relay Tower HG-B7-09" },
-			//{ "Relay Tower 6", "Relay Tower EM-B1-27" },
-			//{ "Schram Homestead", "Silva Homestead" },
-			//{ "Shenandoah Weather Station", "Hawksbill Weather Station" },
-			//{ "Shining Creek Caverns", "Shining Creek Cavern" },
-			//{ "Sundew Grove 02", "Veiled Sundew Grove" },
-			//{ "Sundew Grove 03", "Creekside Sundew Grove" },
-			//{ "The Burrows", "The Burrows South" },
-			//{ "The Savage Divide", "Monorail Elevator" },
-			//{ "Wildwood Horse Ranch", "Westbrook Horse Ranch" },
-			//{ "World's Largest Teapot", "The Giant Teapot" },
 		};
 
 		public static List<string> MapMarkersToRemove { get; } = new List<string>()
 		{
 			"ERROR: <<NO REF LOCATION>>",
-			//"Fissure Site Theta",
-			//"Fissure Site Kappa",
-			//"Fissure Site Tau",
 		};
-
-		// As above, but provides a pattern for a LIKE term
-		public static string MapMarkersToRemovePattern { get; } = "$REGION_%";
 
 		// Spaces which appear to be copy/pastes or alternates of the same thing, and therefore can and should share scaling/adjustments
 		public static List<List<string>> SisterSpaces { get; } = new List<List<string>>()
 		{
 			new List<string>() { "ElevTransHiTech", "ElevTransHiTechInstitute" },
 			new List<string>() { "ElevMinUseTransUtil", "ElevTransUtil" },
-			//new List<string>() { "ArktosPharmaLab01", "ArktosPharmaLabDungeon" },
-			//new List<string>() { "CharGen01", "CharGen02", "CharGen03", "CharGen04", "CharGen05", "NPEVault7601", "NVEVault7601" },
-			//new List<string>() { "GlassedCavern01", "GlassedCavernDungeon" },
-			//new List<string>() { "SugarGroveMissileSilo01", "MonongahMissileSilo01", "SpruceKnobMissileSilo01" },
-			//new List<string>() { "WatogaCivicCenter01", "WatogaCivicCenterDungeon" },
-			//new List<string>() { "WatogaHighSchool01", "WatogaHighSchoolDungeon" },
-			//new List<string>() { "XPDAC02Aquarium", "XPDAC02AquariumDungeon" },
-			//new List<string>() { "XPDAC03CommunityCenter", "XPDAC03CommunityCenterDungeon" },
-			//new List<string>() { "XPDPitt01Foundry", "XPDPitt01FoundryDungeon" },
-			//new List<string>() { "WestTek02", "WestTek02Arena" },
 		};
-
-		// Monongah Workshop (0x003D4B48) does not have its 'Map Marker/FULL - Name' record assigned so the export scripts don't find it
-		public static string AddMissingMarkersQuery { get; } = "INSERT INTO MapMarker (spaceFormID, x, y, label, icon) VALUES(2480661, 44675.304687, 73761.358125, 'Monongah Power Plant Yard', 'PublicWorkshopMarker');";
-
-		// Hemlock Holes Maintenance is just "Hemlock Holes" in the data, but we can't just correct it like the other misnamed map markers, because there is also a legitimate "Hemlock Holes"
-		public static string CorrectDuplicateMarkersQuery { get; } = "UPDATE MapMarker set label = 'Hemlock Holes Maintenance' WHERE label = 'Hemlock Holes' AND icon = 'FactoryMarker';";
-
-		// For an unknown reason, some entities in xEdit have this invalid lock level
-		public static string CorrectLockLevelQuery { get; } = "UPDATE Position SET lockLevel = 'Novice (Level 0)' WHERE lockLevel = 'Opens Door';";
-
-		// For an unknown reason, some entities in xEdit have this invalid primitive shape
-		public static string CorrectPrimitiveShapeQuery { get; } = "UPDATE Position SET primitiveShape = 'Box' WHERE primitiveShape = '7';";
 
 		// Provides the WHERE clause for a query which defines the rules of which cells we should discard, as they are understood to be cut or otherwise inaccessible.
 		public static string DiscardCellsQuery { get; } =
@@ -193,95 +120,6 @@ namespace Library
 		{
 			switch (markerName)
 			{
-				//case "Ammo Dump":
-				//case "Bloody Frank's":
-				//case "Cliffwatch":
-				//case "Crimson Prospect":
-				//case "Dagger's Den":
-				//case "Hunter's Ridge":
-				//case "Ripper Alley":
-				//case "Rollins Labor Camp":
-				//case "Seneca Gang Camp":
-				//case "Skullbone Vantage":
-				//case "South Cutthroat Camp":
-				//case "The Bounty":
-				//case "The Crosshair":
-				//case "The Kill Box":
-				//case "The Pigsty":
-				//case "The Sludge Works":
-				//case "The Vantage":
-				//case "Twin Pine Cabins":
-				//case "Widow's Perch":
-				//	return "BloodEagleMarker";
-
-				//case "Forward Station Alpha":
-				//case "Forward Station Delta":
-				//case "Forward Station Tango":
-				//	return "BoSMarker";
-
-				//case "Blakes Offering":
-				//case "Clancy Manor":
-				//case "Ingram Mansion":
-				//case "Johnson's Acre":
-				//case "Kanawha County Cemetery":
-				//case "Lucky Hole Mine":
-				//case "Moth-Home":
-				//case "Organ Cave North":
-				//case "Organ Cave South":
-				//case "Organ Cave West":
-				//case "Sacrament":
-				//	return "CultistMarker";
-
-				//case "Highway Town":
-				//	return "ElevatedHighwayMarker";
-
-				//case "Gleaming Depths":
-				//	return "GleamingDepthsMarker";
-
-				//case "Foundation":
-				//	return "HammerWingMarker";
-
-				//case "The Rust Kingdom":
-				//	return "IndustrialDomeMarker";
-
-				//case "The Rusty Pick":
-				//	return "LegendaryPurveyorMarker";
-
-				//case "Abandoned Bog Town":
-				//case "Beckley Mine Exhibit":
-				//case "Berkeley Springs West":
-				//case "Billings Homestead":
-				//case "Charleston Landfill":
-				//case "Converted Munitions Factory":
-				//case "Dabney Homestead":
-				//case "Dolly Sods Campground":
-				//case "Federal Disposal Field HZ-21":
-				//case "Gorge Junkyard":
-				//case "Grafton Steel Yard":
-				//case "Hemlock Holes Maintenance":
-				//case "Lakeside Cabins":
-				//case "Monongah Power Plant Yard":
-				//case "Mount Blair":
-				//case "Poseidon Energy Plant Yard":
-				//case "Red Rocket Mega Stop":
-				//case "Starlight Drive-in":
-				//case "Sunshine Meadows Industrial Farm":
-				//case "Thunder Mt. Power Plant Yard":
-				//case "Tyler County Dirt Track":
-				//case "Wade Airport":
-				//	return "PublicWorkshopMarker";
-
-				//case "Ohio River Adventures":
-				//case "The Coop":
-				//case "The Crater":
-				//	return "SkullRingMarker";
-
-				//case "Vault 51":
-				//	return "Vault51Marker";
-
-				//case "Vault 79":
-				//	return "Vault79Marker";
-
 				default:
 					return null;
 			}
@@ -289,9 +127,7 @@ namespace Library
 
 		// Values passed with the -xm argument to the render command
 		public static List<string> RenderExcludeModels { get; } = new List<string>()
-		{
-			//"babylon", "76Trailer", "SwampGas",
-		};
+		{ };
 
 		// The Form ID of NorthMarker
 		public static uint NorthMarkerFormID { get; } = HexToInt("00000003");
@@ -299,28 +135,7 @@ namespace Library
 		// Some spaces have 2 North Markers - we specify which one we want to pick to give the north angle
 		// Key = space FormID in Hex, Value = northMarker instance FormID in Hex
 		public static Dictionary<string, string> NorthMarkerPreference { get; } = new Dictionary<string, string>()
-		{
-			//{ "00473CE3", "0040C221" }, // Burrows01
-			//{ "006143D4", "006150A9" }, // UncannyCavernsDungeon
-		};
-
-		// Fix fissure site naming - Rename Zeta to Prime, drop Greek alphabet names from all others
-		public static string CorrectFissureLabels(string label)
-		{
-			//if (label.StartsWith(FissureSiteLabel))
-			//{
-			//	return (label == $"{FissureSiteLabel} Zeta") ? $"{FissureSiteLabel} Prime" : FissureSiteLabel;
-			//}
-
-			return label;
-		}
-
-		// Correct map marker labels by correcting common extraneous/incorrect text in the label
-		public static string CorrectCommonBadLabels(string label)
-		{
-			return label;
-			return label.Replace("Fast Travel Point: ", string.Empty).Replace("Hornwright Air Cleanser Site", "Hornwright Air Purifier Site");
-		}
+		{ };
 
 		// Format the map marker icon name into one more consistent with the SWF file structure
 		public static string CleanupMapMarkerIconNames(string label)
@@ -348,34 +163,6 @@ namespace Library
 				default:
 					return new List<Region>();
 			}
-		}
-
-		public static XmlDocument FixMapMarkerSVG(XmlDocument document, MapMarker mapMarker)
-		{
-			//// Change the size and position of the workshop svg, so it is centered
-			//if (mapMarker.Icon == "PublicWorkshopMarker")
-			//{
-			//	XmlNode? svgNode = document.SelectSingleNode("//*[local-name()='svg']");
-			//	XmlNode? gNode = svgNode?.SelectSingleNode("//*[local-name()='g']");
-
-			//	svgNode.SetAttributeValue("width", "32px");
-			//	svgNode.SetAttributeValue("height", "32px");
-			//	gNode.SetAttributeValue("transform", "matrix(1.0, 0.0, 0.0, 1.0, 16, 16)");
-			//}
-
-			return document;
-		}
-
-		// Neatly handles modifying attributes of xml nodes
-		static void SetAttributeValue(this XmlNode? node, string attributeName, string value)
-		{
-			if (node is null)
-			{
-				throw new NullReferenceException("XML Node is null");
-			}
-
-			XmlAttribute? attribute = node.Attributes?[attributeName] ?? throw new NullReferenceException($"XML Node does not have attribute {attributeName}");
-			attribute.Value = value;
 		}
 
 		// List of Globals (GLOB) by EditorID which we should keep

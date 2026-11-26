@@ -103,10 +103,8 @@ namespace Preprocessor
 			SimpleQuery($"CREATE TABLE Container(containerFormID INTEGER REFERENCES Entity(entityFormID), contentFormID INTEGER REFERENCES Entity(entityFormID), quantity INTEGER);");
 			SimpleQuery($"CREATE TABLE Position(spaceFormID INTEGER REFERENCES Space(spaceFormID), referenceFormID TEXT REFERENCES Entity(entityFormID), x REAL, y REAL, z REAL, locationFormID TEXT REFERENCES Location(locationFormID), lockLevel TEXT, primitiveShape TEXT, boundX REAL, boundY REAL, boundZ REAL, rotX REAL, rotY REAL, rotZ REAL, mapMarkerName TEXT, shortName TEXT, teleportsToFormID TEXT, initiallyDisabled INTEGER);");
 			SimpleQuery($"CREATE TABLE Space(spaceFormID INTEGER PRIMARY KEY, spaceEditorID TEXT, spaceDisplayName TEXT, isWorldspace INTEGER);");
-			//SimpleQuery($"CREATE TABLE Location(locationFormID INTEGER, parentLocationFormID TEXT, minLevel INTEGER, maxLevel INTEGER, property TEXT, value INTEGER);");
 			SimpleQuery($"CREATE TABLE Region(spaceFormID TEXT REFERENCES Space(spaceFormID), regionFormID INTEGER, regionEditorID TEXT, locationFormID TEXT, subRegionIndex INTEGER, coordIndex INTEGER, x REAL, y REAL);");
-			SimpleQuery($"CREATE TABLE Scrap(junkFormID INTEGER REFERENCES Entity(entityFormID), component TEXT, componentQuantity TEXT);");
-			SimpleQuery($"CREATE TABLE Component(component TEXT PRIMARY KEY, singular INTEGER, rare INTEGER, medium INTEGER, low INTEGER, high INTEGER, bulk INTEGER);");
+			SimpleQuery($"CREATE TABLE Scrap(junkFormID INTEGER REFERENCES Entity(entityFormID), component TEXT, componentQuantity INTEGER);");
 			SimpleQuery($"CREATE TABLE LocationCell(locationFormID INTEGER, locationEditorId TEXT, locationDisplayName TEXT, spaceFormID TEXT, x INTEGER, y INTEGER);");
 			SimpleQuery($"CREATE TABLE Global(key TEXT PRIMARY KEY, value REAL);");
 			SimpleQuery($"CREATE TABLE ESM(number INTEGER PRIMARY KEY, name TEXT, masterCount INTEGER);");
@@ -116,10 +114,8 @@ namespace Preprocessor
 			ImportTableFromCSV("Container");
 			ImportTableFromCSV("Position");
 			ImportTableFromCSV("Space");
-			//ImportTableFromCSV("Location");
 			ImportTableFromCSV("Region");
 			ImportTableFromCSV("Scrap");
-			ImportTableFromCSV("Component");
 			ImportTableFromCSV("LocationCell");
 			ImportTableFromCSV("Global");
 			ImportTableFromCSV("ESM", false);
@@ -135,15 +131,10 @@ namespace Preprocessor
 			// Pull the MapMarker data into a new table, then make some hardcoded amendments and corrections
 			SimpleQuery("CREATE TABLE MapMarker AS SELECT spaceFormID, x, y, referenceFormID as label, mapMarkerName as icon FROM Position WHERE mapMarkerName != '';");
 			TransformColumn(UnescapeCharacters, "MapMarker", "label");
-			//SimpleQuery($"DELETE FROM MapMarker WHERE label IN {MapMarkersToRemove.ToSqliteCollection()};");
-			//SimpleQuery($"DELETE FROM MapMarker WHERE label LIKE '{MapMarkersToRemovePattern}';");
-			//SimpleQuery(AddMissingMarkersQuery);
-			//SimpleQuery(CorrectDuplicateMarkersQuery);
+			SimpleQuery($"DELETE FROM MapMarker WHERE label IN {MapMarkersToRemove.ToSqliteCollection()};");
 			TransformColumn(CleanupMapMarkerIconNames, "MapMarker", "icon");
 			TransformColumn(CorrectIconsByDict, "MapMarker", "icon");
 			TransformColumn(CorrectLabelsByDict, "MapMarker", "label");
-			TransformColumn(CorrectFissureLabels, "MapMarker", "label");
-			TransformColumn(CorrectCommonBadLabels, "MapMarker", "label");
 			TransformColumn(GetCorrectedMarkerIcon, "MapMarker", "label", "icon");
 			AddForeignKey("MapMarker", "spaceFormID", "INTEGER", "Space", "spaceFormID");
 
@@ -179,11 +170,6 @@ namespace Preprocessor
 			AddForeignKey("Position", "teleportsToFormID", "INTEGER", "Space", "spaceFormID");
 
 			TransformColumn(ConvertBool, "Position", "initiallyDisabled");
-
-			// Capture and convert to int the parent location Form ID on Location
-			//TransformColumn(CaptureFormID, "Location", "parentLocationFormID");
-			//ChangeColumnType("Location", "parentLocationFormID", "INTEGER");
-			//AddForeignKey("Location", "parentLocationFormID", "INTEGER", "Location", "locationFormID");
 
 			// Capture and convert to int the spaceFormID on Region
 			TransformColumn(CaptureSpaceFormID, "Region", "spaceFormID");
@@ -284,18 +270,8 @@ namespace Preprocessor
 			// Clean up scrap and component names
 			TransformColumn(CaptureQuotedTerm, "Scrap", "componentQuantity");
 			TransformColumn(CaptureQuotedTerm, "Scrap", "component");
-			SimpleQuery($"UPDATE Scrap SET componentQuantity = 'Singular' WHERE componentQuantity LIKE '%Singular%';");
-
-			// Fix erroneous data which is exported from xEdit with values somehow misaligned from in-game
-			//SimpleQuery(CorrectLockLevelQuery);
-			//SimpleQuery(CorrectPrimitiveShapeQuery);
 
 			TransformColumn(ReduceLockLevel, "Position", "lockLevel");
-
-			// Transform the component quantity keywords to numeric values from Scrap table, then drop the Component table
-			//TransformColumn(GetComponentQuantity, "Scrap", "component", "componentQuantity", "componentQuantity");
-			//ChangeColumnType("Scrap", "componentQuantity", "INTEGER");
-			//SimpleQuery($"DROP TABLE Component;");
 
 			// Now we've dropped the Location table used for NPC spawns, we can repurpose the name for Location Data for cells,
 			// putting cell coords in another new table, and dropping the original LocationCell
@@ -342,7 +318,6 @@ namespace Preprocessor
 			SimpleQuery("CREATE INDEX indexTeleportsTo ON Position(teleportsToFormID);");
 			SimpleQuery("CREATE INDEX indexCount ON Position_PreGrouped(count);");
 			SimpleQuery("CREATE INDEX indexReference ON Position_PreGrouped(referenceFormID);");
-			SimpleQuery("CREATE INDEX indexComponent ON Scrap(component);");
 
 			// Final steps, wrap-up, optimizations, etc
 			SimpleQuery("PRAGMA foreign_keys = 1;");
@@ -797,12 +772,6 @@ namespace Preprocessor
 			}
 
 			return QuotedTermRegex.Match(displayName).Groups[1].Value;
-		}
-
-		// Returns the numeric quantity of the component for the given quantity name
-		static string GetComponentQuantity(string component, string quantity)
-		{
-			return SimpleQuery($"SELECT \"{quantity}\" FROM Component where component = '{component}'", true, GetNewConnection()).First();
 		}
 
 		static string GetMinLocationLevel(string locationFormID)

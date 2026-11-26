@@ -1161,7 +1161,7 @@ namespace Mappalachia
 			Icon = (Icon)resources.GetObject("$this.Icon");
 			MainMenuStrip = menuStripMain;
 			Name = "FormMain";
-			Text = "Commonwealth Cartography";
+			Text = Common.ApplicationTitleName;
 			FormClosing += FormMain_FormClosing;
 			Shown += FormMain_Shown;
 			Click += Search_IncludeInitiallyDisabled_click;
