@@ -73,11 +73,68 @@ namespace Library
 		public static Dictionary<string, string> MarkerLabelCorrection { get; } = new Dictionary<string, string>()
 		{
 			{ "O�Neill Family Manufacturing", "O'Neill Family Manufacturing" },
+			{ "ERROR: <<NO REF LOCATION>>", "Nuka World Junkyard" },
 		};
 
 		public static List<string> MapMarkersToRemove { get; } = new List<string>()
 		{
-			"ERROR: <<NO REF LOCATION>>",
+			"Far Harbor Ruins",
+			"Nuka-World Airfield",
+			"Moonshiner's Camp",
+			"Freeway Pileup",
+			"Cambridge Church",
+			"Holy Mission Congregation",
+			"Footbridge Camp",
+			"Back Alley Camp",
+			"Cambridge Warehouse",
+			"Cambridge Graveyard",
+			"North End Graveyard",
+			"South Boston Graveyard",
+			"Factory",
+			"Boxing Gym",
+			"Cambridge Baseball Diamond",
+			"Christopher Columbus Park",
+			"Lil' Gentry Playground",
+			"Subway Station",
+			"Valenti Station",
+			"Dorchester Heights Monument",
+			"Apartment",
+			"Bridgeway Trust",
+			"L Street Bathhouse",
+			"Marlborough House",
+			"Science Center Gift Shop",
+			"Cambridge Raider Base",
+			"35 Court",
+			"Cambridge Construction Site",
+			"Commonwealth Bank",
+			"Hub 360",
+			"Oakwood Residences",
+			"South Fens Tower",
+			"Weatherby Investment Trust",
+			"Hawthorne Estate",
+			"Cambridge Hardware Store",
+			"Ivan's",
+			"Paul Revere House",
+			"Brookline Building",
+			"Cambridge Academic Center",
+			"Camp Kendall",
+			"East C.I.T. Raider Camp",
+			"Evans Way Cul-de-Sac",
+			"Flagon Tunnel",
+			"Founder's Triangle",
+			"Jimbo's Tower",
+			"Kendall Parking Garage",
+			"Major Crossroad",
+			"Pizza Parlour",
+			"Prost Bar",
+			"Raider Alleyway Outpost",
+			"Raider Drug Den",
+			"Shenley's Oyster Bar",
+			"Ticker Tape Lounge",
+			"Tower Apartments",
+			"Union Man's Circle",
+			"Warren Theater",
+			"Water Street Apartments",
 		};
 
 		// Spaces which appear to be copy/pastes or alternates of the same thing, and therefore can and should share scaling/adjustments
@@ -154,6 +211,11 @@ namespace Library
 			switch (space.EditorID.ToUpper())
 			{
 				case "COMMONWEALTH":
+					List<Region> borderRegions = new List<Region>();
+					borderRegions.AddRange(await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'%Border%'"));
+					borderRegions.AddRange(await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'DLC03Coast'"));
+					return borderRegions;
+
 				case "NUKAWORLD":
 					return await CommonDatabase.GetRegionsByLikeTerm(GetNewConnection(), space, $"'%Border%'");
 
