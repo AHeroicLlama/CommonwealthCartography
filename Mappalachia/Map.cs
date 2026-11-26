@@ -11,7 +11,6 @@ namespace Mappalachia
 	{
 		Render,
 		Menu,
-		Military,
 		None,
 	}
 
@@ -67,6 +66,8 @@ namespace Mappalachia
 
 	public static class Map
 	{
+		public static Color MapMarkerColor { get; } = Color.FromArgb(220, 0, 255, 0);
+
 		public static int CompassSize { get; } = MapImageResolution / 8;
 
 		public static double IconScale { get; } = 1.5;
@@ -103,14 +104,6 @@ namespace Mappalachia
 
 		static int BoundsEdgeThickness { get; } = 1;
 
-		static Color InfestationZoneEdgeColor { get; } = Color.FromArgb(128, 255, 120, 100);
-
-		static Color InfestationZoneInnerColor { get; } = Color.FromArgb(32, 255, 120, 100);
-
-		static Pen InfestationEdgePen { get; } = new Pen(InfestationZoneEdgeColor, 4);
-
-		static Brush InfestationInnerBrush { get; } = new SolidBrush(InfestationZoneInnerColor);
-
 		public static Color DropShadowColor { get; } = Color.FromArgb(128, 0, 0, 0);
 
 		static Brush BrushDropShadow { get; } = new SolidBrush(DropShadowColor);
@@ -118,6 +111,8 @@ namespace Mappalachia
 		static Brush BrushGeneric { get; } = Brushes.White;
 
 		static Brush BrushGenericTransparent { get; } = new SolidBrush(Color.FromArgb(128, 255, 255, 255));
+
+		static Brush BrushMapMarker { get; } = new SolidBrush(MapMarkerColor);
 
 		static Brush CoordinateGridLabelBrush { get; } = new SolidBrush(Color.White);
 
@@ -167,14 +162,12 @@ namespace Mappalachia
 			mapImage.AdjustBrightnessOrGrayscale(settings.MapSettings.Brightness, settings.MapSettings.GrayscaleBackground);
 
 			// Overlay the water mask
-			if (settings.MapSettings.HighlightWater && settings.Space.IsWorldspace)
+			if (settings.MapSettings.HighlightWater && settings.Space.IsPrimaryWorldspace)
 			{
 				graphics.DrawImage(settings.Space.GetWaterMask(), backgroundRectangle);
 			}
 
 			DrawCoordinateGrid(settings, graphics);
-
-			await DrawInfestations(settings, graphics);
 
 			DrawMapMarkerIconsAndLabels(settings, graphics, progressInfo);
 
@@ -231,33 +224,6 @@ namespace Mappalachia
 			UpdateProgress(progressInfo, 0, "Done");
 
 			return mapImage;
-		}
-
-		static async Task DrawInfestations(Settings settings, Graphics graphics)
-		{
-			if (!settings.MapSettings.ShowInfestations)
-			{
-				return;
-			}
-
-			List<Location> infestationLocations = await Database.GetInfestationLocations(settings.Space);
-			float infestationRadius = await Database.GetInfestationRadius();
-
-			foreach (Location location in infestationLocations)
-			{
-				Coord cellTopLeftCentroid = location.Cells.GetCentroid();
-				Coord trueCentroid = new Coord(cellTopLeftCentroid.X + (CellSize / 2), cellTopLeftCentroid.Y - (CellSize / 2));
-
-				RectangleF infestationZone = new RectangleF(
-					(float)(trueCentroid.X - infestationRadius),
-					(float)(trueCentroid.Y + infestationRadius),
-					infestationRadius * 2f,
-					infestationRadius * 2f).AsImageRectangle(settings);
-
-				graphics.FillEllipse(InfestationInnerBrush, infestationZone);
-				graphics.DrawEllipse(InfestationEdgePen, infestationZone);
-				graphics.DrawImageCentered(FileIO.GetInfestationMarker(), trueCentroid.AsImagePoint(settings));
-			}
 		}
 
 		static void DrawCoordinateGrid(Settings settings, Graphics graphics)
@@ -1035,12 +1001,6 @@ namespace Mappalachia
 						continue;
 					}
 
-					// If the plot is flux but the target space isn't nukable - skip
-					if (item.Entity is DerivedRawFlux && !teleporter.TeleportsTo!.IsNukable())
-					{
-						continue;
-					}
-
 					List<Instance> instances = await Database.GetInstances(item, teleporter.TeleportsTo);
 
 					if (instances.Count == 0)
@@ -1283,11 +1243,6 @@ namespace Mappalachia
 
 			string text = $"{settings.Space.DisplayName} ({settings.Space.EditorID})";
 
-			if (settings.Space.IsInstanceable)
-			{
-				text += " (Instanced)";
-			}
-
 			if (settings.MapSettings.ShowCoordinateGrid)
 			{
 				int range, x, y;
@@ -1336,7 +1291,7 @@ namespace Mappalachia
 
 				if (settings.MapSettings.MapMarkerIcons)
 				{
-					Image image = marker.GetMapMarkerImage();
+					Image image = marker.GetMapMarkerImage(MapMarkerColor);
 
 					// Hidden option - convert a new copy to grayscale
 					if (settings.MapSettings.MapMarkerGrayscale)
@@ -1351,7 +1306,7 @@ namespace Mappalachia
 
 				if (settings.MapSettings.MapMarkerLabels)
 				{
-					graphics.DrawStringCentered(marker.Label, font, BrushGeneric, new PointF(coord.X, coord.Y + labelOffset), !settings.MapSettings.MapMarkerIcons);
+					graphics.DrawStringCentered(marker.Label, font, BrushMapMarker, new PointF(coord.X, coord.Y + labelOffset), !settings.MapSettings.MapMarkerIcons);
 				}
 			}
 		}

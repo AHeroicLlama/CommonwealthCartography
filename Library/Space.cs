@@ -4,14 +4,14 @@ using System.Text.Json.Serialization;
 namespace Library
 {
 	// Represents a Worldspace (WRLD) or Cell (CELL)
-	public class Space(uint formID, string editorID, string displayName, bool isWorldspace, bool isInstanceable, double centerX, double centerY, double maxRange, double northAngle)
+	public class Space(uint formID, string editorID, string displayName, bool isWorldspace, bool isPrimaryWorldspace, double centerX, double centerY, double maxRange, double northAngle)
 		: Entity(formID, editorID, displayName, isWorldspace ? Signature.WRLD : Signature.CELL)
 	{
 		[JsonIgnore]
 		public bool IsWorldspace { get; } = isWorldspace;
 
 		[JsonIgnore]
-		public bool IsInstanceable { get; } = isInstanceable;
+		public bool IsPrimaryWorldspace => IsWorldspace && isPrimaryWorldspace;
 
 		[JsonIgnore]
 		public double CenterX { get; } = centerX;
@@ -40,17 +40,6 @@ namespace Library
 		// Accessed via variable name in the UI - provides the name for the Space select dropdown
 		[JsonIgnore]
 		public string FriendlyName => $"{DisplayName} ({EditorID})";
-
-		public bool IsAppalachia()
-		{
-			return EditorID.EqualsIgnoreCase("APPALACHIA");
-		}
-
-		// Return if this Space can be targeted (or otherwise somehow affected) by a nuke
-		public bool IsNukable()
-		{
-			return IsAppalachia();
-		}
 
 		// Return the spotlight tiles for the space
 		public List<SpotlightTile> GetTiles()

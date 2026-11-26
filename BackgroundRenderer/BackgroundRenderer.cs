@@ -120,12 +120,13 @@ namespace BackgroundRenderer
 				string outputFile = TempPath + $"debug_{space.EditorID}.dds";
 				string esmPaths = await GetEsmPaths(space);
 
-				string renderCommand = $"{Fo76UtilsRenderPath} \"{esmPaths}\" {outputFile} {resolution} {resolution} " +
-					$"\"{GameDataPath.WithoutTrailingSlash()}\" {(space.IsWorldspace ? $"-btd \"{GameTerrainPath}\"" : string.Empty)} " +
+				string renderCommand = $"{Fo76UtilsRenderPath} {esmPaths} {outputFile} {resolution} {resolution} " +
+					$"\"{GameDataPath.WithoutTrailingSlash()}\" " +
 					$"-w 0x{space.FormID.ToFixedFormId().ToHex()} -l 0 -cam {scale} 180 0 0 {cameraX} {cameraY} {cameraZ} " +
-					$"-light 1.8 65 180 -rq 0 -scol 1 -ssaa 0 -ltxtres 64 -mlod 4 -xm effects";
+					$"-light 1.8 65 180 -rq 0 -scol 1 -ssaa 0 -ltxtres 64 -mlod 4 -xm effects -deftxt {DefaultTextureFormID} {GetWaterPlaneHackString(space)}";
 
 				Console.WriteLine($"Rendering {space.EditorID} to {outputFile}");
+
 				Process renderJob = StartProcess(renderCommand);
 				renderJob.WaitForExit();
 				OpenURI(outputFile);
@@ -221,10 +222,10 @@ namespace BackgroundRenderer
 			{
 				string outputFile = TempPath + $"debug_{space.EditorID}_Z{height}.dds";
 
-				string renderCommand = $"{Fo76UtilsRenderPath} \"{esmPaths}\" {outputFile} {MapImageResolution} {MapImageResolution} " +
-					$"\"{GameDataPath.WithoutTrailingSlash()}\" {(space.IsWorldspace ? $"-btd \"{GameTerrainPath}\"" : string.Empty)} " +
+				string renderCommand = $"{Fo76UtilsRenderPath} {esmPaths} {outputFile} {MapImageResolution} {MapImageResolution} " +
+					$"\"{GameDataPath.WithoutTrailingSlash()}\" " +
 					$"-w 0x{space.FormID.ToFixedFormId().ToHex()} -l 0 -cam {MapImageResolution / space.MaxRange} 180 0 0 {space.CenterX} {space.CenterY} {height} " +
-					$"-light 1.8 65 180 -rq 0 -scol 1 -ssaa 0 -ltxtres 64 -mlod 4 -xm effects";
+					$"-light 1.8 65 180 -rq 0 -scol 1 -ssaa 0 -ltxtres 64 -mlod 4 -xm effects -deftxt {DefaultTextureFormID} {GetWaterPlaneHackString(space)}";
 
 				Console.WriteLine($"Rendering {space.EditorID} to {outputFile}");
 				Process renderJob = StartProcess(renderCommand);
@@ -254,21 +255,20 @@ namespace BackgroundRenderer
 		}
 
 		// Renders a space in the normal way, and converts and moves it appropriately.
-		// Worldspaces also see the watermask generated.
+		// Primary Worldspaces also see the watermask generated.
 		static async Task RenderSpace(Space space, bool silent = false)
 		{
 			int renderResolution = space.IsWorldspace ? WorldspaceRenderResolution : MapImageResolution;
 			string ddsFile = TempPath + $"{space.EditorID}.dds";
 			string finalFile = (space.IsWorldspace ? WorldPath : CellPath) + space.EditorID + BackgroundImageFileType;
-			string terrainString = space.IsWorldspace ? $"-btd \"{GameTerrainPath}\" " : string.Empty;
 			double scale = renderResolution / space.MaxRange;
 			string esmPaths = await GetEsmPaths(space);
 
-			string renderCommand = $"{Fo76UtilsRenderPath} \"{esmPaths}\" {ddsFile} {renderResolution} {renderResolution} " +
-				$"\"{GameDataPath.WithoutTrailingSlash()}\" {terrainString}" +
+			string renderCommand = $"{Fo76UtilsRenderPath} {esmPaths} {ddsFile} {renderResolution} {renderResolution} " +
+				$"\"{GameDataPath.WithoutTrailingSlash()}\" " +
 				$"-w 0x{space.FormID.ToFixedFormId().ToHex()} -l 0 -cam {scale} 180 0 0 {space.CenterX} {space.CenterY} {GetSpaceCameraHeight(space)} " +
 				$"-light 1.8 65 180 -lcolor 1.1 0xD6CCC7 0.9 -1 -1 -rq {1 + 2 + 12 + (space.IsWorldspace ? 0 : 32) + 256 + 1024} -ssaa 2 " +
-				$"-ltxtres 512 -tc 4096 -mc 64 -mip 1 -lmip 2 -mlod 0 -ndis 1 " +
+				$"-ltxtres 512 -tc 4096 -mc 64 -mip 1 -lmip 2 -mlod 0 -ndis 1 -deftxt {DefaultTextureFormID} {GetWaterPlaneHackString(space)} " +
 				$"{ExcludeModelsParameter}";
 
 			string resizeCommand = $"magick {ddsFile} -resize {MapImageResolution}x{MapImageResolution} " +
@@ -281,14 +281,14 @@ namespace BackgroundRenderer
 			magickResizeConvert.WaitForExit();
 
 			// Do the watermask
-			if (space.IsWorldspace)
+			if (space.IsPrimaryWorldspace)
 			{
 				string waterMaskDDS = TempPath + space.EditorID + WaterMaskAddendum + ".dds";
 				string waterMaskFinalFile = WorldPath + space.EditorID + WaterMaskAddendum + MaskImageFileType;
 
-				string waterMaskRenderCommand = $"{Fo76UtilsRenderPath} \"{esmPaths}\" {waterMaskDDS} {renderResolution} {renderResolution} " +
-					$"\"{GameDataPath.WithoutTrailingSlash()}\" {terrainString} -w 0x{space.FormID.ToFixedFormId().ToHex()} -l 0 -cam {scale} 180 0 0 {space.CenterX} {space.CenterY} {GetSpaceCameraHeight(space)} " +
-					$"-light 1 0 0 -ssaa 2 -watermask 1 -xm water " +
+				string waterMaskRenderCommand = $"{Fo76UtilsRenderPath} {esmPaths} {waterMaskDDS} {renderResolution} {renderResolution} " +
+					$"\"{GameDataPath.WithoutTrailingSlash()}\" -w 0x{space.FormID.ToFixedFormId().ToHex()} -l 0 -cam {scale} 180 0 0 {space.CenterX} {space.CenterY} {GetSpaceCameraHeight(space)} " +
+					$"-light 1 0 0 -ssaa 2 -watermask 1 -xm water {GetWaterPlaneHackString(space)} " +
 					$"{ExcludeModelsParameter}";
 
 				string waterMaskResizeCommand = $"magick {waterMaskDDS} -fill #0000FF -fuzz 25% +opaque #000000 -transparent #000000 -resize {MapImageResolution}x{MapImageResolution} PNG:{waterMaskFinalFile}";
@@ -317,19 +317,9 @@ namespace BackgroundRenderer
 			Directory.CreateDirectory(outputPath);
 			Directory.CreateDirectory(finalPath);
 
-			List<SpotlightTile> tiles = space.GetTiles();
-			List<Region> worldBorderRegions = await space.GetWorldBorders();
+			List<SpotlightTile> tiles = await GetInBoundsSpotlightTilesForSpace(space);
+
 			string esmPaths = await GetEsmPaths(space);
-
-			if (worldBorderRegions.Count > 0)
-			{
-				tiles = tiles.Where(t => t.IntersectsRegions(worldBorderRegions)).ToList();
-			}
-
-			if (!space.IsWorldspace)
-			{
-				tiles = tiles.Where(t => t.HasEntities().Result).ToList();
-			}
 
 			StdOutWithColor($"Spotlight Rendering {tiles.Count} tile{Pluralize(tiles)} of {space.EditorID}", ColorInfo);
 
@@ -342,12 +332,12 @@ namespace BackgroundRenderer
 				string outputFile = $"{outputPath}{tile.XId}.{tile.YId}.dds";
 				string finalFile = tile.GetFilePath();
 
-				string renderCommand = $"{Fo76UtilsRenderPath} \"{esmPaths}\" {outputFile} {SpotlightTileSize} {SpotlightTileSize} " +
-					$"\"{GameDataPath.WithoutTrailingSlash()}\" {(space.IsWorldspace ? $"-btd \"{GameTerrainPath}\"" : string.Empty)} " +
+				string renderCommand = $"{Fo76UtilsRenderPath} {esmPaths} {outputFile} {SpotlightTileSize} {SpotlightTileSize} " +
+					$"\"{GameDataPath.WithoutTrailingSlash()}\" " +
 					$"-r {tile.XId * SpotlightScale} {tile.YId * SpotlightScale} {(tile.XId + 1) * SpotlightScale} {(tile.YId + 1) * SpotlightScale} " +
 					$"-w 0x{space.FormID.ToFixedFormId().ToHex()} -l 0 -cam {scale} 180 0 0 {tile.XCenter} {tile.YCenter} {GetSpaceCameraHeight(space)} " +
 					$"-light 1.8 65 180 -lcolor 1.1 0xD6CCC7 0.9 -1 -1 -rq {1 + 2 + 12 + 32 + 256 + 1024} -ssaa 1 " +
-					$"-ltxtres 4096 -tc 4096 -mc 64 -mip 0 -lmip 1 -mlod 0 -ndis 1 " +
+					$"-ltxtres 4096 -tc 4096 -mc 64 -mip 0 -lmip 1 -mlod 0 -ndis 1 -deftxt {DefaultTextureFormID} {GetWaterPlaneHackString(space)} " +
 					$"{ExcludeModelsParameter}";
 
 				string convertCommand = $"magick {outputFile} -quality {JpgQualityStandard} JPEG:{finalFile}";
@@ -384,72 +374,32 @@ namespace BackgroundRenderer
 			});
 		}
 
+		// Our ESP Generated by xEdit scripts hides the default water plane in vanilla cells
+		// But we don't need it for worldspaces, and for some reason it won't work for DLC (Other ESMs)
+		// So we turn off the default water entirely here
+		static string GetWaterPlaneHackString(Space space)
+		{
+			if (space.IsPrimaryWorldspace || GetEsmNumber(space.FormID) == 0x0)
+			{
+				return string.Empty;
+			}
+
+			return "-watercolor 0";
+		}
+
 		static async Task<string> GetEsmPaths(Space space)
 		{
 			SqliteConnection connection = GetNewConnection();
-			List<string> esmNames = await CommonDatabase.GetEsmNameWithMasters(connection, GetEsmNumber(space.FormID));
-			return string.Join(",", esmNames.Select(n => $"\"{GameDataPath}{n}\""));
-		}
+			List<string> esmNames = new List<string>();
 
-		// Return if this tile contains any entities
-		static async Task<bool> HasEntities(this SpotlightTile tile)
-		{
-			string countQuery = $"SELECT count(*) as count FROM Position WHERE SpaceFormID = {tile.Space.FormID} AND " +
-				$"x >= {tile.XCenter - TileRadius} AND x <= {tile.XCenter + TileRadius} AND y >= {tile.YCenter - TileRadius} AND y <= {tile.YCenter + TileRadius}";
+			esmNames.AddRange(await GetEsmNameWithMasters(connection, GetEsmNumber(space.FormID)));
 
-			SqliteDataReader reader = await GetReader(GetNewConnection(), countQuery);
-			reader.Read();
-
-			return Convert.ToInt32(reader["count"]) > 0;
-		}
-
-		// Returns if the tile intersects any of the regions
-		static bool IntersectsRegions(this SpotlightTile tile, List<Region> regions)
-		{
-			foreach (Region region in regions)
+			if (!space.IsPrimaryWorldspace)
 			{
-				if (region.Points.Count == 0)
-				{
-					throw new ArgumentException($"Region {region.EditorID} has no points");
-				}
-
-				// First case - The tile is at least partly within the region because the center of it is
-				// It may not be wholly contained
-				if (region.ContainsPoint(new Coord(tile.XCenter, tile.YCenter)))
-				{
-					return true;
-				}
-
-				// Edge cases
-				// Test if any of the 4 edges of the tile intersect any of the region's edges
-				for (int i = 0; i < region.Points.Count; i++)
-				{
-					int j = i + 1;
-
-					if (i == region.Points.Count - 1)
-					{
-						j = 0;
-					}
-
-					Coord regionPointA = region.Points[i].Coord;
-					Coord regionPointB = region.Points[j].Coord;
-
-					Coord topLeft = new Coord(tile.XCenter - TileRadius, tile.YCenter + TileRadius);
-					Coord topRight = new Coord(tile.XCenter + TileRadius, tile.YCenter + TileWidth);
-					Coord bottomLeft = new Coord(tile.XCenter - TileRadius, tile.YCenter - TileRadius);
-					Coord bottomRight = new Coord(tile.XCenter + TileRadius, tile.YCenter - TileRadius);
-
-					if (GeometryHelper.LinesIntersect(regionPointA, regionPointB, topLeft, topRight) ||
-						GeometryHelper.LinesIntersect(regionPointA, regionPointB, bottomLeft, bottomRight) ||
-						GeometryHelper.LinesIntersect(regionPointA, regionPointB, topLeft, bottomLeft) ||
-						GeometryHelper.LinesIntersect(regionPointA, regionPointB, topRight, bottomRight))
-					{
-						return true;
-					}
-				}
+				esmNames.Add(NoWaterEspPath);
 			}
 
-			return false;
+			return string.Join(",", esmNames.Select(n => $"\"{GameDataPath}{n}\""));
 		}
 
 		// Returns a list of Spaces gathered from the user, for rendering

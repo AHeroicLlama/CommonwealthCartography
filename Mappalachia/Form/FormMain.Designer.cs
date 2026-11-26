@@ -43,12 +43,10 @@ namespace Mappalachia
 			backgroundImageMenuItem = new ToolStripMenuItem();
 			backgroundNormalToolStripMenuItem = new ToolStripMenuItem();
 			backgroundSatelliteToolStripMenuItem = new ToolStripMenuItem();
-			backgroundMilitaryToolStripMenuItem = new ToolStripMenuItem();
 			backgroundNoneToolStripMenuItem = new ToolStripMenuItem();
 			grayscaleToolStripMenuItem = new ToolStripMenuItem();
 			backgroundBrightnessToolStripMenuItem = new ToolStripMenuItem();
 			highlightWaterToolStripMenuItem = new ToolStripMenuItem();
-			showInfestationsToolStripMenuItem = new ToolStripMenuItem();
 			coordinateGridToolStripMenuItem = new ToolStripMenuItem();
 			coordinateGridEnabledToolStripMenuItem = new ToolStripMenuItem();
 			coordinateGridPrecisionToolStripMenuItem = new ToolStripMenuItem();
@@ -92,7 +90,6 @@ namespace Mappalachia
 			resetToolStripMenuItem = new ToolStripMenuItem();
 			searchSettingsToolStripMenuItem = new ToolStripMenuItem();
 			searchInAllSpacesToolStripMenuItem = new ToolStripMenuItem();
-			searchInInstancesOnlyToolStripMenuItem = new ToolStripMenuItem();
 			showInitiallyDisabledToolStripMenuItem = new ToolStripMenuItem();
 			advancedModeToolStripMenuItem = new ToolStripMenuItem();
 			plotSettingsMenuItem = new ToolStripMenuItem();
@@ -167,7 +164,7 @@ namespace Mappalachia
 			// 
 			// mapMenuItem
 			// 
-			mapMenuItem.DropDownItems.AddRange(new ToolStripItem[] { showPreviewToolStripMenuItem, openExternallyToolStripMenuItem, setTitleToolStripMenuItem, fontSizesToolStripMenuItem, mapMapMarkersToolStripMenuItem, backgroundImageMenuItem, grayscaleToolStripMenuItem, backgroundBrightnessToolStripMenuItem, highlightWaterToolStripMenuItem, showInfestationsToolStripMenuItem, coordinateGridToolStripMenuItem, showCompassToolStripMenuItem, lookupToolStripMenuItem, legendToolStripMenuItem, loadRecipeToolStripMenuItem, saveAsRecipeToolStripMenuItem, exportToFileToolStripMenuItem, quickSaveToolStripMenuItem, clearPlotsToolStripMenuItem, resetToolStripMenuItem });
+			mapMenuItem.DropDownItems.AddRange(new ToolStripItem[] { showPreviewToolStripMenuItem, openExternallyToolStripMenuItem, setTitleToolStripMenuItem, fontSizesToolStripMenuItem, mapMapMarkersToolStripMenuItem, backgroundImageMenuItem, grayscaleToolStripMenuItem, backgroundBrightnessToolStripMenuItem, highlightWaterToolStripMenuItem, coordinateGridToolStripMenuItem, showCompassToolStripMenuItem, lookupToolStripMenuItem, legendToolStripMenuItem, loadRecipeToolStripMenuItem, saveAsRecipeToolStripMenuItem, exportToFileToolStripMenuItem, quickSaveToolStripMenuItem, clearPlotsToolStripMenuItem, resetToolStripMenuItem });
 			mapMenuItem.Name = "mapMenuItem";
 			mapMenuItem.Size = new Size(43, 20);
 			mapMenuItem.Text = "Map";
@@ -230,7 +227,7 @@ namespace Mappalachia
 			// 
 			// backgroundImageMenuItem
 			// 
-			backgroundImageMenuItem.DropDownItems.AddRange(new ToolStripItem[] { backgroundNormalToolStripMenuItem, backgroundSatelliteToolStripMenuItem, backgroundMilitaryToolStripMenuItem, backgroundNoneToolStripMenuItem });
+			backgroundImageMenuItem.DropDownItems.AddRange(new ToolStripItem[] { backgroundNormalToolStripMenuItem, backgroundSatelliteToolStripMenuItem, backgroundNoneToolStripMenuItem });
 			backgroundImageMenuItem.Name = "backgroundImageMenuItem";
 			backgroundImageMenuItem.Size = new Size(240, 22);
 			backgroundImageMenuItem.Text = "Background Image";
@@ -238,7 +235,7 @@ namespace Mappalachia
 			// backgroundNormalToolStripMenuItem
 			// 
 			backgroundNormalToolStripMenuItem.Name = "backgroundNormalToolStripMenuItem";
-			backgroundNormalToolStripMenuItem.Size = new Size(115, 22);
+			backgroundNormalToolStripMenuItem.Size = new Size(180, 22);
 			backgroundNormalToolStripMenuItem.Text = "Normal";
 			backgroundNormalToolStripMenuItem.ToolTipText = "Set the background image to the typical pause menu map.";
 			backgroundNormalToolStripMenuItem.Click += Map_Background_Normal_Click;
@@ -246,23 +243,15 @@ namespace Mappalachia
 			// backgroundSatelliteToolStripMenuItem
 			// 
 			backgroundSatelliteToolStripMenuItem.Name = "backgroundSatelliteToolStripMenuItem";
-			backgroundSatelliteToolStripMenuItem.Size = new Size(115, 22);
+			backgroundSatelliteToolStripMenuItem.Size = new Size(180, 22);
 			backgroundSatelliteToolStripMenuItem.Text = "Satellite";
 			backgroundSatelliteToolStripMenuItem.ToolTipText = "Set the background image to a top-down render of the in-game world.";
 			backgroundSatelliteToolStripMenuItem.Click += Map_Background_Satellite_Click;
 			// 
-			// backgroundMilitaryToolStripMenuItem
-			// 
-			backgroundMilitaryToolStripMenuItem.Name = "backgroundMilitaryToolStripMenuItem";
-			backgroundMilitaryToolStripMenuItem.Size = new Size(115, 22);
-			backgroundMilitaryToolStripMenuItem.Text = "Military";
-			backgroundMilitaryToolStripMenuItem.ToolTipText = "Set the background image to the military-style topographic map found in train stations.";
-			backgroundMilitaryToolStripMenuItem.Click += Map_Background_Military_Click;
-			// 
 			// backgroundNoneToolStripMenuItem
 			// 
 			backgroundNoneToolStripMenuItem.Name = "backgroundNoneToolStripMenuItem";
-			backgroundNoneToolStripMenuItem.Size = new Size(115, 22);
+			backgroundNoneToolStripMenuItem.Size = new Size(180, 22);
 			backgroundNoneToolStripMenuItem.Text = "None";
 			backgroundNoneToolStripMenuItem.ToolTipText = "Disable the background map image.";
 			backgroundNoneToolStripMenuItem.Click += Map_Background_None_Click;
@@ -292,14 +281,6 @@ namespace Mappalachia
 			highlightWaterToolStripMenuItem.Text = "Highlight Water";
 			highlightWaterToolStripMenuItem.ToolTipText = "Overlay a blue highlight showing accessible surface water.";
 			highlightWaterToolStripMenuItem.Click += Map_HighlightWater_Click;
-			// 
-			// showInfestationsToolStripMenuItem
-			// 
-			showInfestationsToolStripMenuItem.Name = "showInfestationsToolStripMenuItem";
-			showInfestationsToolStripMenuItem.Size = new Size(240, 22);
-			showInfestationsToolStripMenuItem.Text = "Show Infestations";
-			showInfestationsToolStripMenuItem.ToolTipText = "Plot the area of all possible infestations.";
-			showInfestationsToolStripMenuItem.Click += Map_ShowInfestations_Click;
 			// 
 			// coordinateGridToolStripMenuItem
 			// 
@@ -614,7 +595,7 @@ namespace Mappalachia
 			// 
 			// searchSettingsToolStripMenuItem
 			// 
-			searchSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { searchInAllSpacesToolStripMenuItem, searchInInstancesOnlyToolStripMenuItem, showInitiallyDisabledToolStripMenuItem, advancedModeToolStripMenuItem });
+			searchSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { searchInAllSpacesToolStripMenuItem, showInitiallyDisabledToolStripMenuItem, advancedModeToolStripMenuItem });
 			searchSettingsToolStripMenuItem.Name = "searchSettingsToolStripMenuItem";
 			searchSettingsToolStripMenuItem.Size = new Size(99, 20);
 			searchSettingsToolStripMenuItem.Text = "Search Settings";
@@ -622,23 +603,15 @@ namespace Mappalachia
 			// searchInAllSpacesToolStripMenuItem
 			// 
 			searchInAllSpacesToolStripMenuItem.Name = "searchInAllSpacesToolStripMenuItem";
-			searchInAllSpacesToolStripMenuItem.Size = new Size(200, 22);
+			searchInAllSpacesToolStripMenuItem.Size = new Size(192, 22);
 			searchInAllSpacesToolStripMenuItem.Text = "Search in all Spaces";
 			searchInAllSpacesToolStripMenuItem.ToolTipText = "Constrain the search to the selected Space only, or search all Spaces.";
 			searchInAllSpacesToolStripMenuItem.Click += Search_SearchInAllSpaces_Click;
 			// 
-			// searchInInstancesOnlyToolStripMenuItem
-			// 
-			searchInInstancesOnlyToolStripMenuItem.Name = "searchInInstancesOnlyToolStripMenuItem";
-			searchInInstancesOnlyToolStripMenuItem.Size = new Size(200, 22);
-			searchInInstancesOnlyToolStripMenuItem.Text = "Search in instances only";
-			searchInInstancesOnlyToolStripMenuItem.ToolTipText = "Only show results for spaces which are (or may be) instances.";
-			searchInInstancesOnlyToolStripMenuItem.Click += Search_SearchInInstancesOnly_click;
-			// 
 			// showInitiallyDisabledToolStripMenuItem
 			// 
 			showInitiallyDisabledToolStripMenuItem.Name = "showInitiallyDisabledToolStripMenuItem";
-			showInitiallyDisabledToolStripMenuItem.Size = new Size(200, 22);
+			showInitiallyDisabledToolStripMenuItem.Size = new Size(192, 22);
 			showInitiallyDisabledToolStripMenuItem.Text = "Show Initially Disabled";
 			showInitiallyDisabledToolStripMenuItem.ToolTipText = "Include search results which are disabled by default.";
 			showInitiallyDisabledToolStripMenuItem.Click += Search_IncludeInitiallyDisabled_click;
@@ -646,7 +619,7 @@ namespace Mappalachia
 			// advancedModeToolStripMenuItem
 			// 
 			advancedModeToolStripMenuItem.Name = "advancedModeToolStripMenuItem";
-			advancedModeToolStripMenuItem.Size = new Size(200, 22);
+			advancedModeToolStripMenuItem.Size = new Size(192, 22);
 			advancedModeToolStripMenuItem.Text = "Advanced Mode";
 			advancedModeToolStripMenuItem.ToolTipText = "Toggle displaying search results in technical formats, and enable searching by FormID.";
 			advancedModeToolStripMenuItem.Click += Search_AdvancedMode_Click;
@@ -1228,7 +1201,6 @@ namespace Mappalachia
 		private ToolStripMenuItem backgroundImageMenuItem;
 		private ToolStripMenuItem backgroundNormalToolStripMenuItem;
 		private ToolStripMenuItem backgroundSatelliteToolStripMenuItem;
-		private ToolStripMenuItem backgroundMilitaryToolStripMenuItem;
 		private ToolStripMenuItem backgroundNoneToolStripMenuItem;
 		private ToolStripMenuItem legendToolStripMenuItem;
 		private ToolStripMenuItem legendHorizontalToolStripMenuItem;
@@ -1276,7 +1248,6 @@ namespace Mappalachia
 		private Label labelSearchResults;
 		private Label labelItemsToPlot;
 		private ToolStripMenuItem installSpotlightToolStripMenuItem;
-		private ToolStripMenuItem searchInInstancesOnlyToolStripMenuItem;
 		private ToolStripMenuItem fontSizesToolStripMenuItem;
 		private ToolStripMenuItem showCompassToolStripMenuItem;
 		private ToolStripMenuItem compassAlwaysToolStripMenuItem;
@@ -1305,7 +1276,6 @@ namespace Mappalachia
 		private ToolStripMenuItem legendVerticalTopToolStripMenuItem;
 		private ToolStripMenuItem legendVerticalCenterToolStripMenuItem;
 		private ToolStripMenuItem legendVerticalBottomToolStripMenuItem;
-		private ToolStripMenuItem showInfestationsToolStripMenuItem;
 		private ToolStripMenuItem lookupToolStripMenuItem;
 		private ToolStripMenuItem lookupRangeToolStripMenuItem;
 		private ToolStripMenuItem lookupRangeSmallToolStripMenuItem;

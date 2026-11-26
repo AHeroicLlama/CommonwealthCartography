@@ -1,15 +1,15 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 
 namespace Library
 {
 	public static class Common
 	{
-		public static string ApplicationTitleName { get; } = "Mappalachia"; // User-friendly name
+		public static string ApplicationTitleName { get; } = "Commonwealth Cartography"; // User-friendly name
 
-		public static string ApplicationSystemName { get; } = "Mappalachia"; // File/URL-friendly name
+		public static string ApplicationSystemName { get; } = "CommonwealthCartography"; // File/URL-friendly name
 
-		public static string GameTargetName { get; } = "Fallout 76"; // User-friendly game title
+		public static string GameTargetName { get; } = "Fallout 4"; // User-friendly game title
 
 		public static string RepositoryName { get; } = $"AHeroicLlama/{ApplicationSystemName}";
 
@@ -33,8 +33,6 @@ namespace Library
 
 		public static string BackgroundMenuAddendum { get; } = "_menu";
 
-		public static string BackgroundMilitaryAddendum { get; } = "_military";
-
 		public static int MapImageResolution { get; } = 4096;
 
 		public static int SpotlightMaxSize { get; } = 16; // The maximum user-selectable spotlight size, in tiles.
@@ -53,15 +51,6 @@ namespace Library
 		static Regex FormID { get; } = new Regex("^(0[Xx])?([0-9A-Fa-f]{1,8})$");
 
 		public static int CellSize { get; } = 4096;
-
-		public enum FluxColor
-		{
-			Crimson,
-			Cobalt,
-			Fluorescent,
-			Violet,
-			Yellowcake,
-		}
 
 		// Return if this string appears to represent a FormID in hexadecimal
 		public static bool IsHexFormID(this string formID)
@@ -88,7 +77,7 @@ namespace Library
 		public static uint ToFixedFormId(this uint loadOrderFormId)
 		{
 			// First byte 0x00 indicates base game record - no change
-			if (loadOrderFormId >> 24 == 0x00)
+			if (GetEsmNumber(loadOrderFormId) == 0x00)
 			{
 				return loadOrderFormId;
 			}

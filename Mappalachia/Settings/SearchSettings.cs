@@ -10,27 +10,6 @@ namespace Mappalachia
 
 		public string SearchTerm { get; set; } = GetRandomSearchHint();
 
-		bool searchInstancesOnly = false;
-
-		public bool SearchInInstancesOnly
-		{
-			get
-			{
-				return searchInstancesOnly;
-			}
-
-			set
-			{
-				searchInstancesOnly = value;
-
-				// Search in instances only implies searching in all spaces
-				if (searchInstancesOnly)
-				{
-					SearchInAllSpaces = true;
-				}
-			}
-		}
-
 		public bool IncludeInitiallyDisabled { get; set; } = false;
 
 		public List<Signature> SelectedSignatures { get; set; } = Enum.GetValues<Signature>().ToList().Where(s => s.IsRecommendedSelection()).ToList();
@@ -41,59 +20,31 @@ namespace Mappalachia
 		{
 			List<string> searchTermHints = new List<string>
 			{
-				"Alcohol",
-				"Alien Blaster",
-				"Ballistic Fiber",
-				"Caps",
+				"Caps Stash",
 				"Flora",
 				"Fusion Core",
-				"Ghoul",
-				"Ginseng",
-				"Hardpoint",
-				"Instrument",
-				"Chem",
-				"LPI_Food",
-				"LvlCritter",
-				"NoCampAllowed",
+				"Jet",
 				"Nuka Cola",
-				"Overseer's Cache",
-				"P01C_Bucket_Loot",
-				"PowerArmorFurniture_",
+				"PerkMag",
+				"PowerArmorFurniture",
 				"Pre War Money",
-				"Protest Sign",
-				"Pumpkin",
 				"RETrigger",
 				"Rare",
-				"Raw Flux",
-				"Recipe",
-				"SFM04_Organic_Pod",
-				"Starlight Creeper",
-				"Strange Encounter",
-				"Tales from West Virginia",
+				"San Francisco Sunlights",
+				"Synth",
 				"Teddy Bear",
-				"Treasure Map Mound",
+				"Thistle",
 				"Trunk Boss",
-				"Vein",
-				"Wind Chimes",
+				"UFO Crash Site",
 				"Workbench",
 			};
 
 			return searchTermHints[new Random().Next(searchTermHints.Count)];
 		}
 
-		public bool ShouldSearchForNPC()
-		{
-			return SelectedSignatures.Contains(Signature.NPC_) && SelectedLockLevels.Contains(LockLevel.None);
-		}
-
 		public bool ShouldSearchForScrap()
 		{
 			return SelectedSignatures.Contains(Signature.MISC) && SelectedLockLevels.Contains(LockLevel.None);
-		}
-
-		public bool ShouldSearchForRawFlux()
-		{
-			return SelectedSignatures.Contains(Signature.ALCH) && SelectedLockLevels.Contains(LockLevel.None);
 		}
 
 		public bool ShouldSearchForRegion()

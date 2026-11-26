@@ -10,7 +10,7 @@ namespace Preprocessor
 {
 	internal partial class Preprocessor
 	{
-		static uint MinRenderedCellImageSizeKB { get; } = 500;
+		static uint MinRenderedCellImageSizeKB { get; } = 200;
 
 		static uint MaxRenderedCellImageSizeKB { get; } = 6500;
 
@@ -26,7 +26,7 @@ namespace Preprocessor
 
 		static uint MaxMapMarkerImageSizeBytes { get; } = 16000;
 
-		static float MaxBlackPixelsBackgroundPerc { get; } = 90f;
+		static float MaxBlackPixelsBackgroundPerc { get; } = 93f;
 
 		static async Task ValidateImageAssets()
 		{
@@ -37,9 +37,9 @@ namespace Preprocessor
 			List<Space> spaces = await CommonDatabase.GetAllSpaces(GetNewConnection());
 
 			// Perform file checks for all spaces
-			Parallel.ForEach(spaces, space =>
+			Parallel.ForEach(spaces, async space =>
 			{
-				ValidateSpace(space);
+				await ValidateSpace(space);
 			});
 
 			// Inverse of above (excluding spotlight), check there are no extraneous files
@@ -66,8 +66,11 @@ namespace Preprocessor
 				}
 			}
 
-			// Count 3 files per worldspace, plus 1 extra for Appalachia for the "military" map
-			int expectedWorldspaceImageFiles = (spaces.Where(space => space.IsWorldspace).Count() * 3) + spaces.Where(space => space.IsAppalachia()).Count();
+			// Count 3 files per primary worldspace, 1 per non-primary worldspace
+			int expectedWorldspaceImageFiles =
+				(spaces.Where(space => space.IsPrimaryWorldspace).Count() * 3) +
+				spaces.Where(space => !space.IsPrimaryWorldspace && space.IsWorldspace).Count();
+
 			int actualWorldspaceImageFiles = Directory.GetFiles(WorldPath).Length;
 
 			if (actualWorldspaceImageFiles != expectedWorldspaceImageFiles)
@@ -78,7 +81,7 @@ namespace Preprocessor
 			// Main check for Map Markers
 			Parallel.ForEach(mapMarkers, ValidateMapMarker);
 
-			// Unique cases for door and infestation markers (not a MapMarker, not in the DB, but still an icon svg)
+			// Unique cases for door markers (not a MapMarker, not in the DB, but still an icon svg)
 			Console.WriteLine("Icon: DoorMarker");
 			MapMarker doorMarker = new MapMarker("DoorMarker", string.Empty, 0, new Coord(0, 0));
 
@@ -86,15 +89,6 @@ namespace Preprocessor
 			{
 				ValidateMapMarkerFileSize(doorMarker, DoorMarkerPath);
 				ValidateSVG(DoorMarkerPath);
-			}
-
-			Console.WriteLine("Icon: InfestationMarker");
-			MapMarker infestationMarker = new MapMarker("InfestationMarker", string.Empty, 0, new Coord(0, 0));
-
-			if (ValidateMapMarkerImageExists(infestationMarker, InfestationMarkerPath))
-			{
-				ValidateMapMarkerFileSize(infestationMarker, InfestationMarkerPath);
-				ValidateSVG(InfestationMarkerPath);
 			}
 
 			Parallel.ForEach(Directory.GetFiles(MapMarkerPath), file =>
@@ -328,7 +322,7 @@ namespace Preprocessor
 		}
 
 		// Validates the background images for the given Space
-		static void ValidateSpace(Space space)
+		static async Task ValidateSpace(Space space)
 		{
 			Console.WriteLine($"Background image(s): {space.EditorID}");
 			string filePath = (space.IsWorldspace ? WorldPath : CellPath) + space.EditorID + BackgroundImageFileType;
@@ -340,28 +334,35 @@ namespace Preprocessor
 				ValidateBackgroundImageBlackPx(space, filePath);
 			}
 
-			int i = 0;
-			List<SpotlightTile> tiles = space.GetTiles();
-
-			// Validate spotlight tiles
-			Parallel.ForEach(tiles, tile =>
+			if (space.IsSuitableForSpotlight())
 			{
-				Interlocked.Increment(ref i);
+				int i = 0;
+				List<SpotlightTile> tiles = await GetInBoundsSpotlightTilesForSpace(space);
 
-				string file = tile.GetFilePath();
-
-				// We don't fail on a missing spotlight tile, because it may have been deleted due to being empty, or not rendered due to being outside the world border
-				if (File.Exists(file))
+				Parallel.ForEach(tiles, tile =>
 				{
-					Console.WriteLine($"Spotlight tile {i} of {tiles.Count}: {space.EditorID}");
-					ValidateTileImageFileSize(tile, file);
-					ValidateImageDimensions(file);
-					ValidateTileImageBlackPx(tile, file);
-				}
-			});
+					Interlocked.Increment(ref i);
+
+					string file = tile.GetFilePath();
+
+					if (File.Exists(file))
+					{
+						Console.WriteLine($"Spotlight tile {i} of {tiles.Count}: {space.EditorID}");
+						ValidateTileImageFileSize(tile, file);
+						ValidateImageDimensions(file);
+						ValidateTileImageBlackPx(tile, file);
+					}
+
+					// Missing spotlight tile may be valid for interiors, as a tile may be an invisible out of bounds object, leaving it black, which we delete.
+					else if (space.IsPrimaryWorldspace)
+					{
+						FailValidation($"Spotlight tile ({tile.XId}, {tile.YId}) for {space.EditorID} was not found at {file}");
+					}
+				});
+			}
 
 			// There are several additional files for Worldspaces
-			if (space.IsWorldspace)
+			if (space.IsPrimaryWorldspace)
 			{
 				string watermaskFilePath = WorldPath + space.EditorID + WaterMaskAddendum + MaskImageFileType;
 				string menuMapPath = WorldPath + space.EditorID + BackgroundMenuAddendum + BackgroundImageFileType;
@@ -373,19 +374,6 @@ namespace Preprocessor
 
 				ValidateImageDimensions(watermaskFilePath);
 				ValidateImageDimensions(menuMapPath);
-
-				// Appalachia specifically also has the 'military' map
-				if (space.IsAppalachia())
-				{
-					string militaryMapPath = WorldPath + space.EditorID + BackgroundMilitaryAddendum + BackgroundImageFileType;
-
-					if (!ValidateSpaceImageExists(space, militaryMapPath))
-					{
-						return;
-					}
-
-					ValidateImageDimensions(militaryMapPath);
-				}
 			}
 		}
 

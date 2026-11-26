@@ -42,15 +42,6 @@ namespace Mappalachia
 			return doorMarker;
 		}
 
-		static Image? infestationMarker;
-
-		// Return the Infestation Marker icon
-		public static Image GetInfestationMarker()
-		{
-			infestationMarker ??= LoadSVGIcon(Paths.InfestationMarkerPath);
-			return infestationMarker;
-		}
-
 		static Image? compassRose;
 
 		public static Image CompassRose
@@ -207,9 +198,6 @@ namespace Mappalachia
 				case BackgroundImageType.Menu:
 					path += BackgroundMenuAddendum;
 					break;
-				case BackgroundImageType.Military:
-					path += BackgroundMilitaryAddendum;
-					break;
 				default:
 					throw new Exception("Unexpected BackgroundImageType: " + backgroundImageType);
 			}
@@ -226,7 +214,7 @@ namespace Mappalachia
 
 		public static Image GetWaterMask(this Space space)
 		{
-			if (!space.IsWorldspace)
+			if (!space.IsPrimaryWorldspace)
 			{
 				return EmptyMapImage;
 			}
@@ -242,7 +230,7 @@ namespace Mappalachia
 		}
 
 		// Returns the image for the icon of the mapMarker, uses caching
-		public static Image GetMapMarkerImage(this MapMarker mapMarker)
+		public static Image GetMapMarkerImage(this MapMarker mapMarker, Color? color = null)
 		{
 			string path = Paths.MapMarkersPath + mapMarker.Icon + MapMarkerImageFileType;
 
@@ -252,6 +240,11 @@ namespace Mappalachia
 			}
 
 			Image marker = LoadSVGIcon(path, Map.IconScale);
+
+			if (color.HasValue)
+			{
+				marker = marker.SetColor(color.Value);
+			}
 
 			MapMarkerIconImageCache[mapMarker.Icon] = marker;
 			return marker;

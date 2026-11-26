@@ -75,7 +75,7 @@ namespace Library
 					reader.GetString("spaceEditorID"),
 					reader.GetString("spaceDisplayName"),
 					reader.GetBool("isWorldspace"),
-					reader.GetBool("isInstanceable"),
+					reader.GetBool("isPrimaryWorldspace"),
 					reader.GetDouble("centerX"),
 					reader.GetDouble("centerY"),
 					reader.GetDouble("maxRange"),
@@ -85,10 +85,10 @@ namespace Library
 			return spaces;
 		}
 
-		// Returns a new List of all spaces, ordered by worldspace and editorID
+		// Returns a new List of all spaces, ordered by primary worldspace and editorID
 		public static async Task<List<Space>> GetAllSpaces(SqliteConnection connection)
 		{
-			return await GetSpaces(connection, "SELECT * FROM Space ORDER BY isWorldspace DESC, spaceEditorID ASC");
+			return await GetSpaces(connection, "SELECT * FROM Space ORDER BY isPrimaryWorldspace DESC, spaceEditorID ASC");
 		}
 
 		// Returns the Space instance with the editorID from the database
@@ -109,7 +109,7 @@ namespace Library
 				reader.GetString("spaceEditorID"),
 				reader.GetString("spaceDisplayName"),
 				reader.GetBool("isWorldspace"),
-				reader.GetBool("isInstanceable"),
+				reader.GetBool("isPrimaryWorldspace"),
 				reader.GetDouble("centerX"),
 				reader.GetDouble("centerY"),
 				reader.GetDouble("maxRange"),
@@ -181,7 +181,7 @@ namespace Library
 				throw new ArgumentException("Only string or enum collections are valid.");
 			}
 
-			return $"({string.Join(",", elements.Select(e => "\'" + e?.ToString() + "\'"))})";
+			return $"({string.Join(",", elements.Select(e => "\'" + e?.ToString()?.Replace("'", "''") + "\'"))})";
 		}
 
 		// Return the name of the given ESM, plus all masters

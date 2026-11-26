@@ -98,12 +98,7 @@ namespace Mappalachia
 		// Check for and amend settings which shouldn't be used together
 		public void ResolveConflictingSettings()
 		{
-			if (MapSettings.BackgroundImage == BackgroundImageType.Military && !Space.IsAppalachia())
-			{
-				MapSettings.BackgroundImage = BackgroundImageType.Menu;
-			}
-
-			if (MapSettings.BackgroundImage == BackgroundImageType.Menu && !Space.IsWorldspace)
+			if (MapSettings.BackgroundImage == BackgroundImageType.Menu && !Space.IsPrimaryWorldspace)
 			{
 				MapSettings.BackgroundImage = BackgroundImageType.Render;
 			}

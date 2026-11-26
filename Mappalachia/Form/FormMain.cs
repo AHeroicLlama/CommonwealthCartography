@@ -205,7 +205,7 @@ namespace Mappalachia
 
 				case "SpawnWeight":
 					return "The effective expected value of entities at each individual instance. Most entities are always present (100%).\n" +
-						"However for example an NPC may only spawn 1/5 of the time (20%), but a container may contain 2x of the item (200%), and a piece of junk may contain 3 of the specified scrap (300%)";
+						"However for example a container may contain 2x of the item (200%), and a piece of junk may contain 3 of the specified scrap (300%)";
 
 				case "Count":
 					return "The total number of identical instances of this entity, at this location";
@@ -267,11 +267,9 @@ namespace Mappalachia
 			// Update the check for boolean settings
 			grayscaleToolStripMenuItem.Checked = Settings.MapSettings.GrayscaleBackground;
 			highlightWaterToolStripMenuItem.Checked = Settings.MapSettings.HighlightWater;
-			showInfestationsToolStripMenuItem.Checked = Settings.MapSettings.ShowInfestations;
 			mapMarkerIconsToolStripMenuItem.Checked = Settings.MapSettings.MapMarkerIcons;
 			mapMarkerLabelsToolStripMenuItem.Checked = Settings.MapSettings.MapMarkerLabels;
 			searchInAllSpacesToolStripMenuItem.Checked = Settings.SearchSettings.SearchInAllSpaces;
-			searchInInstancesOnlyToolStripMenuItem.Checked = Settings.SearchSettings.SearchInInstancesOnly;
 			showInitiallyDisabledToolStripMenuItem.Checked = Settings.SearchSettings.IncludeInitiallyDisabled;
 			advancedModeToolStripMenuItem.Checked = Settings.SearchSettings.Advanced;
 			drawInstanceFormIDToolStripMenuItem.Checked = Settings.PlotSettings.DrawInstanceFormID;
@@ -303,9 +301,6 @@ namespace Mappalachia
 					break;
 				case BackgroundImageType.Render:
 					backgroundSatelliteToolStripMenuItem.Checked = true;
-					break;
-				case BackgroundImageType.Military:
-					backgroundMilitaryToolStripMenuItem.Checked = true;
 					break;
 				case BackgroundImageType.None:
 					backgroundNoneToolStripMenuItem.Checked = true;
@@ -471,12 +466,10 @@ namespace Mappalachia
 			}
 
 			// Disable some now unavailable settings, for clarity
-			backgroundNormalToolStripMenuItem.Enabled = Settings.Space.IsWorldspace;
-			backgroundMilitaryToolStripMenuItem.Enabled = Settings.Space.IsAppalachia();
+			backgroundNormalToolStripMenuItem.Enabled = Settings.Space.IsPrimaryWorldspace;
 
-			highlightWaterToolStripMenuItem.Enabled = Settings.Space.IsWorldspace;
-			mapMapMarkersToolStripMenuItem.Enabled = Settings.Space.IsWorldspace;
-			showInfestationsToolStripMenuItem.Enabled = Settings.Space.IsWorldspace;
+			highlightWaterToolStripMenuItem.Enabled = Settings.Space.IsPrimaryWorldspace;
+			mapMapMarkersToolStripMenuItem.Enabled = Settings.Space.IsPrimaryWorldspace;
 
 			UpdateDataGridAppearances();
 
@@ -982,11 +975,6 @@ namespace Mappalachia
 			await SetSetting(() => Settings.MapSettings.BackgroundImage = BackgroundImageType.Render);
 		}
 
-		private async void Map_Background_Military_Click(object sender, EventArgs e)
-		{
-			await SetSetting(() => Settings.MapSettings.BackgroundImage = BackgroundImageType.Military);
-		}
-
 		private async void Map_Background_None_Click(object sender, EventArgs e)
 		{
 			await SetSetting(() => Settings.MapSettings.BackgroundImage = BackgroundImageType.None);
@@ -1060,11 +1048,6 @@ namespace Mappalachia
 		private async void Map_HighlightWater_Click(object sender, EventArgs e)
 		{
 			await SetSetting(() => Settings.MapSettings.HighlightWater = !Settings.MapSettings.HighlightWater);
-		}
-
-		private async void Map_ShowInfestations_Click(object sender, EventArgs e)
-		{
-			await SetSetting(() => Settings.MapSettings.ShowInfestations = !Settings.MapSettings.ShowInfestations);
 		}
 
 		private async void Map_CoordinateGrid_Enabled_Click(object sender, EventArgs e)
@@ -1262,11 +1245,6 @@ namespace Mappalachia
 		private async void Search_SearchInAllSpaces_Click(object sender, EventArgs e)
 		{
 			await SetSetting(() => Settings.SearchSettings.SearchInAllSpaces = !Settings.SearchSettings.SearchInAllSpaces, false, true);
-		}
-
-		private async void Search_SearchInInstancesOnly_click(object sender, EventArgs e)
-		{
-			await SetSetting(() => Settings.SearchSettings.SearchInInstancesOnly = !Settings.SearchSettings.SearchInInstancesOnly, false, true);
 		}
 
 		private async void Search_IncludeInitiallyDisabled_click(object sender, EventArgs e)

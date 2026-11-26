@@ -46,7 +46,6 @@ class MapIconProcessor
 
 		// Manual clean the static marker icons
 		CleanSVG(DoorMarkerPath);
-		CleanSVG(InfestationMarkerPath);
 
 		StdOutWithColor("Finished. Press any key.", ColorInfo);
 		Console.ReadKey();
@@ -149,7 +148,6 @@ class MapIconProcessor
 				document.Load(markerPath);
 
 				// Run the mapmarker svg against hardcodings to apply any bespoke fixes
-				document = FixMapMarkerSVG(document, mapMarker);
 				CleanXMLNode(document);
 
 				StringWriter stringWriter = new StringWriter(new StringBuilder());

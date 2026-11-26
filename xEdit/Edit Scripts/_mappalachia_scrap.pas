@@ -13,7 +13,7 @@ unit _mappalachia_scrap;
 
 	procedure ripItem(item : IInterface);
 	const
-		MCQPEntry = ElementBySignature(item, 'MCQP');
+		MCQPEntry = ElementBySignature(item, 'CVPA');
 		formID = IntToStr(GetLoadOrderFormID(item));
 	var
 		i : Integer;
@@ -24,7 +24,7 @@ unit _mappalachia_scrap;
 			outputStrings.Add(
 				formID + ',' +
 				sanitize(GetEditValue(ElementByName(currentComponent, 'Component'))) + ',' +
-				sanitize(GetEditValue(ElementByName(currentComponent, 'Component Count Keyword')))
+				sanitize(GetEditValue(ElementByName(currentComponent, 'Count')))
 			);
 		end;
 	end;

@@ -1,5 +1,5 @@
 // Gets the FormID, EditorID, and DisplayName of every relevant CELL and WRLD
-// Header 'spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace,isInstanceable'
+// Header 'spaceFormID,spaceEditorID,spaceDisplayName,isWorldspace'
 unit _mappalachia_space;
 
 	uses _mappalachia_lib;
@@ -76,12 +76,10 @@ unit _mappalachia_space;
 		spaceEditorID = EditorID(space);
 		spaceDisplayName = sanitize(DisplayName(space));
 	var
-		entry, isInstanceable : String;
+		entry : String;
 	begin
 		if IsWinningOverride(space) then begin
-			isInstanceable := GetEditValue(ElementByName(ElementByName(ElementByName(space, 'Record Header'), 'Record Flags'), 'Is Instancable'));
-
-			entry := IntToStr(GetLoadOrderFormID(space)) + ',' + spaceEditorID + ',' + spaceDisplayName + ',' + intToStr(isWorldspace) + ',' + isInstanceable;
+			entry := IntToStr(GetLoadOrderFormID(space)) + ',' + spaceEditorID + ',' + spaceDisplayName + ',' + intToStr(isWorldspace);
 			outputStrings.Add(entry);
 		end;
 	end;
